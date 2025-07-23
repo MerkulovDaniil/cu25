@@ -1,0 +1,16 @@
+- name: Даниил Меркулов
+  role: Лектор для бакалавров
+  image: photos/dm.jpeg
+- name: Денис Рубцов
+  role: Семинарист для бакалавров
+  image: photos/dr.jpeg
+- name: Петр Остроухов
+  role: Лектор и семинарист для магистров
+  image: photos/po.jpeg
+- name: Максим Шуклин
+  role: Ассистент
+  image: photos/ms.jpeg
+- name: Анна Петрова
+  role: Ассистент
+  image: photos/ap.jpeg
+
