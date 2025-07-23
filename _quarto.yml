@@ -20,24 +20,24 @@ website:
   navbar:
     left: 
         - program.md
-        - homework.md 
+        # - homework.md 
     title: false
     logo: logo.svg
-    logo-alt: hse25.fmin.xyz
+    logo-alt: cu25.fmin.xyz
     tools:
       - icon: github
-        href: https://github.com/MerkulovDaniil/hse25
+        href: https://github.com/MerkulovDaniil/cu25
       - icon: youtube
         href: https://www.youtube.com/@fmin
       - icon: telegram
-        href: https://t.me/hse25_fmin
-      - icon: person-workspace
-        href: https://classroom.google.com/c/NzQ1ODY3MzUxNTMx?cjc=7ccfdjv
-      - icon: table
-        href: https://docs.google.com/spreadsheets/d/1FsozOqYd4BZI8Cvzow61hkoyPiTdGhzKQ8vIvqtf4cY/edit?usp=sharing
+        href: https://t.me/fminxyz
+      # - icon: person-workspace
+      #   href: https://classroom.google.com/c/NzQ1ODY3MzUxNTMx?cjc=7ccfdjv
+      # - icon: table
+      #   href: https://docs.google.com/spreadsheets/d/1FsozOqYd4BZI8Cvzow61hkoyPiTdGhzKQ8vIvqtf4cY/edit?usp=sharing
       - icon: gem
         href: https://fmin.xyz
-  repo-url: https://github.com/MerkulovDaniil/hse25
+  repo-url: https://github.com/MerkulovDaniil/cu25
   repo-branch: main
   repo-actions: [edit]
   search: 
