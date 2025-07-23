@@ -1,0 +1,40 @@
+on:
+  workflow_dispatch:
+  push:
+    branches: main
+
+name: Quarto Publish
+
+jobs:
+  build-deploy:
+    runs-on: macos-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      
+      - name: Install CMU Unicode Fonts Manually
+        run: |
+          curl -L -o cmu-fonts.zip https://downloads.sourceforge.net/project/cm-unicode/cm-unicode/0.7.0/cm-unicode-0.7.0-ttf.tar.xz
+          mkdir -p ~/Library/Fonts
+          tar -xf cmu-fonts.zip
+          find cm-unicode-* -name "*.ttf" -exec cp {} ~/Library/Fonts/ \;
+          fc-cache -f -v
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with: 
+          tinytex: true
+
+      - name: Render and Publish
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
