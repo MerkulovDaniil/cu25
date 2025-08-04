@@ -293,7 +293,7 @@
 точке. Кроме того, вектор градиента всегда ортогонален линии уровня в
 точке.
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Example}, colframe=quarto-callout-color-frame, breakable, colbacktitle=quarto-callout-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, titlerule=0mm, opacityback=0, leftrule=.75mm, toprule=.15mm, rightrule=.15mm, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colback=white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, coltitle=black, leftrule=.75mm, left=2mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, colback=white, breakable, arc=.35mm, toptitle=1mm, colbacktitle=quarto-callout-color!10!white, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Example}, titlerule=0mm, rightrule=.15mm, opacitybacktitle=0.6, toprule=.15mm]
 
 Для функции \(f(x, y) = x^2 + y^2\) градиент равен: \[
 \nabla f(x, y) =
@@ -305,7 +305,7 @@
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, colframe=quarto-callout-color-frame, breakable, colbacktitle=quarto-callout-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, titlerule=0mm, opacityback=0, leftrule=.75mm, toprule=.15mm, rightrule=.15mm, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colback=white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, coltitle=black, leftrule=.75mm, left=2mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, colback=white, breakable, arc=.35mm, toptitle=1mm, colbacktitle=quarto-callout-color!10!white, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, titlerule=0mm, rightrule=.15mm, opacitybacktitle=0.6, toprule=.15mm]
 
 Как связана норма градиента с крутизной функции?
 
@@ -327,11 +327,11 @@ f''(x) = \nabla^2 f(x) = \dfrac{\partial^2 f}{\partial x_i \partial x_j} = \begi
 
 Гессиан может быть тензором:
 \(\left(f(x): \mathbb{R}^n \to \mathbb{R}^m \right)\) Таким образом, это
-просто трехмерный тензор, каждый срез это гессиан соответствующей
-скалярной функции
+просто трехмерный тензор, каждый срез которого это гессиан
+соответствующей скалярной функции
 \(\left( \nabla^2f_1(x), \ldots, \nabla^2f_m(x)\right)\).
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Example}, colframe=quarto-callout-color-frame, breakable, colbacktitle=quarto-callout-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, titlerule=0mm, opacityback=0, leftrule=.75mm, toprule=.15mm, rightrule=.15mm, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colback=white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, coltitle=black, leftrule=.75mm, left=2mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, colback=white, breakable, arc=.35mm, toptitle=1mm, colbacktitle=quarto-callout-color!10!white, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Example}, titlerule=0mm, rightrule=.15mm, opacitybacktitle=0.6, toprule=.15mm]
 
 Для функции \(f(x, y) = x^2 + y^2\) гессиан равен:
 
@@ -343,10 +343,10 @@ H_f(x, y) = \begin{bmatrix} 2 & 0 \\
 
 \end{tcolorbox}
 
-Эта матрица cодержит информацию о кривизне функции в разных
+Эта матрица содержит информацию о кривизне функции в разных
 направлениях.
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, colframe=quarto-callout-color-frame, breakable, colbacktitle=quarto-callout-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, titlerule=0mm, opacityback=0, leftrule=.75mm, toprule=.15mm, rightrule=.15mm, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colback=white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, coltitle=black, leftrule=.75mm, left=2mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, colback=white, breakable, arc=.35mm, toptitle=1mm, colbacktitle=quarto-callout-color!10!white, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, titlerule=0mm, rightrule=.15mm, opacitybacktitle=0.6, toprule=.15mm]
 
 Как можно использовать гессиан для определения выпуклости или вогнутости
 функции?
@@ -365,8 +365,8 @@ H_f(x, y) = \begin{bmatrix} 2 & 0 \\
 \frac{\partial^2 f}{\partial x_i \partial x_j} (a) = \frac{\partial^2 f}{\partial x_j \partial x_i} (a)
 \]
 
-Данная теорема говорит о том, что если смешанные частные производные
-непрерывны на открытом множестве, то гессиан симметричен. То есть,
+Согласно данной теореме, если смешанные частные производные непрерывны
+на открытом множестве, то гессиан симметричен. То есть,
 
 \[
 \frac{\partial^2 f}{\partial x_i \partial x_j} = \frac{\partial^2 f}{\partial x_j \partial x_i} \quad \nabla^2 f(x)  =(\nabla^2 f(x))^T
@@ -375,7 +375,7 @@ H_f(x, y) = \begin{bmatrix} 2 & 0 \\
 Эта симметричность упрощает вычисления и анализ, связанные с гессианом в
 различных приложениях, особенно в оптимизации.
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Контрпример Шварца}, colframe=quarto-callout-color-frame, breakable, colbacktitle=quarto-callout-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, titlerule=0mm, opacityback=0, leftrule=.75mm, toprule=.15mm, rightrule=.15mm, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colback=white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, coltitle=black, leftrule=.75mm, left=2mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, colback=white, breakable, arc=.35mm, toptitle=1mm, colbacktitle=quarto-callout-color!10!white, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Контрпример Шварца}, titlerule=0mm, rightrule=.15mm, opacitybacktitle=0.6, toprule=.15mm]
 
 \[
 f(x,y) = 
@@ -384,9 +384,6 @@ f(x,y) =
     0 & \text{ для } (x, y) = (0, 0).
 \end{cases}
 \]
-
-\textbf{Counterexample
-\href{https://fmin.xyz/docs/theory/Matrix_calculus.html\#hessian}{\(\clubsuit\)}}
 
 \pandocbounded{\includegraphics[keepaspectratio]{schwartz.pdf}}
 
@@ -414,14 +411,14 @@ J_f = f'(x) = \dfrac{df}{dx^T} = \begin{pmatrix}
 Она содержит информацию о скорости изменения функции по отношению к ее
 входу.
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, colframe=quarto-callout-color-frame, breakable, colbacktitle=quarto-callout-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, titlerule=0mm, opacityback=0, leftrule=.75mm, toprule=.15mm, rightrule=.15mm, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colback=white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, coltitle=black, leftrule=.75mm, left=2mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, colback=white, breakable, arc=.35mm, toptitle=1mm, colbacktitle=quarto-callout-color!10!white, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, titlerule=0mm, rightrule=.15mm, opacitybacktitle=0.6, toprule=.15mm]
 
 Можно ли связать эти три определения выше (градиент, якобиан, и гессиан)
 с помощью одного утверждения?
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Example}, colframe=quarto-callout-color-frame, breakable, colbacktitle=quarto-callout-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, titlerule=0mm, opacityback=0, leftrule=.75mm, toprule=.15mm, rightrule=.15mm, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colback=white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, coltitle=black, leftrule=.75mm, left=2mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, colback=white, breakable, arc=.35mm, toptitle=1mm, colbacktitle=quarto-callout-color!10!white, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Example}, titlerule=0mm, rightrule=.15mm, opacitybacktitle=0.6, toprule=.15mm]
 
 Для функции\\
 \[
@@ -438,7 +435,7 @@ J_f(x, y) = \begin{bmatrix}
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, colframe=quarto-callout-color-frame, breakable, colbacktitle=quarto-callout-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, titlerule=0mm, opacityback=0, leftrule=.75mm, toprule=.15mm, rightrule=.15mm, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colback=white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, coltitle=black, leftrule=.75mm, left=2mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, colback=white, breakable, arc=.35mm, toptitle=1mm, colbacktitle=quarto-callout-color!10!white, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, titlerule=0mm, rightrule=.15mm, opacitybacktitle=0.6, toprule=.15mm]
 
 Как матрица Якоби связана с градиентом для скалярных функций?
 
@@ -501,8 +498,8 @@ f_{x_0}^I(x) = f(x_0) + \nabla f(x_0)^T (x - x_0)
   \(\nabla f(x_0)\) - градиент функции в точке \(x_0\).
 \end{itemize}
 
-Часто для более простого теоретического анализа в некоторых методах
-заменяют функции вблизи некоторой точки на её аппроксимацию
+Часто для упрощения теоретического анализа в некоторых методах заменяют
+функцию вблизи некоторой точки на её аппроксимацию
 
 \begin{figure}[H]
 
@@ -545,18 +542,19 @@ f_{x_0}^{II}(x) = f(x_0) + \nabla f(x_0)^T (x - x_0) + \frac{1}{2} (x - x_0)^T \
 
 }
 
-\caption{Второе приближение Тейлора в окрестности точки \(x_0\)}
+\caption{Аппроксимация Тейлора второго порядка в окрестности точки
+\(x_0\)}
 
 \end{figure}%
 
-\subsection{Дифференциалы}\label{ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux430ux43bux44b}
+\section{Дифференциалы}\label{ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux430ux43bux44b}
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Theorem}, colframe=quarto-callout-color-frame, breakable, colbacktitle=quarto-callout-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, titlerule=0mm, opacityback=0, leftrule=.75mm, toprule=.15mm, rightrule=.15mm, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colback=white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, coltitle=black, leftrule=.75mm, left=2mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, colback=white, breakable, arc=.35mm, toptitle=1mm, colbacktitle=quarto-callout-color!10!white, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Theorem}, titlerule=0mm, rightrule=.15mm, opacitybacktitle=0.6, toprule=.15mm]
 
 Пусть \(x \in S\) - внутренняя точка множества \(S\), и пусть
 \(D : U \rightarrow V\) - линейный оператор. Мы говорим, что функция
 \(f\) дифференцируема в точке \(x\) с производной \(D\), если для всех
-достаточно малых \(h \in U\) выполняетсяследующее разложение: \[ 
+достаточно малых \(h \in U\) выполняется следующее разложение: \[ 
 f(x + h) = f(x) + D[h] + o(\|h\|)
 \] Если для любого линейного оператора \(D : U \rightarrow V\) функция
 \(f\) не дифференцируема в точке \(x\) с производной \(D\), то мы
@@ -620,14 +618,14 @@ d^2f(x) = \langle \nabla^2 f(x) dx_1, dx\rangle = \langle H_f(x) dx_1, dx\rangle
   \(d(X^{-1})=-X^{-1}(dX)X^{-1}\)
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Example}, colframe=quarto-callout-color-frame, breakable, colbacktitle=quarto-callout-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, titlerule=0mm, opacityback=0, leftrule=.75mm, toprule=.15mm, rightrule=.15mm, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colback=white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, coltitle=black, leftrule=.75mm, left=2mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, colback=white, breakable, arc=.35mm, toptitle=1mm, colbacktitle=quarto-callout-color!10!white, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Example}, titlerule=0mm, rightrule=.15mm, opacitybacktitle=0.6, toprule=.15mm]
 
 Найти \(df, \nabla f(x)\), если
 \(f(x) = \langle x, Ax\rangle -b^T x + c\).
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Example}, colframe=quarto-callout-color-frame, breakable, colbacktitle=quarto-callout-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, titlerule=0mm, opacityback=0, leftrule=.75mm, toprule=.15mm, rightrule=.15mm, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colback=white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, coltitle=black, leftrule=.75mm, left=2mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, colback=white, breakable, arc=.35mm, toptitle=1mm, colbacktitle=quarto-callout-color!10!white, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Example}, titlerule=0mm, rightrule=.15mm, opacitybacktitle=0.6, toprule=.15mm]
 
 Найти \(df, \nabla f(x)\), если \(f(x) = \ln \langle x, Ax\rangle\).
 
@@ -638,9 +636,9 @@ d^2f(x) = \langle \nabla^2 f(x) dx_1, dx\rangle = \langle H_f(x) dx_1, dx\rangle
 \tightlist
 \item
   Заметим, что \(A\) должна быть положительно определенной, потому что
-  \(\langle x, Ax\rangle\) аргумент логарифма и для любого x должно быть
-  положительным. Таким образом, \(A \in \mathbb{S}^n_{++}\) Давайте
-  сначала найдем дифференциал: \[
+  \(\langle x, Ax\rangle\) аргумент логарифма и для любого x формула
+  должна быть положительной. Таким образом, \(A \in \mathbb{S}^n_{++}\)
+  Давайте сначала найдем дифференциал: \[
   \begin{split}
    df &= d \left( \ln \langle x, Ax\rangle \right) = \dfrac{d \left( \langle x, Ax\rangle \right)}{ \langle x, Ax\rangle} = \dfrac{\langle dx, Ax\rangle +  \langle x, d(Ax)\rangle}{ \langle x, Ax\rangle} = \\
    &= \dfrac{\langle Ax, dx\rangle + \langle x, Adx\rangle}{ \langle x, Ax\rangle} = \dfrac{\langle Ax, dx\rangle + \langle A^T x, dx\rangle}{ \langle x, Ax\rangle} = \dfrac{\langle (A + A^T) x, dx\rangle}{ \langle x, Ax\rangle} 
@@ -654,10 +652,7 @@ d^2f(x) = \langle \nabla^2 f(x) dx_1, dx\rangle = \langle H_f(x) dx_1, dx\rangle
   \(\nabla f(x) = \dfrac{2 A x}{ \langle x, Ax\rangle}\)
 \end{enumerate}
 
-\subsection{Матричное дифференцирование. Пример
-3}\label{ux43cux430ux442ux440ux438ux447ux43dux43eux435-ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux440ux43eux432ux430ux43dux438ux435.-ux43fux440ux438ux43cux435ux440-3}
-
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Example}, colframe=quarto-callout-color-frame, breakable, colbacktitle=quarto-callout-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, titlerule=0mm, opacityback=0, leftrule=.75mm, toprule=.15mm, rightrule=.15mm, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colback=white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, coltitle=black, leftrule=.75mm, left=2mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, colback=white, breakable, arc=.35mm, toptitle=1mm, colbacktitle=quarto-callout-color!10!white, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Example}, titlerule=0mm, rightrule=.15mm, opacitybacktitle=0.6, toprule=.15mm]
 
 Найти \(df, \nabla f(X)\), если
 \(f(X) = \langle S, X\rangle - \log \det X\).
@@ -683,12 +678,10 @@ f(x) \to \min_{x \in \mathbb{R}}
 f(x) \to \min_{x \in [a,b]}
 \]
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Example}, colframe=quarto-callout-color-frame, breakable, colbacktitle=quarto-callout-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, titlerule=0mm, opacityback=0, leftrule=.75mm, toprule=.15mm, rightrule=.15mm, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colback=white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, coltitle=black, leftrule=.75mm, left=2mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, colback=white, breakable, arc=.35mm, toptitle=1mm, colbacktitle=quarto-callout-color!10!white, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Example}, titlerule=0mm, rightrule=.15mm, opacitybacktitle=0.6, toprule=.15mm]
 
 Типичным примером задачи линейного поиска является выбор подходящего
-шага для алгоритма градиентного спуска:
-
-\[
+шага для алгоритма градиентного спуска: \[
 \begin{split}
 x_{k+1} = x_k - \alpha \nabla f(x_k) \\
 \alpha = \text{argmin } f(x_{k+1}) 
@@ -697,15 +690,15 @@ x_{k+1} = x_k - \alpha \nabla f(x_k) \\
 
 \end{tcolorbox}
 
-Линейный поиск является фундаментальной задачей оптимизации, которая
-важна для решения сложных задач. Для упрощения предположим, что функция
-\(f(x)\) является \emph{унимодальной}, то есть имеет единственный пик
-или впадину.
+Линейный поиск является фундаментальной задачей оптимизации,
+использующийся для решения сложных задач. Для упрощения предположим,
+что\(f(x)\) \emph{унимодальна}, то есть имеет единственный пик или
+впадину.
 
 \subsection{Унимодальная
 функция}\label{ux443ux43dux438ux43cux43eux434ux430ux43bux44cux43dux430ux44f-ux444ux443ux43dux43aux446ux438ux44f}
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Definition}, colframe=quarto-callout-color-frame, breakable, colbacktitle=quarto-callout-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, titlerule=0mm, opacityback=0, leftrule=.75mm, toprule=.15mm, rightrule=.15mm, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colback=white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, coltitle=black, leftrule=.75mm, left=2mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, colback=white, breakable, arc=.35mm, toptitle=1mm, colbacktitle=quarto-callout-color!10!white, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Definition}, titlerule=0mm, rightrule=.15mm, opacitybacktitle=0.6, toprule=.15mm]
 
 Функция \(f(x)\) называется \textbf{унимодальной} на отрезке \([a, b]\),
 если существует \(x_* \in [a, b]\), что
@@ -739,18 +732,18 @@ x_{k+1} = x_k - \alpha \nabla f(x_k) \\
 \end{itemize}
 
 \textbf{Доказательство} Докажем первое утверждение. Предположим, что
-\(f(x_1) \leq f(x_2)\), но \(x^* > x_2\). Тогда, необходимо,
-\(x_1 < x_2 < x^*\), и в силу унимодальности функции \(f(x)\)
-неравенство: \(f(x_1) > f(x_2)\) должно выполняться. Мы получили
-противоречие.
+\(f(x_1) \leq f(x_2)\), но \(x^* > x_2\). Тогда, поскольку
+\(x_1 < x_2 < x^*\), из определения унимодальности функции \(f(x)\)
+следует, что должно выполняться неравенство \(f(x_1) > f(x_2)\). Мы
+получили противоречие.
 
 \centering
 
-\pandocbounded{\includegraphics[keepaspectratio]{"Unimodal lemm1.pdf"}}
+\includegraphics[width=0.35\linewidth,height=\textheight,keepaspectratio]{"Unimodal lemm1.pdf"}
 
-\pandocbounded{\includegraphics[keepaspectratio]{"Unimodal lemm2.pdf"}}
+\includegraphics[width=0.35\linewidth,height=\textheight,keepaspectratio]{"Unimodal lemm2.pdf"}
 
-\pandocbounded{\includegraphics[keepaspectratio]{"Unimodal lemm3.pdf"}}
+\includegraphics[width=0.35\linewidth,height=\textheight,keepaspectratio]{"Unimodal lemm3.pdf"}
 
 \subsection{Метод
 дихотомии}\label{ux43cux435ux442ux43eux434-ux434ux438ux445ux43eux442ux43eux43cux438ux438}
@@ -761,14 +754,14 @@ x_{k+1} = x_k - \alpha \nabla f(x_k) \\
 f(x) \to \min_{x \in [a,b]}
 \]
 
-Делим отрезок на две равные части и выбираем ту, которая содержит
-решение задачи, используя значения функции, основанные на ключевом
-свойстве, описанном выше. Наша цель после одной итерации метода -
-локализовать решение в отрезке в два раза меньшей длины.
+Делим отрезок на две равные части и выбираем, основываясь на ключевом
+свойстве, описанном выше, ту, которая содержит решение задачи. Наша цель
+после одной итерации метода - локализовать решение в отрезке в два раза
+меньшей длины.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.5\linewidth,height=\textheight,keepaspectratio]{Dichotomy1.pdf}
+{\centering \includegraphics[width=0.4\linewidth,height=\textheight,keepaspectratio]{Dichotomy1.pdf}
 
 }
 
@@ -792,7 +785,7 @@ f(x) \to \min_{x \in [a,b]}
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.5\linewidth,height=\textheight,keepaspectratio]{Dichotomy3.pdf}
+{\centering \includegraphics[width=0.4\linewidth,height=\textheight,keepaspectratio]{Dichotomy3.pdf}
 
 }
 
@@ -800,12 +793,12 @@ f(x) \to \min_{x \in [a,b]}
 
 \end{figure}%
 
-Выбираем целевой отрезок.Нас все устраивает, потому что уже разделили
-решение на две равные части. Но это не всегда так.
+Выбираем целевой отрезок. В этом случае нас все устраивает, потому что
+уже разделили решение на две равные части. Но это не всегда так.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.5\linewidth,height=\textheight,keepaspectratio]{Dichotomy4.pdf}
+{\centering \includegraphics[width=0.4\linewidth,height=\textheight,keepaspectratio]{Dichotomy4.pdf}
 
 }
 
@@ -817,7 +810,7 @@ f(x) \to \min_{x \in [a,b]}
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.5\linewidth,height=\textheight,keepaspectratio]{Dichotomy5.pdf}
+{\centering \includegraphics[width=0.4\linewidth,height=\textheight,keepaspectratio]{Dichotomy5.pdf}
 
 }
 
@@ -829,7 +822,7 @@ f(x) \to \min_{x \in [a,b]}
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.5\linewidth,height=\textheight,keepaspectratio]{Dichotomy6.pdf}
+{\centering \includegraphics[width=0.4\linewidth,height=\textheight,keepaspectratio]{Dichotomy6.pdf}
 
 }
 
@@ -855,7 +848,7 @@ f(x) \to \min_{x \in [a,b]}
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.5\linewidth,height=\textheight,keepaspectratio]{Dichotomy8.pdf}
+{\centering \includegraphics[width=0.4\linewidth,height=\textheight,keepaspectratio]{Dichotomy8.pdf}
 
 }
 
@@ -868,7 +861,7 @@ f(x) \to \min_{x \in [a,b]}
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.5\linewidth,height=\textheight,keepaspectratio]{Dichotomy9.pdf}
+{\centering \includegraphics[width=0.4\linewidth,height=\textheight,keepaspectratio]{Dichotomy9.pdf}
 
 }
 
@@ -881,7 +874,7 @@ f(x) \to \min_{x \in [a,b]}
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.5\linewidth,height=\textheight,keepaspectratio]{Dichotomy10.pdf}
+{\centering \includegraphics[width=0.4\linewidth,height=\textheight,keepaspectratio]{Dichotomy10.pdf}
 
 }
 
@@ -997,8 +990,8 @@ K = \left\lceil \log_2 \dfrac{b-a}{\varepsilon} - 1 \right\rceil
 \tightlist
 \item
   Знаменатель геометрической прогрессии для метода золотого сечения
-  \textbf{больше}, чем для метода дихотомии: \(0.618\) больше (значит
-  медленнее), чем \(0.5\).
+  \textbf{больше}, чем для метода дихотомии: \(0.618\) больше, чем
+  \(0.5\).
 \item
   Количество вызовов функции \textbf{меньше} для метода золотого
   сечения, чем для метода дихотомии: \(0.707\) больше (значит
@@ -1011,11 +1004,12 @@ K = \left\lceil \log_2 \dfrac{b-a}{\varepsilon} - 1 \right\rceil
 \subsection{Метод параболической
 интерполяции}\label{ux43cux435ux442ux43eux434-ux43fux430ux440ux430ux431ux43eux43bux438ux447ux435ux441ux43aux43eux439-ux438ux43dux442ux435ux440ux43fux43eux43bux44fux446ux438ux438}
 
-3 точки, не лежащие на одной прямой однозначно определяют параболу,
-проходящую через них. Используя эту информацию, мы сразу переходим к
-своему минимуму. Предположим, у нас есть 3 точки \(x_1 < x_2 < x_3\)
-такие, что отрезок \([x_1, x_3]\) содержит минимум функции \(f(x)\).
-Тогда мы должны решить следующую систему уравнений:
+Три точки, не лежащие на одной прямой, однозначно определяют параболу,
+проходящую через них. Идея метода --- аппроксимировать функцию такой
+параболой и в качестве следующего приближения взять точку её минимума.
+Предположим, у нас есть 3 точки \(x_1 < x_2 < x_3\) такие, что отрезок
+\([x_1, x_3]\) содержит минимум функции \(f(x)\). Тогда мы должны решить
+следующую систему уравнений:
 
 \[
 ax_i^2 + bx_i + c = f_i = f(x_i), i = 1,2,3 
@@ -1034,7 +1028,7 @@ u = -\dfrac{b}{2a} = x_2 - \dfrac{(x_2 - x_1)^2(f_2 - f_3) - (x_2 - x_3)^2(f_2 -
 \subsection[Метод параболической интерполяции. Алгоритм
 ]{\texorpdfstring{Метод параболической интерполяции. Алгоритм
 \footnote{Скорость сходимости этого метода суперлинейна, но локальна,
-  что означает, что вы можете получить выгоду от использования этого
+  что означает, что мы можем получить выгоду от использования этого
   метода только вблизи некоторой окрестности оптимума.
   \href{https://people.math.sc.edu/kellerlv/Quadratic_Interpolation.pdf}{\emph{Здесь}}
   доказательство суперлинейной сходимости порядка \(1.32\).}}{Метод параболической интерполяции. Алгоритм }}\label{ux43cux435ux442ux43eux434-ux43fux430ux440ux430ux431ux43eux43bux438ux447ux435ux441ux43aux43eux439-ux438ux43dux442ux435ux440ux43fux43eux43bux44fux446ux438ux438.-ux430ux43bux433ux43eux440ux438ux442ux43c-2}
@@ -1044,26 +1038,26 @@ u = -\dfrac{b}{2a} = x_2 - \dfrac{(x_2 - x_1)^2(f_2 - f_3) - (x_2 - x_3)^2(f_2 -
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{def}\NormalTok{ parabola\_search(f, x1, x2, x3, epsilon):}
-\NormalTok{ f1, f2, f3 }\OperatorTok{=}\NormalTok{ f(x1), f(x2), f(x3)}
-    \ControlFlowTok{while}\NormalTok{ x3 }\OperatorTok{{-}}\NormalTok{ x1 }\OperatorTok{\textgreater{}}\NormalTok{ epsilon:}
-\NormalTok{ u }\OperatorTok{=}\NormalTok{ x2 }\OperatorTok{{-}}\NormalTok{ ((x2 }\OperatorTok{{-}}\NormalTok{ x1)}\OperatorTok{**}\DecValTok{2}\OperatorTok{*}\NormalTok{(f2 }\OperatorTok{{-}}\NormalTok{ f3) }\OperatorTok{{-}}\NormalTok{ (x2 }\OperatorTok{{-}}\NormalTok{ x3)}\OperatorTok{**}\DecValTok{2}\OperatorTok{*}\NormalTok{(f2 }\OperatorTok{{-}}\NormalTok{ f1))}\OperatorTok{/}\NormalTok{(}\DecValTok{2}\OperatorTok{*}\NormalTok{((x2 }\OperatorTok{{-}}\NormalTok{ x1)}\OperatorTok{*}\NormalTok{(f2 }\OperatorTok{{-}}\NormalTok{ f3) }\OperatorTok{{-}}\NormalTok{ (x2 }\OperatorTok{{-}}\NormalTok{ x3)}\OperatorTok{*}\NormalTok{(f2 }\OperatorTok{{-}}\NormalTok{ f1)))}
-\NormalTok{ fu }\OperatorTok{=}\NormalTok{ f(u)}
+\NormalTok{   f1, f2, f3 }\OperatorTok{=}\NormalTok{ f(x1), f(x2), f(x3)}
+   \ControlFlowTok{while}\NormalTok{ x3 }\OperatorTok{{-}}\NormalTok{ x1 }\OperatorTok{\textgreater{}}\NormalTok{ epsilon:}
+\NormalTok{      u }\OperatorTok{=}\NormalTok{ x2 }\OperatorTok{{-}}\NormalTok{ ((x2 }\OperatorTok{{-}}\NormalTok{ x1)}\OperatorTok{**}\DecValTok{2}\OperatorTok{*}\NormalTok{(f2 }\OperatorTok{{-}}\NormalTok{ f3) }\OperatorTok{{-}}\NormalTok{ (x2 }\OperatorTok{{-}}\NormalTok{ x3)}\OperatorTok{**}\DecValTok{2}\OperatorTok{*}\NormalTok{(f2 }\OperatorTok{{-}}\NormalTok{ f1))}\OperatorTok{/}\NormalTok{(}\DecValTok{2}\OperatorTok{*}\NormalTok{((x2 }\OperatorTok{{-}}\NormalTok{ x1)}\OperatorTok{*}\NormalTok{(f2 }\OperatorTok{{-}}\NormalTok{ f3) }\OperatorTok{{-}}\NormalTok{ (x2 }\OperatorTok{{-}}\NormalTok{ x3)}\OperatorTok{*}\NormalTok{(f2 }\OperatorTok{{-}}\NormalTok{ f1)))}
+\NormalTok{      fu }\OperatorTok{=}\NormalTok{ f(u)}
 
-        \ControlFlowTok{if}\NormalTok{ x2 }\OperatorTok{\textless{}=}\NormalTok{ u:}
-            \ControlFlowTok{if}\NormalTok{ f2 }\OperatorTok{\textless{}=}\NormalTok{ fu:}
-\NormalTok{ x1, x2, x3 }\OperatorTok{=}\NormalTok{ x1, x2, u}
-\NormalTok{ f1, f2, f3 }\OperatorTok{=}\NormalTok{ f1, f2, fu}
-            \ControlFlowTok{else}\NormalTok{:}
-\NormalTok{ x1, x2, x3 }\OperatorTok{=}\NormalTok{ x2, u, x3}
-\NormalTok{ f1, f2, f3 }\OperatorTok{=}\NormalTok{ f2, fu, f3}
-        \ControlFlowTok{else}\NormalTok{:}
-            \ControlFlowTok{if}\NormalTok{ fu }\OperatorTok{\textless{}=}\NormalTok{ f2:}
-\NormalTok{ x1, x2, x3 }\OperatorTok{=}\NormalTok{ x1, u, x2}
-\NormalTok{ f1, f2, f3 }\OperatorTok{=}\NormalTok{ f1, fu, f2}
-            \ControlFlowTok{else}\NormalTok{:}
-\NormalTok{ x1, x2, x3 }\OperatorTok{=}\NormalTok{ u, x2, x3}
-\NormalTok{ f1, f2, f3 }\OperatorTok{=}\NormalTok{ fu, f2, f3}
-    \ControlFlowTok{return}\NormalTok{ (x1 }\OperatorTok{+}\NormalTok{ x3) }\OperatorTok{/} \DecValTok{2}
+      \ControlFlowTok{if}\NormalTok{ x2 }\OperatorTok{\textless{}=}\NormalTok{ u:}
+         \ControlFlowTok{if}\NormalTok{ f2 }\OperatorTok{\textless{}=}\NormalTok{ fu:}
+\NormalTok{            x1, x2, x3 }\OperatorTok{=}\NormalTok{ x1, x2, u}
+\NormalTok{            f1, f2, f3 }\OperatorTok{=}\NormalTok{ f1, f2, fu}
+         \ControlFlowTok{else}\NormalTok{:}
+\NormalTok{            x1, x2, x3 }\OperatorTok{=}\NormalTok{ x2, u, x3}
+\NormalTok{            f1, f2, f3 }\OperatorTok{=}\NormalTok{ f2, fu, f3}
+      \ControlFlowTok{else}\NormalTok{:}
+         \ControlFlowTok{if}\NormalTok{ fu }\OperatorTok{\textless{}=}\NormalTok{ f2:}
+\NormalTok{            x1, x2, x3 }\OperatorTok{=}\NormalTok{ x1, u, x2}
+\NormalTok{            f1, f2, f3 }\OperatorTok{=}\NormalTok{ f1, fu, f2}
+         \ControlFlowTok{else}\NormalTok{:}
+\NormalTok{            x1, x2, x3 }\OperatorTok{=}\NormalTok{ u, x2, x3}
+\NormalTok{            f1, f2, f3 }\OperatorTok{=}\NormalTok{ fu, f2, f3}
+   \ControlFlowTok{return}\NormalTok{ (x1 }\OperatorTok{+}\NormalTok{ x3)}\OperatorTok{/}\DecValTok{2}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1072,7 +1066,7 @@ u = -\dfrac{b}{2a} = x_2 - \dfrac{(x_2 - x_1)^2(f_2 - f_3) - (x_2 - x_3)^2(f_2 -
 \subsection{Неточный линейный
 поиск}\label{ux43dux435ux442ux43eux447ux43dux44bux439-ux43bux438ux43dux435ux439ux43dux44bux439-ux43fux43eux438ux441ux43a}
 
-Нам не всегда нужно решать точно задачу минимизации. Иногда, достаточно
+Нам не всегда нужно точно решать задачу минимизации. Иногда, достаточно
 найти приближенное решение. Такое часто встречается в задаче выбора шага
 метода оптимизации \[
 \begin{split}
@@ -1110,17 +1104,17 @@ f(x_k - \alpha \nabla f (x_k)) \leq f(x_k) - c_1 \cdot \alpha\nabla f(x_k)^T \na
 \]
 
 для некоторой постоянной \(c_1 \in (0,1)\). Заметим, что установка
-\(c_1 = 1\) соответствует аппроксимации первого порядка Тейлора
-\(\phi(\alpha)\). Однако это условие может принимать очень малые
-значения \(\alpha\), потенциально замедляя процесс решения. Обычно на
-практике используется \(c_1 \approx 10^{-4}\).
+\(c_1 = 1\) соответствует первому приближению Тейлора \(\phi(\alpha)\).
+Однако это условие может принимать очень малые значения \(\alpha\),
+потенциально замедляя процесс решения. Обычно на практике используется
+\(c_1 \approx 10^{-4}\).
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Example}, colframe=quarto-callout-color-frame, breakable, colbacktitle=quarto-callout-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, titlerule=0mm, opacityback=0, leftrule=.75mm, toprule=.15mm, rightrule=.15mm, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colback=white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, coltitle=black, leftrule=.75mm, left=2mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, colback=white, breakable, arc=.35mm, toptitle=1mm, colbacktitle=quarto-callout-color!10!white, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Example}, titlerule=0mm, rightrule=.15mm, opacitybacktitle=0.6, toprule=.15mm]
 
 Если \(f(x)\) представляет собой функцию стоимости в задаче оптимизации,
-выбор подходящего значения \(c_1\) является важным. Например, при
-обучении моделей машинного обучения неправильное значение \(c_1\) может
-привести к очень медленной сходимости или пропуску минимума.
+важен выбор подходящего значения \(c_1\). Например, при обучении моделей
+ML неправильное значение \(c_1\) может привести к очень медленной
+сходимости или пропуску минимума.
 
 \end{tcolorbox}
 
@@ -1175,13 +1169,13 @@ f(x_k - \alpha \nabla f (x_k)) \leq f(x_k) - c_1 \cdot \alpha\nabla f(x_k)^T \na
 в \(c_2\) раз больше начального наклона
 \(\nabla_\alpha \phi(\alpha)(0)\).
 
-Обычно для методов Ньютона или квази-Ньютона используется
+Обычно для методов Ньютона и квазиньютоновских методов используется
 \(c_2 \approx 0.9\) . В объединении условие достаточного убывания и
-ограничение на кривизну образуют условия Вольфа.
+ограничение на кривизну образуют условия Вульфа.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.5\linewidth,height=\textheight,keepaspectratio]{Curvature.pdf}
+{\centering \includegraphics[width=0.35\linewidth,height=\textheight,keepaspectratio]{Curvature.pdf}
 
 }
 
@@ -1190,16 +1184,16 @@ f(x_k - \alpha \nabla f (x_k)) \leq f(x_k) - c_1 \cdot \alpha\nabla f(x_k)^T \na
 \end{figure}%
 
 \subsection{Неточный линейный поиск. Условия
-Вольфа}\label{ux43dux435ux442ux43eux447ux43dux44bux439-ux43bux438ux43dux435ux439ux43dux44bux439-ux43fux43eux438ux441ux43a.-ux443ux441ux43bux43eux432ux438ux44f-ux432ux43eux43bux44cux444ux430}
+Вульфа}\label{ux43dux435ux442ux43eux447ux43dux44bux439-ux43bux438ux43dux435ux439ux43dux44bux439-ux43fux43eux438ux441ux43a.-ux443ux441ux43bux43eux432ux438ux44f-ux432ux443ux43bux44cux444ux430}
 
 \[
 -\nabla f (x_k - \alpha \nabla f(x_k))^T \nabla f(x_k) \geq c_2 \nabla f(x_k)^T(- \nabla f(x_k))
 \]
 
 Вместе, условие достаточного убывания и ограничение на кривизну образуют
-условия Вольфа.
+условия Вульфа.
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Theorem}, colframe=quarto-callout-color-frame, breakable, colbacktitle=quarto-callout-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, titlerule=0mm, opacityback=0, leftrule=.75mm, toprule=.15mm, rightrule=.15mm, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colback=white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, coltitle=black, leftrule=.75mm, left=2mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, colback=white, breakable, arc=.35mm, toptitle=1mm, colbacktitle=quarto-callout-color!10!white, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Theorem}, titlerule=0mm, rightrule=.15mm, opacitybacktitle=0.6, toprule=.15mm]
 
 Пусть \(f : \mathbb{R}^n \to \mathbb{R}\) непрерывно дифференцируема, и
 пусть \(\phi(\alpha) = f(x_k - \alpha \nabla f(x_k))\). Предположим, что
@@ -1207,22 +1201,22 @@ f(x_k - \alpha \nabla f (x_k)) \leq f(x_k) - c_1 \cdot \alpha\nabla f(x_k)^T \na
 направлением спуска. Также предположим, что \(f\) ограничена снизу вдоль
 луча \(\{x_k + \alpha p_k \mid \alpha > 0\}\). Мы хотим показать, что
 для \(0 < c_1 < c_2 < 1\), существуют интервалы шагов, удовлетворяющие
-условиям Вольфа.
+условиям Вульфа.
 
 \end{tcolorbox}
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.5\linewidth,height=\textheight,keepaspectratio]{Wolfe.pdf}
+{\centering \includegraphics[width=0.4\linewidth,height=\textheight,keepaspectratio]{Wolfe.pdf}
 
 }
 
-\caption{Иллюстрация условий Вольфа}
+\caption{Иллюстрация условий Вульфа}
 
 \end{figure}%
 
-\subsection{Неточный линейный поиск. Условия Вольфа.
-Доказательство}\label{ux43dux435ux442ux43eux447ux43dux44bux439-ux43bux438ux43dux435ux439ux43dux44bux439-ux43fux43eux438ux441ux43a.-ux443ux441ux43bux43eux432ux438ux44f-ux432ux43eux43bux44cux444ux430.-ux434ux43eux43aux430ux437ux430ux442ux435ux43bux44cux441ux442ux432ux43e}
+\subsection{Неточный линейный поиск. Условия Вульфа.
+Доказательство}\label{ux43dux435ux442ux43eux447ux43dux44bux439-ux43bux438ux43dux435ux439ux43dux44bux439-ux43fux43eux438ux441ux43a.-ux443ux441ux43bux43eux432ux438ux44f-ux432ux443ux43bux44cux444ux430.-ux434ux43eux43aux430ux437ux430ux442ux435ux43bux44cux441ux442ux432ux43e}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1245,33 +1239,34 @@ f(x_k - \alpha \nabla f (x_k)) \leq f(x_k) - c_1 \cdot \alpha\nabla f(x_k)^T \na
 
 Делим на \(\alpha' > 0\), получаем: \[
 \nabla f(x_k + \alpha'' p_k)^T p_k \leq c_1 \nabla f(x_k)^T p_k. \tag{3}
-\] 3. Поскольку \(c_1 < c_2\) и \(\nabla f(x_k)^T p_k < 0\), неравенство
-\(c_1 \nabla f(x_k)^T p_k < c_2 \nabla f(x_k)^T p_k\) выполняется. Это
-означает, что существует \(\alpha''\) такое, что: \[
-\nabla f(x_k + \alpha'' p_k)^T p_k \leq c_2 \nabla f(x_k)^T p_k. \tag{4}
-\] Неравенства (3) и (4) вместе гарантируют выполнение условий Вольфа.
+\]
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
 \item
-  Для сильных условий Вольфа, условие ограничения на кривизну: \[
+  Поскольку \(c_1 < c_2\) и \(\nabla f(x_k)^T p_k < 0\), неравенство
+  \(c_1 \nabla f(x_k)^T p_k < c_2 \nabla f(x_k)^T p_k\) выполняется. Это
+  означает, что существует \(\alpha''\) такое, что: \[
+  \nabla f(x_k + \alpha'' p_k)^T p_k \leq c_2 \nabla f(x_k)^T p_k. \tag{4}
+  \] Неравенства (3) и (4) вместе гарантируют выполнение условий Вульфа.
+\item
+  Для сильных условий Вульфа, условие ограничения на кривизну: \[
   \left| \nabla f(x_k + \alpha p_k)^T p_k \right| \leq c_2 \left| \nabla f(x_k)^T p_k \right| \tag{5}
   \] выполняется, потому что \(\nabla f(x_k + \alpha p_k)^T p_k\)
   отрицательно и ограничено снизу \(c_2 \nabla f(x_k)^T p_k\).
 \item
   Из-за гладкости \(f\), существует интервал вокруг \(\alpha''\) , где
-  выполняются условия Вольфа (и, следовательно, сильные условия Вольфа).
+  выполняются условия Вульфа (и, следовательно, сильные условия Вульфа).
   Таким образом, доказательство завершено.
 \end{enumerate}
 
-\subsection{Линейный поиск с
-возвратом}\label{ux43bux438ux43dux435ux439ux43dux44bux439-ux43fux43eux438ux441ux43a-ux441-ux432ux43eux437ux432ux440ux430ux442ux43eux43c}
+\subsection{Бэктрекинг}\label{ux431ux44dux43aux442ux440ux435ux43aux438ux43dux433}
 
-Линейный поиск с возвратом - это техника для нахождения шага,
-удовлетворяющего условию Армихо, условиям Гольдштейна или другим
-критериям неточного линейного поиска. Она начинает с относительно
-большого шага и итеративно уменьшает его до тех пор, пока не будет
-выполнено условие.
+Бэктрекинг - это техника для нахождения шага, удовлетворяющего условию
+Армихо, условиям Гольдштейна или другим критериям неточного линейного
+поиска. Она начинает с относительно большого шага и итеративно уменьшает
+его до тех пор, пока не будет выполнено условие.
 
 \subsubsection{Алгоритм:}\label{ux430ux43bux433ux43eux440ux438ux442ux43c}
 
@@ -1297,7 +1292,7 @@ f(x_k - \alpha \nabla f (x_k)) \leq f(x_k) - c_1 \cdot \alpha\nabla f(x_k)^T \na
 
 в каждой итерации до тех пор, пока выбранное условие не будет выполнено.
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Example}, colframe=quarto-callout-color-frame, breakable, colbacktitle=quarto-callout-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, titlerule=0mm, opacityback=0, leftrule=.75mm, toprule=.15mm, rightrule=.15mm, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colback=white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, coltitle=black, leftrule=.75mm, left=2mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, colback=white, breakable, arc=.35mm, toptitle=1mm, colbacktitle=quarto-callout-color!10!white, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Example}, titlerule=0mm, rightrule=.15mm, opacitybacktitle=0.6, toprule=.15mm]
 
 В обучении моделей машинного обучения линейный поиск с возвратом может
 использоваться для регулировки скорости обучения. Если потеря не
@@ -1327,89 +1322,29 @@ f(x_k - \alpha \nabla f (x_k)) \leq f(x_k) - c_1 \cdot \alpha\nabla f(x_k)^T \na
 
 \href{https://fmin.xyz/docs/visualizations/ls_gd.mp4}{\pandocbounded{\includegraphics[keepaspectratio]{gd_ls.pdf}}}
 
-\section{Итоги}\label{ux438ux442ux43eux433ux438}
-
-\subsection{Итоги}\label{ux438ux442ux43eux433ux438-1}
-
-\subsubsection{Определения}\label{ux43eux43fux440ux435ux434ux435ux43bux435ux43dux438ux44f}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Унимодальная функция.
-\item
-  Метод дихотомии.
-\item
-  Метод золотого сечения.
-\item
-  Метод параболической интерполяции.
-\item
-  Условие достаточного убывания для неточного линейного поиска.
-\item
-  Условия Гольдштейна для неточного линейного поиска.
-\item
-  Условие ограничения на кривизну для неточного линейного поиска.
-\item
-  Градиент функции \(f(x): \mathbb{R}^n \to \mathbb{R}\).
-\item
-  Гессиан функции \(f(x): \mathbb{R}^n \to \mathbb{R}\).
-\item
-  Якобиан функции \(f(x): \mathbb{R}^n \to \mathbb{R}^m\).
-\item
-  Формула для аппроксимации Тейлора первого порядка \(f^I_{x_0}(x)\)
-  функции \(f(x): \mathbb{R}^n \to \mathbb{R}\) в точке \(x_0\).
-\item
-  Формула для аппроксимации Тейлора второго порядка \(f^{II}_{x_0}(x)\)
-  функции \(f(x): \mathbb{R}^n \to \mathbb{R}\) в точке \(x_0\).
-\end{enumerate}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{12}
-\tightlist
-\item
-  Связь дифференциала функции \(df\) и градиента \(\nabla f\) для
-  функции \(f(x): \mathbb{R}^n \to \mathbb{R}\).
-\item
-  Связь второго дифференциала функции \(d^2f\) и гессиана \(\nabla^2 f\)
-  для функции \(f(x): \mathbb{R}^n \to \mathbb{R}\).
-\end{enumerate}
-
-\subsubsection{Теоремы}\label{ux442ux435ux43eux440ux435ux43cux44b}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Метод дихотомии и золотого сечения для унимодальных функций. Скорость
-  сходимости.
-\end{enumerate}
+:::
 
 \section{Задачи}\label{ux437ux430ux434ux430ux447ux438}
 
-\subsection{Матрично-векторное дифференцирование. Задача
-1}\label{ux43cux430ux442ux440ux438ux447ux43dux43e-ux432ux435ux43aux442ux43eux440ux43dux43eux435-ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux440ux43eux432ux430ux43dux438ux435.-ux437ux430ux434ux430ux447ux430-1}
+\subsection{Задача 1}\label{ux437ux430ux434ux430ux447ux430-1}
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Example}, colframe=quarto-callout-color-frame, breakable, colbacktitle=quarto-callout-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, titlerule=0mm, opacityback=0, leftrule=.75mm, toprule=.15mm, rightrule=.15mm, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colback=white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, coltitle=black, leftrule=.75mm, left=2mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, colback=white, breakable, arc=.35mm, toptitle=1mm, colbacktitle=quarto-callout-color!10!white, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Example}, titlerule=0mm, rightrule=.15mm, opacitybacktitle=0.6, toprule=.15mm]
 
 Найдите \(\nabla f(x)\), если \(f(x) = \dfrac{1}{2}x^TAx + b^Tx + c\).
 
 \end{tcolorbox}
 
-\subsection{Матрично-векторное дифференцирование. Задача
-2}\label{ux43cux430ux442ux440ux438ux447ux43dux43e-ux432ux435ux43aux442ux43eux440ux43dux43eux435-ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux440ux43eux432ux430ux43dux438ux435.-ux437ux430ux434ux430ux447ux430-2}
+\subsection{Задача 2}\label{ux437ux430ux434ux430ux447ux430-2}
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Example}, colframe=quarto-callout-color-frame, breakable, colbacktitle=quarto-callout-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, titlerule=0mm, opacityback=0, leftrule=.75mm, toprule=.15mm, rightrule=.15mm, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colback=white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, coltitle=black, leftrule=.75mm, left=2mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, colback=white, breakable, arc=.35mm, toptitle=1mm, colbacktitle=quarto-callout-color!10!white, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Example}, titlerule=0mm, rightrule=.15mm, opacitybacktitle=0.6, toprule=.15mm]
 
 Найдите \(\nabla f(X)\), если \(f(X) = tr(AX^{-1}B)\)
 
 \end{tcolorbox}
 
-\subsection{Матрично-векторное дифференцирование. Задача
-3}\label{ux43cux430ux442ux440ux438ux447ux43dux43e-ux432ux435ux43aux442ux43eux440ux43dux43eux435-ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux440ux43eux432ux430ux43dux438ux435.-ux437ux430ux434ux430ux447ux430-3}
+\subsection{Задача 3}\label{ux437ux430ux434ux430ux447ux430-3}
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Example}, colframe=quarto-callout-color-frame, breakable, colbacktitle=quarto-callout-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, titlerule=0mm, opacityback=0, leftrule=.75mm, toprule=.15mm, rightrule=.15mm, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colback=white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, coltitle=black, leftrule=.75mm, left=2mm, opacityback=0, bottomtitle=1mm, bottomrule=.15mm, colback=white, breakable, arc=.35mm, toptitle=1mm, colbacktitle=quarto-callout-color!10!white, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Example}, titlerule=0mm, rightrule=.15mm, opacitybacktitle=0.6, toprule=.15mm]
 
 Найдите градиент \(\nabla f(x)\) и гессиан \(\nabla^2 f(x)\), если
 \(f(x) = \frac{1}{3}\Vert x\Vert _2^3\)
@@ -1419,7 +1354,7 @@ f(x_k - \alpha \nabla f (x_k)) \leq f(x_k) - c_1 \cdot \alpha\nabla f(x_k)^T \na
 \section{Задачи на
 дом}\label{ux437ux430ux434ux430ux447ux438-ux43dux430-ux434ux43eux43c}
 
-\subsubsection{Линейный
+\subsection{Линейный
 поиск}\label{ux43bux438ux43dux435ux439ux43dux44bux439-ux43fux43eux438ux441ux43a-1}
 
 \begin{enumerate}
@@ -1533,7 +1468,7 @@ f(x_k - \alpha \nabla f (x_k)) \leq f(x_k) - c_1 \cdot \alpha\nabla f(x_k)^T \na
 \end{Shaded}
 
   Начните с ознакомления с предоставленным Python кодом. Этот код
-  реализует градиентный спуск с фиксированным шагом и возвратом на
+  реализует градиентный спуск с фиксированным шагом и бэктрекингом на
   квадратичной функции. Ознакомьтесь с тем, как реализованы функции
   градиентного спуска и стратегии размера шага.
 
@@ -1584,7 +1519,7 @@ f(x_k - \alpha \nabla f (x_k)) \leq f(x_k) - c_1 \cdot \alpha\nabla f(x_k)^T \na
   \end{enumerate}
 \end{enumerate}
 
-\subsubsection{Матрично-векторное
+\subsection{Матрично-векторное
 дифференцирование}\label{ux43cux430ux442ux440ux438ux447ux43dux43e-ux432ux435ux43aux442ux43eux440ux43dux43eux435-ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux440ux43eux432ux430ux43dux438ux435-1}
 
 \begin{enumerate}
