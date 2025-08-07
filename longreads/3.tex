@@ -273,11 +273,9 @@
 \section{Автоматическое
 дифференцирование}\label{ux430ux432ux442ux43eux43cux430ux442ux438ux447ux435ux441ux43aux43eux435-ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux440ux43eux432ux430ux43dux438ux435}
 
-\subsection{}\label{section}
-
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.65\linewidth,height=\textheight,keepaspectratio]{autograd_expectations.jpeg}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{autograd_expectations.jpeg}}
 
 }
 
@@ -285,11 +283,9 @@
 
 \end{figure}%
 
-\subsection{}\label{section-1}
-
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.45\linewidth,height=\textheight,keepaspectratio]{avtograd.jpeg}
+{\centering \includegraphics[width=0.65\linewidth,height=\textheight,keepaspectratio]{avtograd.jpeg}
 
 }
 
@@ -299,36 +295,34 @@
 
 \subsection{Задача}\label{ux437ux430ux434ux430ux447ux430}
 
-Предположим, что мы хотим решить следующую задачу:
-
-\[
+Предположим, что мы хотим решить следующую задачу: \[
 L(w) \to \min_{w \in \mathbb{R}^d}
 \]
 
 \begin{itemize}
 \tightlist
 \item
-  Такие задачи обычно возникают в машинном обучении, когда вам нужно
+  Такие задачи обычно возникают в машинном обучении, когда нам нужно
   найти подходящие параметры \(w\) модели (например, обучить нейронную
   сеть).
 \item
-  Вы можете использовать множество алгоритмов для решения этой задачи.
-  Однако, учитывая современный размер задачи, где \(d\) может достигать
-  десятков миллиардов, это очень сложно решить без информации о
-  градиентах, используя алгоритмы нулевого порядка.
+  Существуют разные методы решения этой задачи. Однако, размерность
+  задач сегодня может достигать сотен миллиардов или даже триллионов
+  переменных. Такие задачи очень тяжело решать без знания градиентов, то
+  есть методами нулевого порядка.
 \item
   Поэтому было бы полезно уметь вычислять вектор градиента
   \(\nabla_w L = \left( \frac{\partial L}{\partial w_1}, \ldots, \frac{\partial L}{\partial w_d}\right)^T\).
 \item
-  Обычно первые методы работают лучше в больших задачах, в то время как
-  вторые методы требуют слишком много памяти.
+  Обычно методы первого порядка работают лучше в больших задачах, в то
+  время как методы второго порядка требуют слишком много памяти.
 \end{itemize}
 
-\subsection{Пример: многомерное
-масштабирование}\label{ux43fux440ux438ux43cux435ux440-ux43cux43dux43eux433ux43eux43cux435ux440ux43dux43eux435-ux43cux430ux441ux448ux442ux430ux431ux438ux440ux43eux432ux430ux43dux438ux435}
+\subsection{Задача многомерного
+шкалирования}\label{ux437ux430ux434ux430ux447ux430-ux43cux43dux43eux433ux43eux43cux435ux440ux43dux43eux433ux43e-ux448ux43aux430ux43bux438ux440ux43eux432ux430ux43dux438ux44f}
 
 Предположим, что у нас есть матрица расстояний для \(N\) \(d\)-мерных
-объектов \(D \in \mathbb{R}^{N \times N}\). Учитывая эту матрицу, мы
+объектов \(D \in \mathbb{R}^{N \times N}\). Используя эту матрицу, мы
 хотим восстановить исходные координаты
 \(W_i \in \mathbb{R}^d, \; i = 1, \ldots, N\).
 
@@ -336,19 +330,16 @@ L(w) \to \min_{w \in \mathbb{R}^d}
 L(W) = \sum_{i, j = 1}^N \left(\|W_i - W_j\|^2_2 - D_{i,j}\right)^2 \to \min_{W \in \mathbb{R}^{N \times d}}
 \]
 
-Ссылка на наглядную визуализацию
+Ссылка на визуализацию
 \href{http://www.benfrederickson.com/numerical-optimization/}{\(\clubsuit\)},
-где можно увидеть, что методы без градиента обрабатывают эту задачу
-намного медленнее, особенно в пространствах большой размерности.
+где можно увидеть, что безградиентные методы оптимизации решают эту
+задачу намного медленнее, особенно в пространствах большой размерности.
 
-\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-color!10!white, toptitle=1mm, bottomrule=.15mm, left=2mm, opacitybacktitle=0.6, colframe=quarto-callout-color-frame, arc=.35mm, bottomtitle=1mm, colback=white, coltitle=black, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, leftrule=.75mm, opacityback=0, rightrule=.15mm, toprule=.15mm, breakable, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, rightrule=.15mm, toprule=.15mm, coltitle=black, opacityback=0, colback=white, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, bottomrule=.15mm, breakable, toptitle=1mm, colbacktitle=quarto-callout-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, left=2mm, titlerule=0mm]
 
 Связано ли это с PCA?
 
 \end{tcolorbox}
-
-\subsection{Пример: многомерное
-масштабирование}\label{ux43fux440ux438ux43cux435ux440-ux43cux43dux43eux433ux43eux43cux435ux440ux43dux43eux435-ux43cux430ux441ux448ux442ux430ux431ux438ux440ux43eux432ux430ux43dux438ux435-1}
 
 \begin{figure}[H]
 
@@ -361,18 +352,14 @@ L(W) = \sum_{i, j = 1}^N \left(\|W_i - W_j\|^2_2 - D_{i,j}\right)^2 \to \min_{W 
 
 \end{figure}%
 
-\subsection{Пример: градиентный спуск без
-градиента}\label{ux43fux440ux438ux43cux435ux440-ux433ux440ux430ux434ux438ux435ux43dux442ux43dux44bux439-ux441ux43fux443ux441ux43a-ux431ux435ux437-ux433ux440ux430ux434ux438ux435ux43dux442ux430}
+\subsection{Градиентный спуск без
+градиента}\label{ux433ux440ux430ux434ux438ux435ux43dux442ux43dux44bux439-ux441ux43fux443ux441ux43a-ux431ux435ux437-ux433ux440ux430ux434ux438ux435ux43dux442ux430}
 
-Предположим, что мы хотим решить следующую задачу:
-
-\[
+Предположим, что мы хотим решить следующую задачу: \[
 L(w) \to \min_{w \in \mathbb{R}^d}
 \]
 
-с помощью алгоритма градиентного спуска (GD):
-
-\[
+с помощью алгоритма градиентного спуска (GD): \[
 w_{k+1} = w_k - \alpha_k \nabla_w L(w_k)
 \]
 
@@ -381,19 +368,15 @@ w_{k+1} = w_k - \alpha_k \nabla_w L(w_k)
 
 Да, но за определенную цену.
 
-Можно рассмотреть оценку 2-точечного градиента\footnote{предлагаю
-  \href{https://scholar.harvard.edu/files/yujietang/files/slides_2019_zero-order_opt_tutorial.pdf}{хорошую}
-  презентацию о методах без градиента} \(G\):
-
-\[
+Рассмотрим двухточечную оценку градиента\footnote{рекомендуется
+  \href{https://scholar.harvard.edu/files/yujietang/files/slides_2019_zero-order_opt_tutorial.pdf}{хорошая}
+  презентация о безградиентных методах} \(G\): \[
 G = d\dfrac{L(w + \varepsilon v)- L(w - \varepsilon v)}{2 \varepsilon}v, 
-\]
-
-где \(v\) сферически симметричен.
+\] где \(v\) сферически симметричен.
 
 \begin{figure}[H]
 
-{\centering \pandocbounded{\includegraphics[keepaspectratio]{zgd_2p.pdf}}
+{\centering \includegraphics[width=0.8\linewidth,height=\textheight,keepaspectratio]{zgd_2p.pdf}
 
 }
 
@@ -401,29 +384,27 @@ G = d\dfrac{L(w + \varepsilon v)- L(w - \varepsilon v)}{2 \varepsilon}v,
 
 \end{figure}%
 
-\subsection{Пример: конечные
-разности}\label{ux43fux440ux438ux43cux435ux440-ux43aux43eux43dux435ux447ux43dux44bux435-ux440ux430ux437ux43dux43eux441ux442ux438}
+\subsection{Конечные
+разности}\label{ux43aux43eux43dux435ux447ux43dux44bux435-ux440ux430ux437ux43dux43eux441ux442ux438}
 
 \[
 w_{k+1} = w_k - \alpha_k G
 \]
 
-Можем также рассмотреть идею конечных разностей:
-
-\[
+Также рассмотрим идею конечных разностей: \[
 G =  \sum\limits_{i=1}^d\dfrac{L(w+\varepsilon e_i) - L(w-\varepsilon e_i)}{2\varepsilon} e_i
 \]
-
 \href{https://colab.research.google.com/github/MerkulovDaniil/optim/blob/master/assets/Notebooks/Zero_order_GD.ipynb}{Открыть
 в Colab \(\clubsuit\)}
 
 \begin{figure}[H]
 
-{\centering \pandocbounded{\includegraphics[keepaspectratio]{zgd_fd.pdf}}
+{\centering \includegraphics[width=0.8\linewidth,height=\textheight,keepaspectratio]{zgd_fd.pdf}
 
 }
 
-\caption{``Иллюстрация оценки конечных разностей градиентного спуска''}
+\caption{``Иллюстрация работы метода оценки градиента с помощью метода
+конечных разностей''}
 
 \end{figure}%
 
@@ -464,39 +445,37 @@ GD &
 \(\|\nabla f(x_k)\|^2 \approx \mathcal{O} \left( \dfrac{1}{k} \right)\)
 & \(f(x_k) - f^* \approx  \mathcal{O} \left( \dfrac{1}{k} \right)\) &
 \(\|x_k - x^*\|^2 \approx \mathcal{O} \left( \left(1 - \dfrac{\mu}{L}\right)^k \right)\) \\
-Zero order GD &
+GD нулевого порядка &
 \(\|\nabla f(x_k)\|^2 \approx \mathcal{O} \left( \dfrac{n}{k} \right)\)
 & \(f(x_k) - f^* \approx  \mathcal{O} \left( \dfrac{n}{k} \right)\) &
 \(\|x_k - x^*\|^2 \approx \mathcal{O} \left( \left(1 - \dfrac{\mu}{n L}\right)^k \right)\) \\
 \end{longtable}
 
-Для 2-точечных оценок, вы не можете сделать зависимость лучше, чем на
+Для 2-точечных оценок, мы не можем сделать зависимость лучше, чем от
 \(\sqrt{n}\) !
 
 \subsection{Конечные
-разности}\label{ux43aux43eux43dux435ux447ux43dux44bux435-ux440ux430ux437ux43dux43eux441ux442ux438}
+разности}\label{ux43aux43eux43dux435ux447ux43dux44bux435-ux440ux430ux437ux43dux43eux441ux442ux438-1}
 
 Наивный подход к получению приблизительных значений градиентов - это
 подход \textbf{конечных разностей}. Для каждой координаты, можно
-вычислить приближенное значение частной производной:
-
-\[
+вычислить приближенное значение частной производной: \[
 \dfrac{\partial L}{\partial w_k} (w) \approx \dfrac{L(w+\varepsilon e_k) - L(w)}{\varepsilon}, \quad e_k = (0, \ldots, \underset{{\tiny k}}{1}, \ldots, 0)
 \]
 
-\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-color!10!white, toptitle=1mm, bottomrule=.15mm, left=2mm, opacitybacktitle=0.6, colframe=quarto-callout-color-frame, arc=.35mm, bottomtitle=1mm, colback=white, coltitle=black, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, leftrule=.75mm, opacityback=0, rightrule=.15mm, toprule=.15mm, breakable, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, rightrule=.15mm, toprule=.15mm, coltitle=black, opacityback=0, colback=white, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, bottomrule=.15mm, breakable, toptitle=1mm, colbacktitle=quarto-callout-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, left=2mm, titlerule=0mm]
 
 Если время, необходимое для одного вычисления \(L(w)\) равно \(T\), то
 какое время необходимо для вычисления \(\nabla_w L\) с этим подходом?
 
 \textbf{Ответ} \(2dT\), что очень долго для больших задач. Кроме того,
-этот точный метод нестабилен, что означает, что вам придется выбирать
-между точностью и стабильностью.
+этот метод нестабилен, что означает, что нам придется выбирать между
+точностью и стабильностью.
 
 \textbf{Теорема}
 
-Существует алгоритм для вычисления \(\nabla_w L\) в \(\mathcal{O}(T)\)
-операциях. \footnotemark{}
+Существует алгоритм для вычисления \(\nabla_w L\) за \(\mathcal{O}(T)\).
+\footnotemark{}
 
 \end{tcolorbox}
 
@@ -508,9 +487,7 @@ rounding errors. Master's Thesis (in Finnish), Univ. Helsinki, 1970.}
 дифференцирования}\label{ux43fux440ux44fux43cux43eux439-ux440ux435ux436ux438ux43c-ux430ux432ux442ux43eux43cux430ux442ux438ux447ux435ux441ux43aux43eux433ux43e-ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux440ux43eux432ux430ux43dux438ux44f}
 
 Чтобы глубже понять идею автоматического дифференцирования, рассмотрим
-простую функцию для вычисления производных:
-
-\[
+простую функцию для вычисления производных: \[
 L(w_1, w_2) = w_2 \log w_1 + \sqrt{w_2 \log w_1}
 \]
 
@@ -529,9 +506,6 @@ L(w_1, w_2) = w_2 \log w_1 + \sqrt{w_2 \log w_1}
 Давайте пойдем от начала графа к концу и вычислим производную
 \(\dfrac{\partial L}{\partial w_1}\).
 
-\subsection{Прямой режим автоматического
-дифференцирования}\label{ux43fux440ux44fux43cux43eux439-ux440ux435ux436ux438ux43c-ux430ux432ux442ux43eux43cux430ux442ux438ux447ux435ux441ux43aux43eux433ux43e-ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux440ux43eux432ux430ux43dux438ux44f-1}
-
 \begin{figure}[H]
 
 {\centering \pandocbounded{\includegraphics[keepaspectratio]{comp_graph1.pdf}}
@@ -542,16 +516,13 @@ L(w_1, w_2) = w_2 \log w_1 + \sqrt{w_2 \log w_1}
 
 \end{figure}%
 
-\subsubsection{Функция}\label{ux444ux443ux43dux43aux446ux438ux44f}
+\textbf{Функция}
 
 \(w_1 = w_1, w_2 = w_2\)
 
-\subsubsection{Производная}\label{ux43fux440ux43eux438ux437ux432ux43eux434ux43dux430ux44f}
+\textbf{Производная}
 
 \(\dfrac{\partial w_1}{\partial w_1} = 1, \dfrac{\partial w_2}{\partial w_1} = 0\)
-
-\subsection{Прямой режим автоматического
-дифференцирования}\label{ux43fux440ux44fux43cux43eux439-ux440ux435ux436ux438ux43c-ux430ux432ux442ux43eux43cux430ux442ux438ux447ux435ux441ux43aux43eux433ux43e-ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux440ux43eux432ux430ux43dux438ux44f-2}
 
 \begin{figure}[H]
 
@@ -563,16 +534,13 @@ L(w_1, w_2) = w_2 \log w_1 + \sqrt{w_2 \log w_1}
 
 \end{figure}%
 
-\subsubsection{Функция}\label{ux444ux443ux43dux43aux446ux438ux44f-1}
+\textbf{Функция}
 
 \(v_1 = \log w_1\)
 
-\subsubsection{Производная}\label{ux43fux440ux43eux438ux437ux432ux43eux434ux43dux430ux44f-1}
+\textbf{Производная}
 
 \(\frac{\partial v_1}{\partial w_1} = \frac{\partial v_1}{\partial w_1} \frac{\partial w_1}{\partial w_1} = \frac{1}{w_1} 1\)
-
-\subsection{Прямой режим автоматического
-дифференцирования}\label{ux43fux440ux44fux43cux43eux439-ux440ux435ux436ux438ux43c-ux430ux432ux442ux43eux43cux430ux442ux438ux447ux435ux441ux43aux43eux433ux43e-ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux440ux43eux432ux430ux43dux438ux44f-3}
 
 \begin{figure}[H]
 
@@ -584,16 +552,13 @@ L(w_1, w_2) = w_2 \log w_1 + \sqrt{w_2 \log w_1}
 
 \end{figure}%
 
-\subsubsection{Функция}\label{ux444ux443ux43dux43aux446ux438ux44f-2}
+\textbf{Функция}
 
 \(v_2 = w_2 v_1\)
 
-\subsubsection{Производная}\label{ux43fux440ux43eux438ux437ux432ux43eux434ux43dux430ux44f-2}
+\textbf{Производная}
 
 \(\frac{\partial v_2}{\partial w_1} = \frac{\partial v_2}{\partial v_1}\frac{\partial v_1}{\partial w_1} + \frac{\partial v_2}{\partial w_2}\frac{\partial w_2}{\partial w_1} = w_2\frac{\partial v_1}{\partial w_1} + v_1\frac{\partial w_2}{\partial w_1}\)
-
-\subsection{Прямой режим автоматического
-дифференцирования}\label{ux43fux440ux44fux43cux43eux439-ux440ux435ux436ux438ux43c-ux430ux432ux442ux43eux43cux430ux442ux438ux447ux435ux441ux43aux43eux433ux43e-ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux440ux43eux432ux430ux43dux438ux44f-4}
 
 \begin{figure}[H]
 
@@ -605,16 +570,13 @@ L(w_1, w_2) = w_2 \log w_1 + \sqrt{w_2 \log w_1}
 
 \end{figure}%
 
-\subsubsection{Функция}\label{ux444ux443ux43dux43aux446ux438ux44f-3}
+\textbf{Функция}
 
 \(v_3 = \sqrt{v_2}\)
 
-\subsubsection{Производная}\label{ux43fux440ux43eux438ux437ux432ux43eux434ux43dux430ux44f-3}
+\textbf{Производная}
 
 \(\frac{\partial v_3}{\partial w_1} = \frac{\partial v_3}{\partial v_2}\frac{\partial v_2}{\partial w_1} = \frac{1}{2\sqrt{v_2}}\frac{\partial v_2}{\partial w_1}\)
-
-\subsection{Прямой режим автоматического
-дифференцирования}\label{ux43fux440ux44fux43cux43eux439-ux440ux435ux436ux438ux43c-ux430ux432ux442ux43eux43cux430ux442ux438ux447ux435ux441ux43aux43eux433ux43e-ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux440ux43eux432ux430ux43dux438ux44f-5}
 
 \begin{figure}[H]
 
@@ -626,16 +588,16 @@ L(w_1, w_2) = w_2 \log w_1 + \sqrt{w_2 \log w_1}
 
 \end{figure}%
 
-\subsubsection{Функция}\label{ux444ux443ux43dux43aux446ux438ux44f-4}
+\textbf{Функция}
 
 \(L = v_2 + v_3\)
 
-\subsubsection{Производная}\label{ux43fux440ux43eux438ux437ux432ux43eux434ux43dux430ux44f-4}
+\textbf{Производная}
 
 \(\frac{\partial L}{\partial w_1} = \frac{\partial L}{\partial v_2}\frac{\partial v_2}{\partial w_1} + \frac{\partial L}{\partial v_3}\frac{\partial v_3}{\partial w_1} = 1\frac{\partial v_2}{\partial w_1} + 1\frac{\partial v_3}{\partial w_1}\)
 
-\subsection{\texorpdfstring{Сделайте аналогичные вычисления для
-\(\dfrac{\partial L}{\partial w_2}\)}{Сделайте аналогичные вычисления для \textbackslash dfrac\{\textbackslash partial L\}\{\textbackslash partial w\_2\}}}\label{ux441ux434ux435ux43bux430ux439ux442ux435-ux430ux43dux430ux43bux43eux433ux438ux447ux43dux44bux435-ux432ux44bux447ux438ux441ux43bux435ux43dux438ux44f-ux434ux43bux44f-dfracpartial-lpartial-w_2}
+\textbf{Сделайте аналогичные вычисления для
+\(\dfrac{\partial L}{\partial w_2}\)}
 
 \begin{figure}[H]
 
@@ -647,9 +609,6 @@ L(w_1, w_2) = w_2 \log w_1 + \sqrt{w_2 \log w_1}
 
 \end{figure}%
 
-\subsection{Пример прямого режима автоматического
-дифференцирования}\label{ux43fux440ux438ux43cux435ux440-ux43fux440ux44fux43cux43eux433ux43e-ux440ux435ux436ux438ux43cux430-ux430ux432ux442ux43eux43cux430ux442ux438ux447ux435ux441ux43aux43eux433ux43e-ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux440ux43eux432ux430ux43dux438ux44f}
-
 \begin{figure}[H]
 
 {\centering \pandocbounded{\includegraphics[keepaspectratio]{cgraph_ex_1.pdf}}
@@ -660,16 +619,13 @@ L(w_1, w_2) = w_2 \log w_1 + \sqrt{w_2 \log w_1}
 
 \end{figure}%
 
-\subsubsection{Функция}\label{ux444ux443ux43dux43aux446ux438ux44f-5}
+\textbf{Функция}
 
 \(w_1 = w_1, w_2 = w_2\)
 
-\subsubsection{Производная}\label{ux43fux440ux43eux438ux437ux432ux43eux434ux43dux430ux44f-5}
+\textbf{Производная}
 
 \(\dfrac{\partial w_1}{\partial w_2} = 0, \dfrac{\partial w_2}{\partial w_2} = 1\)
-
-\subsection{Пример прямого режима автоматического
-дифференцирования}\label{ux43fux440ux438ux43cux435ux440-ux43fux440ux44fux43cux43eux433ux43e-ux440ux435ux436ux438ux43cux430-ux430ux432ux442ux43eux43cux430ux442ux438ux447ux435ux441ux43aux43eux433ux43e-ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux440ux43eux432ux430ux43dux438ux44f-1}
 
 \begin{figure}[H]
 
@@ -681,16 +637,13 @@ L(w_1, w_2) = w_2 \log w_1 + \sqrt{w_2 \log w_1}
 
 \end{figure}%
 
-\subsubsection{Функция}\label{ux444ux443ux43dux43aux446ux438ux44f-6}
+\textbf{Функция}
 
 \(v_1 = \log w_1\)
 
-\subsubsection{Derivative}\label{derivative}
+\textbf{Производная}
 
 \(\frac{\partial v_1}{\partial w_2} = \frac{\partial v_1}{\partial w_1} \frac{\partial w_1}{\partial w_2}= \frac{1}{w_1} \cdot 0\)
-
-\subsection{Пример прямого режима автоматического
-дифференцирования}\label{ux43fux440ux438ux43cux435ux440-ux43fux440ux44fux43cux43eux433ux43e-ux440ux435ux436ux438ux43cux430-ux430ux432ux442ux43eux43cux430ux442ux438ux447ux435ux441ux43aux43eux433ux43e-ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux440ux43eux432ux430ux43dux438ux44f-2}
 
 \begin{figure}[H]
 
@@ -702,16 +655,13 @@ L(w_1, w_2) = w_2 \log w_1 + \sqrt{w_2 \log w_1}
 
 \end{figure}%
 
-\subsubsection{Функция}\label{ux444ux443ux43dux43aux446ux438ux44f-7}
+\textbf{Функция}
 
 \(v_2 = w_2 v_1\)
 
-\subsubsection{Производная}\label{ux43fux440ux43eux438ux437ux432ux43eux434ux43dux430ux44f-6}
+\textbf{Производная}
 
 \(\frac{\partial v_2}{\partial w_2} = \frac{\partial v_2}{\partial v_1}\frac{\partial v_1}{\partial w_2} + \frac{\partial v_2}{\partial w_2}\frac{\partial w_2}{\partial w_2} = w_2\frac{\partial v_1}{\partial w_2} + v_1\frac{\partial w_2}{\partial w_2}\)
-
-\subsection{Пример прямого режима автоматического
-дифференцирования}\label{ux43fux440ux438ux43cux435ux440-ux43fux440ux44fux43cux43eux433ux43e-ux440ux435ux436ux438ux43cux430-ux430ux432ux442ux43eux43cux430ux442ux438ux447ux435ux441ux43aux43eux433ux43e-ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux440ux43eux432ux430ux43dux438ux44f-3}
 
 \begin{figure}[H]
 
@@ -723,16 +673,13 @@ L(w_1, w_2) = w_2 \log w_1 + \sqrt{w_2 \log w_1}
 
 \end{figure}%
 
-\subsubsection{Функция}\label{ux444ux443ux43dux43aux446ux438ux44f-8}
+\textbf{Функция}
 
 \(v_3 = \sqrt{v_2}\)
 
-\subsubsection{Производная}\label{ux43fux440ux43eux438ux437ux432ux43eux434ux43dux430ux44f-7}
+\textbf{Производная}
 
 \(\frac{\partial v_3}{\partial w_2} = \frac{\partial v_3}{\partial v_2}\frac{\partial v_2}{\partial w_2} = \frac{1}{2\sqrt{v_2}}\frac{\partial v_2}{\partial w_2}\)
-
-\subsection{Пример прямого режима автоматического
-дифференцирования}\label{ux43fux440ux438ux43cux435ux440-ux43fux440ux44fux43cux43eux433ux43e-ux440ux435ux436ux438ux43cux430-ux430ux432ux442ux43eux43cux430ux442ux438ux447ux435ux441ux43aux43eux433ux43e-ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux440ux43eux432ux430ux43dux438ux44f-4}
 
 \begin{figure}[H]
 
@@ -744,11 +691,11 @@ L(w_1, w_2) = w_2 \log w_1 + \sqrt{w_2 \log w_1}
 
 \end{figure}%
 
-\subsubsection{Функция}\label{ux444ux443ux43dux43aux446ux438ux44f-9}
+\textbf{Функция}
 
 \(L = v_2 + v_3\)
 
-\subsubsection{Производная}\label{ux43fux440ux43eux438ux437ux432ux43eux434ux43dux430ux44f-8}
+\textbf{Производная}
 
 \(\frac{\partial L}{\partial w_2} = \frac{\partial L}{\partial v_2}\frac{\partial v_2}{\partial w_2} + \frac{\partial L}{\partial v_3}\frac{\partial v_3}{\partial w_2} = 1\frac{\partial v_2}{\partial w_2} + 1\frac{\partial v_3}{\partial w_2}\)
 
@@ -764,16 +711,7 @@ L(w_1, w_2) = w_2 \log w_1 + \sqrt{w_2 \log w_1}
 \[
 \overline{v_i} = \dfrac{\partial v_i}{\partial w_k}
 \]
-
-\begin{figure}[H]
-
-{\centering \includegraphics[width=0.8\linewidth,height=\textheight,keepaspectratio]{auto_diff_forward.pdf}
-
-}
-
-\caption{Иллюстрация прямого режима автоматического дифференцирования}
-
-\end{figure}%
+\includegraphics[width=0.6\linewidth,height=\textheight,keepaspectratio]{auto_diff_forward.pdf}
 
 \begin{itemize}
 \tightlist
@@ -783,13 +721,13 @@ L(w_1, w_2) = w_2 \log w_1 + \sqrt{w_2 \log w_1}
   \begin{itemize}
   \tightlist
   \item
-    Вычислить \(v_i\) как функцию его родителей (входов)
-    \(x_1, \ldots, x_{t_i}\): \[
+    Вычислить \(v_i\) как функцию его предков \(x_1, \ldots, x_{t_i}\):
+    \[
       v_i = v_i(x_1, \ldots, x_{t_i})
       \]
   \item
-    Вычислить производную \(\overline{v_i}\) используя прямой режим
-    автоматического дифференцирования: \[
+    Вычислить производную \(\overline{v_i}\) используя формулу
+    производной сложной функции: \[
       \overline{v_i} = \sum_{j = 1}^{t_i}\dfrac{\partial v_i}{\partial x_j}\dfrac{\partial x_j}{\partial w_k}
       \]
   \end{itemize}
@@ -800,10 +738,8 @@ L(w_1, w_2) = w_2 \log w_1 + \sqrt{w_2 \log w_1}
 производной \(\dfrac{\partial L}{\partial w_k}\) нам нужно
 \(\mathcal{O}(T)\) операций. Это означает, что для всего градиента, нам
 нужно \(d\mathcal{O}(T)\) операций, что то же самое, что и для конечных
-разностей, но теперь мы не имеем проблем со стабильностью, или
+разностей, но теперь у нас нет проблем со стабильностью или
 неточностями(формулы выше точны).
-
-\subsection{}\label{section-2}
 
 \pandocbounded{\includegraphics[keepaspectratio]{yoda.jpg}}
 
@@ -823,14 +759,11 @@ L(w_1, w_2) = w_2 \log w_1 + \sqrt{w_2 \log w_1}
 \end{figure}%
 
 Предположим, что у нас есть некоторые значения параметров \(w_1, w_2\) и
-мы уже выполнили прямой проход (т.е. однократное распространение через
-вычислительный граф слева направо). Предположим также, что мы как-то
-сохранили все промежуточные значения \(v_i\). Давайте пойдем от конца
-графа к началу и вычислим производные
+мы уже выполнили прямой проход (т.е. вычисление значений всех
+промежуточных узлов вычислительного графа). Предположим также, что мы
+как-то сохранили все промежуточные значения \(v_i\). Давайте пойдем от
+конца графа к началу и вычислим производные
 \(\dfrac{\partial L}{\partial w_1}, \dfrac{\partial L}{\partial w_2}\):
-
-\subsection{Пример обратного режима автоматического
-дифференцирования}\label{ux43fux440ux438ux43cux435ux440-ux43eux431ux440ux430ux442ux43dux43eux433ux43e-ux440ux435ux436ux438ux43cux430-ux430ux432ux442ux43eux43cux430ux442ux438ux447ux435ux441ux43aux43eux433ux43e-ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux440ux43eux432ux430ux43dux438ux44f}
 
 \begin{figure}[H]
 
@@ -842,14 +775,11 @@ L(w_1, w_2) = w_2 \log w_1 + \sqrt{w_2 \log w_1}
 
 \end{figure}%
 
-\subsubsection{Производные}\label{ux43fux440ux43eux438ux437ux432ux43eux434ux43dux44bux435}
+\textbf{Производные}
 
 \[
 \dfrac{\partial L}{\partial L} = 1
 \]
-
-\subsection{Пример обратного режима автоматического
-дифференцирования}\label{ux43fux440ux438ux43cux435ux440-ux43eux431ux440ux430ux442ux43dux43eux433ux43e-ux440ux435ux436ux438ux43cux430-ux430ux432ux442ux43eux43cux430ux442ux438ux447ux435ux441ux43aux43eux433ux43e-ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux440ux43eux432ux430ux43dux438ux44f-1}
 
 \begin{figure}[H]
 
@@ -861,14 +791,11 @@ L(w_1, w_2) = w_2 \log w_1 + \sqrt{w_2 \log w_1}
 
 \end{figure}%
 
-\subsubsection{Производные}\label{ux43fux440ux43eux438ux437ux432ux43eux434ux43dux44bux435-1}
+\textbf{Производные}
 
 \[
-\begin{aligned}\frac{\partial L}{\partial v_3} &= \frac{\partial L}{\partial L} \frac{\partial L}{\partial v_3}\\ &= \frac{\partial L}{\partial L} 1\end{aligned}
+\begin{aligned}\frac{\partial L}{\partial v_3} &= \frac{\partial L}{\partial L} \frac{\partial L}{\partial v_3} &= \frac{\partial L}{\partial L} 1\end{aligned}
 \]
-
-\subsection{Пример обратного режима автоматического
-дифференцирования}\label{ux43fux440ux438ux43cux435ux440-ux43eux431ux440ux430ux442ux43dux43eux433ux43e-ux440ux435ux436ux438ux43cux430-ux430ux432ux442ux43eux43cux430ux442ux438ux447ux435ux441ux43aux43eux433ux43e-ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux440ux43eux432ux430ux43dux438ux44f-2}
 
 \begin{figure}[H]
 
@@ -880,14 +807,11 @@ L(w_1, w_2) = w_2 \log w_1 + \sqrt{w_2 \log w_1}
 
 \end{figure}%
 
-\subsubsection{Производные}\label{ux43fux440ux43eux438ux437ux432ux43eux434ux43dux44bux435-2}
+\textbf{Производные}
 
 \[
-\begin{aligned}\frac{\partial L}{\partial v_2} &= \frac{\partial L}{\partial v_3}\frac{\partial v_3}{\partial v_2} + \frac{\partial L}{\partial L}\frac{\partial L}{\partial v_2} \\&= \frac{\partial L}{\partial v_3}\frac{1}{2\sqrt{v_2}} +  \frac{\partial L}{\partial L}1\end{aligned}
+\begin{aligned}\frac{\partial L}{\partial v_2} &= \frac{\partial L}{\partial v_3}\frac{\partial v_3}{\partial v_2} + \frac{\partial L}{\partial L}\frac{\partial L}{\partial v_2} &= \frac{\partial L}{\partial v_3}\frac{1}{2\sqrt{v_2}} +  \frac{\partial L}{\partial L}1\end{aligned}
 \]
-
-\subsection{Пример обратного режима автоматического
-дифференцирования}\label{ux43fux440ux438ux43cux435ux440-ux43eux431ux440ux430ux442ux43dux43eux433ux43e-ux440ux435ux436ux438ux43cux430-ux430ux432ux442ux43eux43cux430ux442ux438ux447ux435ux441ux43aux43eux433ux43e-ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux440ux43eux432ux430ux43dux438ux44f-3}
 
 \begin{figure}[H]
 
@@ -899,14 +823,11 @@ L(w_1, w_2) = w_2 \log w_1 + \sqrt{w_2 \log w_1}
 
 \end{figure}%
 
-\subsubsection{Производные}\label{ux43fux440ux43eux438ux437ux432ux43eux434ux43dux44bux435-3}
+\textbf{Производные}
 
 \[
-\begin{aligned}\frac{\partial L}{\partial v_1} &=\frac{\partial L}{\partial v_2}\frac{\partial v_2}{\partial v_1} \\ &= \frac{\partial L}{\partial v_2}w_2\end{aligned}
+\begin{aligned}\frac{\partial L}{\partial v_1} &=\frac{\partial L}{\partial v_2}\frac{\partial v_2}{\partial v_1}  &= \frac{\partial L}{\partial v_2}w_2\end{aligned}
 \]
-
-\subsection{Пример обратного режима автоматического
-дифференцирования}\label{ux43fux440ux438ux43cux435ux440-ux43eux431ux440ux430ux442ux43dux43eux433ux43e-ux440ux435ux436ux438ux43cux430-ux430ux432ux442ux43eux43cux430ux442ux438ux447ux435ux441ux43aux43eux433ux43e-ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux440ux43eux432ux430ux43dux438ux44f-4}
 
 \begin{figure}[H]
 
@@ -918,27 +839,28 @@ L(w_1, w_2) = w_2 \log w_1 + \sqrt{w_2 \log w_1}
 
 \end{figure}%
 
-\subsubsection{Производные}\label{ux43fux440ux43eux438ux437ux432ux43eux434ux43dux44bux435-4}
+\textbf{Производные}
 
 \[
 \frac{\partial L}{\partial w_1} = \frac{\partial L}{\partial v_1}\frac{\partial v_1}{\partial w_1} = \frac{\partial L}{\partial v_1}\frac{1}{w_1} \qquad \qquad \frac{\partial L}{\partial w_2} = \frac{\partial L}{\partial v_2}\frac{\partial v_2}{\partial w_2} = \frac{\partial L}{\partial v_1}v_1
 \]
 
-\subsection{Обратный (reverse) режим автоматического
-дифференцирования}\label{ux43eux431ux440ux430ux442ux43dux44bux439-reverse-ux440ux435ux436ux438ux43c-ux430ux432ux442ux43eux43cux430ux442ux438ux447ux435ux441ux43aux43eux433ux43e-ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux440ux43eux432ux430ux43dux438ux44f}
+\subsection{Обратный режим автоматического
+дифференцирования}\label{ux43eux431ux440ux430ux442ux43dux44bux439-ux440ux435ux436ux438ux43c-ux430ux432ux442ux43eux43cux430ux442ux438ux447ux435ux441ux43aux43eux433ux43e-ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux440ux43eux432ux430ux43dux438ux44f-1}
 
-\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-color!10!white, toptitle=1mm, bottomrule=.15mm, left=2mm, opacitybacktitle=0.6, colframe=quarto-callout-color-frame, arc=.35mm, bottomtitle=1mm, colback=white, coltitle=black, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, leftrule=.75mm, opacityback=0, rightrule=.15mm, toprule=.15mm, breakable, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, rightrule=.15mm, toprule=.15mm, coltitle=black, opacityback=0, colback=white, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, bottomrule=.15mm, breakable, toptitle=1mm, colbacktitle=quarto-callout-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, left=2mm, titlerule=0mm]
 
 Обратите внимание, что для того же количества вычислений, что и в прямом
-режиме, мы имеем полный вектор градиента \(\nabla_w L\). Это бесплатный
-обед? Какова стоимость ускорения?
+режиме, мы получаем полный вектор градиента \(\nabla_w L\). Какова
+стоимость ускорения?
 
 \textbf{Ответ} Обратите внимание, что для использования обратного режима
 AD вам нужно хранить все промежуточные вычисления из прямого прохода.
-Эта проблема может быть частично смягчена подходом контрольных точек
-градиента, который включает необходимые повторные вычисления некоторых
-промежуточных значений. Это может значительно уменьшить объем памяти
-большой модели машинного обучения.
+Эта проблема может быть частично решена с помощью чекпоинтинга, при
+котором мы сохраняем только часть промежуточных значений, а остальные
+пересчитываем заново по мере необходимости. Это позволяет значительно
+уменьшить объём требуемой памяти при обучении больших моделей машинного
+обучения.
 
 \end{tcolorbox}
 
@@ -950,21 +872,10 @@ AD вам нужно хранить все промежуточные вычис
 переменным \(w\), т.е.
 \(\nabla_w v_N =  \left( \frac{\partial v_N}{\partial w_1}, \ldots, \frac{\partial v_N}{\partial w_d}\right)^T\).
 Эта идея предполагает распространение градиента функции по промежуточным
-переменным от конца к началу, поэтому мы можем ввести обозначение:
-
-\[
+переменным от конца к началу, поэтому мы можем ввести обозначение: \[
 \overline{v_i}  = \dfrac{\partial L}{\partial v_i} = \dfrac{\partial v_N}{\partial v_i}
 \]
-
-\begin{figure}[H]
-
-{\centering \includegraphics[width=0.6\linewidth,height=\textheight,keepaspectratio]{auto_diff_reverse.pdf}
-
-}
-
-\caption{Иллюстрация обратного режима автоматического дифференцирования}
-
-\end{figure}%
+\includegraphics[width=0.6\linewidth,height=\textheight,keepaspectratio]{auto_diff_reverse.pdf}
 
 \begin{itemize}
 \item
@@ -975,8 +886,7 @@ AD вам нужно хранить все промежуточные вычис
   \begin{itemize}
   \tightlist
   \item
-    Вычислить и сохранить значения \(v_i\) как функцию его родителей
-    (входов)
+    Вычислить и сохранить значения \(v_i\) как функцию его предков
   \end{itemize}
 \item
   \textbf{ОБРАТНЫЙ ПРОХОД}
@@ -986,16 +896,17 @@ AD вам нужно хранить все промежуточные вычис
   \begin{itemize}
   \tightlist
   \item
-    Вычислить производную \(\overline{v_i}\) используя обратный режим
-    автоматического дифференцирования и информацию от всех его детей
-    (выходов) (\(x_1, \ldots, x_{t_i}\)): \[
+    Вычислить производную \(\overline{v_i}\) используя формулу
+    производной сложной функции и информацию от всех потомков (выходов):
+    \[
       \overline{v_i} = \dfrac{\partial L}{\partial v_i} = \sum_{j = 1}^{t_i} \dfrac{\partial L}{\partial x_j} \dfrac{\partial x_j}{\partial v_i}
       \]
   \end{itemize}
 \end{itemize}
 
-\subsection{Выберите своего
-бойца}\label{ux432ux44bux431ux435ux440ux438ux442ux435-ux441ux432ux43eux435ux433ux43e-ux431ux43eux439ux446ux430}
+\newpage
+
+\textbf{Choose your fighter}
 
 \begin{figure}[H]
 
@@ -1007,7 +918,7 @@ AD вам нужно хранить все промежуточные вычис
 
 \end{figure}%
 
-\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-color!10!white, toptitle=1mm, bottomrule=.15mm, left=2mm, opacitybacktitle=0.6, colframe=quarto-callout-color-frame, arc=.35mm, bottomtitle=1mm, colback=white, coltitle=black, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, leftrule=.75mm, opacityback=0, rightrule=.15mm, toprule=.15mm, breakable, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, rightrule=.15mm, toprule=.15mm, coltitle=black, opacityback=0, colback=white, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, bottomrule=.15mm, breakable, toptitle=1mm, colbacktitle=quarto-callout-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, left=2mm, titlerule=0mm]
 
 Какой из режимов AD вы бы выбрали (прямой/обратный) для следующего
 вычислительного графа арифметических операций? Предположим, что вам
@@ -1017,12 +928,9 @@ AD вам нужно хранить все промежуточные вычис
 \end{tcolorbox}
 
 \textbf{Ответ} Обратите внимание, что время вычислений в обратном режиме
-пропорционально количеству выходов, в то время как прямой режим работает
-пропорционально количеству входов. Поэтому было бы хорошей идеей
+пропорционально количеству выходов, тогда как время работы прямого
+режима пропорционально количеству входов. Поэтому было бы хорошей идеей
 рассмотреть прямой режим AD.
-
-\subsection{Выберите своего
-бойца}\label{ux432ux44bux431ux435ux440ux438ux442ux435-ux441ux432ux43eux435ux433ux43e-ux431ux43eux439ux446ux430-1}
 
 \begin{figure}[H]
 
@@ -1031,18 +939,18 @@ AD вам нужно хранить все промежуточные вычис
 }
 
 \caption{\href{https://colab.research.google.com/github/MerkulovDaniil/optim/blob/master/assets/Notebooks/Autograd_and_Jax.ipynb}{\(\clubsuit\)}
-Этот граф хорошо иллюстрирует идею выбора между режимами. Размерность
-\(n = 100\) фиксирована, и граф представляет время, необходимое для
-вычисления якобиана w.r.t. \(x\) для \(f(x) = Ax\)}
+График иллюстрирует идею выбора между режимами автоматического
+дифференцирования. Размерность входа \(n = 100\) фиксирована, измерено
+время вычисления якобиана в зависимости от соотношения размерностей
+выхода и входа для разных размерностей выхода \(m\).}
 
 \end{figure}%
 
-\subsection{Выберите своего
-бойца}\label{ux432ux44bux431ux435ux440ux438ux442ux435-ux441ux432ux43eux435ux433ux43e-ux431ux43eux439ux446ux430-2}
+\textbf{Choose your fighter}
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=0.6\linewidth,height=\textheight,keepaspectratio]{ad_mixed.pdf}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{ad_mixed.pdf}}
 
 }
 
@@ -1050,7 +958,7 @@ AD вам нужно хранить все промежуточные вычис
 
 \end{figure}%
 
-\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-color!10!white, toptitle=1mm, bottomrule=.15mm, left=2mm, opacitybacktitle=0.6, colframe=quarto-callout-color-frame, arc=.35mm, bottomtitle=1mm, colback=white, coltitle=black, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, leftrule=.75mm, opacityback=0, rightrule=.15mm, toprule=.15mm, breakable, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, rightrule=.15mm, toprule=.15mm, coltitle=black, opacityback=0, colback=white, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, bottomrule=.15mm, breakable, toptitle=1mm, colbacktitle=quarto-callout-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, left=2mm, titlerule=0mm]
 
 Какой из режимов AD вы бы выбрали (прямой/обратный) для следующего
 вычислительного графа арифметических операций? Предположим, что вам
@@ -1060,10 +968,10 @@ AD вам нужно хранить все промежуточные вычис
 
 \end{tcolorbox}
 
-\textbf{Ответ} В общем случае невозможно сказать это без некоторого
-знания о конкретной структуре графа \(G\). Обратите внимание, что также
-есть множество продвинутых подходов для смешивания прямого и обратного
-режимов AD, основанных на конкретной структуре \(G\).
+\textbf{Ответ} В общем случае невозможно ответить без некоторого знания
+о конкретной структуре графа \(G\). Следует отметить, что существуют
+продвинутые подходы, смешивающие прямой и обратный режим AD в
+зависимости от конкретной структуры графа \(G\).
 
 \subsection{Архитектура прямого
 распространения}\label{ux430ux440ux445ux438ux442ux435ux43aux442ux443ux440ux430-ux43fux440ux44fux43cux43eux433ux43e-ux440ux430ux441ux43fux440ux43eux441ux442ux440ux430ux43dux435ux43dux438ux44f}
@@ -1072,18 +980,17 @@ AD вам нужно хранить все промежуточные вычис
 
 \begin{itemize}
 \item
-  \(v_0 = x\) обычно у нас есть batch данных \(x\) здесь в качестве
-  входа.
+  \(v_0 = x\) на вход обычно подаётся батч данных \(x\)
 \item
   Для \(k = 1, \ldots, t-1, t\):
 
   \begin{itemize}
   \tightlist
   \item
-    \(v_k = \sigma(v_{k-1}w_k)\). Обратите внимание, что практически
-    говоря, данные имеют размерность \(x  \in \mathbb{R}^{b \times d}\),
-    где \(b\) - размер батча (для одного данного \(b=1\)). В то время
-    как матрица весов \(w_k\) \(k\) слоя имеет размер
+    \(v_k = \sigma(v_{k-1}w_k)\). Обратите внимание, что на практике,
+    данные имеют размерность \(x  \in \mathbb{R}^{b \times d}\), где
+    \(b\) - размер батча (для одного объекта из выборки \(b=1\)). В то
+    время как матрица весов \(w_k\) \(k\) слоя имеет размер
     \(n_{k-1} \times n_k\), где \(n_k\) - размер внутреннего
     представления данных.
   \end{itemize}
@@ -1122,21 +1029,21 @@ AD вам нужно хранить все промежуточные вычис
 Гессиана}\label{ux43fux440ux43eux438ux437ux432ux435ux434ux435ux43dux438ux435-ux433ux435ux441ux441ux438ux430ux43dux430-ux43dux430-ux432ux435ux43aux442ux43eux440-ux431ux435ux437-ux432ux44bux447ux438ux441ux43bux435ux43dux438ux44f-ux441ux430ux43cux43eux433ux43e-ux433ux435ux441ux441ux438ux430ux43dux430}
 
 Когда вам нужна некоторая информация о кривизне функции, обычно вам
-нужно работать с гессианом. Однако, когда размерность задачи велика, это
-является вызовом. Для скалярной функции
+нужно работать с гессианом. Однако, это трудно делать, когда размерность
+задачи велика. Для скалярной функции
 \(f : \mathbb{R}^n \to \mathbb{R}\), гессиан в точке
 \(x \in \mathbb{R}^n\) записывается как \(\nabla^2 f(x)\). Тогда
-произведение вектора на гессиан можно оценить
+произведение вектора на гессиан можно записать как
 
 \[
 v \mapsto \nabla^2 f(x) \cdot v
 \]
 
-для любого вектора \(v \in \mathbb{R}^n\). Мы должны использовать
+для любого вектора \(v \in \mathbb{R}^n\). Мы можем использовать
 тождество \[
-\nabla^2 f (x) v = \nabla [x \mapsto \nabla f(x) \cdot v] = \nabla g(x),
-\] где \(g(x) = \nabla f(x)^T \cdot v\) - новая векторная функция,
-которая умножает градиент \(f\) в \(x\) на вектор \(v\).
+\nabla^2 f (x) v = \nabla [x \mapsto \nabla f(x)^T \cdot v] = \nabla g(x),
+\] где \(g(x) = \nabla f(x)^T \cdot v\) - новая функция, которая
+скалярно умножает градиент \(f\) в \(x\) на вектор \(v\).
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1160,8 +1067,8 @@ v \mapsto \nabla^2 f(x) \cdot v
 
 }
 
-\caption{Большие отрицательные собственные значения исчезли после
-обучения для ResNet-32}
+\caption{Большие по модулю отрицательные собственные значения гессиана
+исчезли после обучения ResNet-32}
 
 \end{figure}%
 
@@ -1171,9 +1078,8 @@ v \mapsto \nabla^2 f(x) \cdot v
   stochastic estimator of the trace of the influence matrix for
   Laplacian smoothing splines - M.F. Hutchinson, 1990}}}{Идея Хадчинсона для оценки следа матрицы }}\label{ux438ux434ux435ux44f-ux445ux430ux434ux447ux438ux43dux441ux43eux43dux430-ux434ux43bux44f-ux43eux446ux435ux43dux43aux438-ux441ux43bux435ux434ux430-ux43cux430ux442ux440ux438ux446ux44b}
 
-Этот пример иллюстрирует оценку следа Гессиана нейронной сети с помощью
-метода Hutchinson, который является алгоритмом для получения такой
-оценки из произведений матрицы на вектор:
+Метод Хатчинсона позволяет оценить след гессиана с помощью операций
+вычисления умножения гессиана на произвольный вектор:
 
 Пусть \(X \in \mathbb{R}^{d \times d}\) и \(v \in \mathbb{R}^d\) -
 случайный вектор такой, что \(\mathbb{E}[vv^T] = I\). Тогда,
@@ -1184,7 +1090,7 @@ v \mapsto \nabla^2 f(x) \cdot v
 
 \begin{figure}[H]
 
-{\centering \pandocbounded{\includegraphics[keepaspectratio]{Hutchinson_trace_est.pdf}}
+{\centering \includegraphics[width=0.8\linewidth,height=\textheight,keepaspectratio]{Hutchinson_trace_est.pdf}
 
 }
 
@@ -1192,8 +1098,7 @@ v \mapsto \nabla^2 f(x) \cdot v
 
 \end{figure}%
 
-\subsection{Контрольные точки
-активаций}\label{ux43aux43eux43dux442ux440ux43eux43bux44cux43dux44bux435-ux442ux43eux447ux43aux438-ux430ux43aux442ux438ux432ux430ux446ux438ux439}
+\subsection{Чекпоинтинг}\label{ux447ux435ux43aux43fux43eux438ux43dux442ux438ux43dux433}
 
 Анимация вышеуказанных подходов
 \href{https://github.com/cybertronai/gradient-checkpointing}{\faGithub}
@@ -1201,7 +1106,7 @@ v \mapsto \nabla^2 f(x) \cdot v
 Пример использования контрольных точек градиента
 \href{https://colab.research.google.com/github/oseledets/dl2023/blob/main/seminars/seminar-10/Large_model_training_practice.ipynb}{\faGithub}
 
-Реальный пример из \textbf{GPT-2}\footnote{\href{https://arxiv.org/abs/1910.02054}{ZeRO:
+В качестве примера рассмотрим обучение \textbf{GPT-2}\footnote{\href{https://arxiv.org/abs/1910.02054}{ZeRO:
   Memory Optimizations Toward Training Trillion Parameter Models}}:
 
 \begin{itemize}
@@ -1211,8 +1116,8 @@ v \mapsto \nabla^2 f(x) \cdot v
   последовательности длиной 1K и размера батча \(32\), \(60\) GB нужно
   для хранения всех промежуточных активаций.
 \item
-  Контрольные точки активаций могут снизить потребление до 8 GB,
-  перезапустив их (33\% дополнительных вычислений)
+  Чекпоинтинг может снизить потребление до 8 GB, пересчитывая их (33\%
+  дополнительных вычислений)
 \end{itemize}
 
 \subsection{Чем автоматическое дифференцирование (AD) не
@@ -1221,18 +1126,16 @@ v \mapsto \nabla^2 f(x) \cdot v
 \begin{itemize}
 \tightlist
 \item
-  AD не является конечными разностями
+  AD не является методом конечных разностей
 \item
-  AD не является символической производной
+  AD не является символьным вычислением производных
 \item
-  AD не является только цепным правилом
-\item
-  AD не является только обратным распространением
+  AD не является только правилом вычисления производной сложной функции
 \item
   AD (обратный режим) является времяэффективным и численно стабильным
 \item
-  AD (обратный режим) является неэффективным в памяти (вам нужно хранить
-  все промежуточные вычисления из прямого прохода).
+  AD (обратный режим) не является эффективным по памяти (нужно хранить
+  все промежуточные вычисления из прямого прохода)
 \end{itemize}
 
 \begin{figure}[H]
@@ -1251,7 +1154,7 @@ v \mapsto \nabla^2 f(x) \cdot v
 \begin{itemize}
 \tightlist
 \item
-  Я рекомендую прочитать официальную книгу по Jax Autodiff.
+  Рекомендую прочитать официальную книгу по Jax Autodiff.
   \href{https://colab.research.google.com/github/MerkulovDaniil/optim/blob/master/assets/Notebooks/Autograd_and_Jax.ipynb}{Open
   In Colab \(\clubsuit\)}
 \item
@@ -1265,9 +1168,7 @@ v \mapsto \nabla^2 f(x) \cdot v
 
 \section{Итоги}\label{ux438ux442ux43eux433ux438}
 
-\subsection{Итоги}\label{ux438ux442ux43eux433ux438-1}
-
-\subsubsection{Определения}\label{ux43eux43fux440ux435ux434ux435ux43bux435ux43dux438ux44f}
+\subsection{Определения}\label{ux43eux43fux440ux435ux434ux435ux43bux435ux43dux438ux44f}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1289,7 +1190,7 @@ v \mapsto \nabla^2 f(x) \cdot v
   Идея Хатчинсона для оценки следа матрицы с помощью matvec операций.
 \end{enumerate}
 
-\subsubsection{Теоремы}\label{ux442ux435ux43eux440ux435ux43cux44b}
+\subsection{Теоремы}\label{ux442ux435ux43eux440ux435ux43cux44b}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1304,7 +1205,7 @@ v \mapsto \nabla^2 f(x) \cdot v
 
 \subsection{Задача 1}\label{ux437ux430ux434ux430ux447ux430-1}
 
-\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-color!10!white, toptitle=1mm, bottomrule=.15mm, left=2mm, opacitybacktitle=0.6, colframe=quarto-callout-color-frame, arc=.35mm, bottomtitle=1mm, colback=white, coltitle=black, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, leftrule=.75mm, opacityback=0, rightrule=.15mm, toprule=.15mm, breakable, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, rightrule=.15mm, toprule=.15mm, coltitle=black, opacityback=0, colback=white, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, bottomrule=.15mm, breakable, toptitle=1mm, colbacktitle=quarto-callout-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, left=2mm, titlerule=0mm]
 
 Какой из режимов AD вы бы выбрали (прямой/обратный) для следующего
 вычислительного графа арифметических операций?
@@ -1330,7 +1231,7 @@ v \mapsto \nabla^2 f(x) \cdot v
 \hfill\break
 \hfill\break
 
-\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-color!10!white, toptitle=1mm, bottomrule=.15mm, left=2mm, opacitybacktitle=0.6, colframe=quarto-callout-color-frame, arc=.35mm, bottomtitle=1mm, colback=white, coltitle=black, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, leftrule=.75mm, opacityback=0, rightrule=.15mm, toprule=.15mm, breakable, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, rightrule=.15mm, toprule=.15mm, coltitle=black, opacityback=0, colback=white, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, bottomrule=.15mm, breakable, toptitle=1mm, colbacktitle=quarto-callout-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, left=2mm, titlerule=0mm]
 
 Найдите производные
 \(\dfrac{\partial L}{\partial A}, \dfrac{\partial L}{\partial b}\).
@@ -1366,7 +1267,7 @@ W = U \Sigma V^T, \quad U^TU = I, \quad V^TV = I,
 Регуляризатор \(R(W) = \text{tr}(\Sigma)\) в любой функции потерь
 стимулирует низкоранговые решения.
 
-\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-color!10!white, toptitle=1mm, bottomrule=.15mm, left=2mm, opacitybacktitle=0.6, colframe=quarto-callout-color-frame, arc=.35mm, bottomtitle=1mm, colback=white, coltitle=black, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, leftrule=.75mm, opacityback=0, rightrule=.15mm, toprule=.15mm, breakable, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-color-frame, rightrule=.15mm, toprule=.15mm, coltitle=black, opacityback=0, colback=white, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, bottomrule=.15mm, breakable, toptitle=1mm, colbacktitle=quarto-callout-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, left=2mm, titlerule=0mm]
 
 Найдите производную \(\dfrac{\partial R}{\partial W}\).
 
@@ -1435,8 +1336,7 @@ W = U \Sigma V^T, \quad U^TU = I, \quad V^TV = I,
 \end{Highlighting}
 \end{Shaded}
 
-  \textbf{Hessian and HVP Implementations:} {[}2/22 points{]} Write a
-  function
+  \textbf{Гессиан и HVP:} {[}2/22 балла{]} Напишите функцию
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1452,7 +1352,7 @@ W = U \Sigma V^T, \quad U^TU = I, \quad V^TV = I,
 \end{Highlighting}
 \end{Shaded}
 
-  который вычисляет полный Гессиан \(H\) функции потерь по отношению к
+  которая вычисляет полный Гессиан \(H\) функции потерь по отношению к
   параметрам модели с использованием автоматического дифференцирования
   JAX.
 
