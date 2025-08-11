@@ -189,7 +189,7 @@
 \pagestyle{fancy}
 \fancyhead{} % clear all header fields
 \fancyhead[R]{\href{https://cu25.fmin.xyz}{\faGem[regular]} \hspace{0.04cm} \href{https://github.com/MerkulovDaniil/cu25}{\faGithub} \hspace{0.07cm} \href{https://t.me/fminxyz}{\faTelegram}}
-\fancyhead[L]{\href{https://fmin.xyz}{\includegraphics[height=0.35cm]{logo.pdf}} \hspace{2pt} \textbf{Оптимизация для всех! ЦУ. 2025}}
+\fancyhead[L]{\href{https://fmin.xyz}{\includegraphics[height=0.35cm]{logo.pdf}} ~ \includegraphics[height=0.35cm]{logo_cu.pdf} \hspace{2pt} \textbf{Оптимизация для всех! ЦУ. 2025}}
 \KOMAoption{captions}{tableheading}
 \makeatletter
 \@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
@@ -335,7 +335,7 @@ L(W) = \sum_{i, j = 1}^N \left(\|W_i - W_j\|^2_2 - D_{i,j}\right)^2 \to \min_{W 
 где можно увидеть, что безградиентные методы оптимизации решают эту
 задачу намного медленнее, особенно в пространствах большой размерности.
 
-\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, leftrule=.75mm, colbacktitle=quarto-callout-color!10!white, bottomrule=.15mm, toprule=.15mm, left=2mm, bottomtitle=1mm, toptitle=1mm, colframe=quarto-callout-color-frame, breakable, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, titlerule=0mm, colback=white, coltitle=black, opacitybacktitle=0.6, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, toptitle=1mm, opacityback=0, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, bottomrule=.15mm, colframe=quarto-callout-color-frame, opacitybacktitle=0.6, colbacktitle=quarto-callout-color!10!white, coltitle=black, left=2mm, bottomtitle=1mm, arc=.35mm, titlerule=0mm, toprule=.15mm, leftrule=.75mm, colback=white]
 
 Связано ли это с PCA?
 
@@ -463,7 +463,7 @@ GD нулевого порядка &
 \dfrac{\partial L}{\partial w_k} (w) \approx \dfrac{L(w+\varepsilon e_k) - L(w)}{\varepsilon}, \quad e_k = (0, \ldots, \underset{{\tiny k}}{1}, \ldots, 0)
 \]
 
-\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, leftrule=.75mm, colbacktitle=quarto-callout-color!10!white, bottomrule=.15mm, toprule=.15mm, left=2mm, bottomtitle=1mm, toptitle=1mm, colframe=quarto-callout-color-frame, breakable, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, titlerule=0mm, colback=white, coltitle=black, opacitybacktitle=0.6, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, toptitle=1mm, opacityback=0, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, bottomrule=.15mm, colframe=quarto-callout-color-frame, opacitybacktitle=0.6, colbacktitle=quarto-callout-color!10!white, coltitle=black, left=2mm, bottomtitle=1mm, arc=.35mm, titlerule=0mm, toprule=.15mm, leftrule=.75mm, colback=white]
 
 Если время, необходимое для одного вычисления \(L(w)\) равно \(T\), то
 какое время необходимо для вычисления \(\nabla_w L\) с этим подходом?
@@ -848,7 +848,7 @@ L(w_1, w_2) = w_2 \log w_1 + \sqrt{w_2 \log w_1}
 \subsection{Обратный режим автоматического
 дифференцирования}\label{ux43eux431ux440ux430ux442ux43dux44bux439-ux440ux435ux436ux438ux43c-ux430ux432ux442ux43eux43cux430ux442ux438ux447ux435ux441ux43aux43eux433ux43e-ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux440ux43eux432ux430ux43dux438ux44f-1}
 
-\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, leftrule=.75mm, colbacktitle=quarto-callout-color!10!white, bottomrule=.15mm, toprule=.15mm, left=2mm, bottomtitle=1mm, toptitle=1mm, colframe=quarto-callout-color-frame, breakable, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, titlerule=0mm, colback=white, coltitle=black, opacitybacktitle=0.6, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, toptitle=1mm, opacityback=0, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, bottomrule=.15mm, colframe=quarto-callout-color-frame, opacitybacktitle=0.6, colbacktitle=quarto-callout-color!10!white, coltitle=black, left=2mm, bottomtitle=1mm, arc=.35mm, titlerule=0mm, toprule=.15mm, leftrule=.75mm, colback=white]
 
 Обратите внимание, что для того же количества вычислений, что и в прямом
 режиме, мы получаем полный вектор градиента \(\nabla_w L\). Какова
@@ -918,7 +918,7 @@ AD вам нужно хранить все промежуточные вычис
 
 \end{figure}%
 
-\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, leftrule=.75mm, colbacktitle=quarto-callout-color!10!white, bottomrule=.15mm, toprule=.15mm, left=2mm, bottomtitle=1mm, toptitle=1mm, colframe=quarto-callout-color-frame, breakable, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, titlerule=0mm, colback=white, coltitle=black, opacitybacktitle=0.6, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, toptitle=1mm, opacityback=0, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, bottomrule=.15mm, colframe=quarto-callout-color-frame, opacitybacktitle=0.6, colbacktitle=quarto-callout-color!10!white, coltitle=black, left=2mm, bottomtitle=1mm, arc=.35mm, titlerule=0mm, toprule=.15mm, leftrule=.75mm, colback=white]
 
 Какой из режимов AD вы бы выбрали (прямой/обратный) для следующего
 вычислительного графа арифметических операций? Предположим, что вам
@@ -958,7 +958,7 @@ AD вам нужно хранить все промежуточные вычис
 
 \end{figure}%
 
-\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, leftrule=.75mm, colbacktitle=quarto-callout-color!10!white, bottomrule=.15mm, toprule=.15mm, left=2mm, bottomtitle=1mm, toptitle=1mm, colframe=quarto-callout-color-frame, breakable, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, titlerule=0mm, colback=white, coltitle=black, opacitybacktitle=0.6, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, toptitle=1mm, opacityback=0, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, bottomrule=.15mm, colframe=quarto-callout-color-frame, opacitybacktitle=0.6, colbacktitle=quarto-callout-color!10!white, coltitle=black, left=2mm, bottomtitle=1mm, arc=.35mm, titlerule=0mm, toprule=.15mm, leftrule=.75mm, colback=white]
 
 Какой из режимов AD вы бы выбрали (прямой/обратный) для следующего
 вычислительного графа арифметических операций? Предположим, что вам
@@ -1205,7 +1205,7 @@ v \mapsto \nabla^2 f(x) \cdot v
 
 \subsection{Задача 1}\label{ux437ux430ux434ux430ux447ux430-1}
 
-\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, leftrule=.75mm, colbacktitle=quarto-callout-color!10!white, bottomrule=.15mm, toprule=.15mm, left=2mm, bottomtitle=1mm, toptitle=1mm, colframe=quarto-callout-color-frame, breakable, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, titlerule=0mm, colback=white, coltitle=black, opacitybacktitle=0.6, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, toptitle=1mm, opacityback=0, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, bottomrule=.15mm, colframe=quarto-callout-color-frame, opacitybacktitle=0.6, colbacktitle=quarto-callout-color!10!white, coltitle=black, left=2mm, bottomtitle=1mm, arc=.35mm, titlerule=0mm, toprule=.15mm, leftrule=.75mm, colback=white]
 
 Какой из режимов AD вы бы выбрали (прямой/обратный) для следующего
 вычислительного графа арифметических операций?
@@ -1231,7 +1231,7 @@ v \mapsto \nabla^2 f(x) \cdot v
 \hfill\break
 \hfill\break
 
-\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, leftrule=.75mm, colbacktitle=quarto-callout-color!10!white, bottomrule=.15mm, toprule=.15mm, left=2mm, bottomtitle=1mm, toptitle=1mm, colframe=quarto-callout-color-frame, breakable, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, titlerule=0mm, colback=white, coltitle=black, opacitybacktitle=0.6, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, toptitle=1mm, opacityback=0, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, bottomrule=.15mm, colframe=quarto-callout-color-frame, opacitybacktitle=0.6, colbacktitle=quarto-callout-color!10!white, coltitle=black, left=2mm, bottomtitle=1mm, arc=.35mm, titlerule=0mm, toprule=.15mm, leftrule=.75mm, colback=white]
 
 Найдите производные
 \(\dfrac{\partial L}{\partial A}, \dfrac{\partial L}{\partial b}\).
@@ -1267,7 +1267,7 @@ W = U \Sigma V^T, \quad U^TU = I, \quad V^TV = I,
 Регуляризатор \(R(W) = \text{tr}(\Sigma)\) в любой функции потерь
 стимулирует низкоранговые решения.
 
-\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, leftrule=.75mm, colbacktitle=quarto-callout-color!10!white, bottomrule=.15mm, toprule=.15mm, left=2mm, bottomtitle=1mm, toptitle=1mm, colframe=quarto-callout-color-frame, breakable, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, titlerule=0mm, colback=white, coltitle=black, opacitybacktitle=0.6, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, breakable, toptitle=1mm, opacityback=0, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Question}, bottomrule=.15mm, colframe=quarto-callout-color-frame, opacitybacktitle=0.6, colbacktitle=quarto-callout-color!10!white, coltitle=black, left=2mm, bottomtitle=1mm, arc=.35mm, titlerule=0mm, toprule=.15mm, leftrule=.75mm, colback=white]
 
 Найдите производную \(\dfrac{\partial R}{\partial W}\).
 

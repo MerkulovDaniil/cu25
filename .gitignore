@@ -21,3 +21,4 @@ _site/
 *.synctex(busy)
 **/.DS_Store
 /site_libs
+/_cu_overleaf
