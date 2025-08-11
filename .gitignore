@@ -20,3 +20,4 @@ _site/
 *.brf
 *.synctex(busy)
 **/.DS_Store
+/site_libs
