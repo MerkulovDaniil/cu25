@@ -26,10 +26,17 @@
 \usepackage{ifthen}
 
 %%% === TEMPLATE
-% Font setup - Let Quarto handle language setup via lang: ru
 \usepackage{fontspec}
+\usepackage{polyglossia}
+
+% Set the main language to Russian
+% \setmainlanguage{russian}
 
 % Set Computer Modern Unicode (CMU) as the main font for both Latin and Cyrillic
+\newfontfamily\cyrillicfont{CMU Serif}
+\newfontfamily\cyrillicfontsf{CMU Sans Serif}
+\newfontfamily\cyrillicfonttt{CMU Typewriter Text}
+
 \setmainfont{CMU Serif}          % For regular (serif) text
 \setsansfont{CMU Sans Serif}      % For sans-serif text
 \setmonofont{CMU Typewriter Text} % For monospaced (typewriter-style) text
@@ -51,8 +58,9 @@
 \setbeamertemplate{itemize items}[circle] % For level-1 itemize
 \setbeamertemplate{itemize subitem}[circle] % For level-2 (subitems)
 \setbeamertemplate{itemize subsubitem}[circle] % For level-3 (subsubitems)
+\captionsetup[figure]{name=Рис.}
 
-\addtobeamertemplate{footline}{\raisebox{-1.3pt}{\href{https://fmin.xyz}{\includegraphics[width=1cm]{logo.pdf}}} \hspace{0.2cm} \hbox{\insertsection \hspace{0.2cm}} \hfill \href{https://cu25.fmin.xyz}{\faGem[regular]} \hspace{0.04cm} \href{https://github.com/MerkulovDaniil/cu25}{\faGithub} \hspace{0.07cm} \href{https://t.me/fminxyz}{\faTelegram} \hspace{0.4cm}\hbox{\insertframenumber \hspace{0.1cm}}
+\addtobeamertemplate{footline}{\raisebox{-1.3pt}{\href{https://fmin.xyz}{\includegraphics[height=0.27cm]{logo.pdf}}~\includegraphics[height=0.27cm]{logo_cu.pdf}} \hspace{0.2cm} \hbox{\insertsection \hspace{0.2cm}} \hfill \href{https://cu25.fmin.xyz}{\faGem[regular]} \hspace{0.04cm} \href{https://github.com/MerkulovDaniil/cu25}{\faGithub} \hspace{0.07cm} \href{https://t.me/fminxyz}{\faTelegram} \hspace{0.4cm}\hbox{\insertframenumber \hspace{0.1cm}}
   \vskip0pt
 }
 
