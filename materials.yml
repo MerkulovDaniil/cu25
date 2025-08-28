@@ -2,8 +2,10 @@
   number: 1
   longread: /longreads/1.pdf
   materials: /lectures/1.pdf
+  # materials_cu: /lectures/1-cu.pdf
   # notes: /notes/1.pdf
   seminar: /seminars/1.pdf
+  # seminar_cu: /seminars/1-cu.pdf
   youtube:
   download:
 

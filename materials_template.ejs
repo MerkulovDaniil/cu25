@@ -13,6 +13,14 @@
             print(links.join(' • '));
         %>
     </p>
+    <p>
+        <% 
+            var linksCu = [];
+            if(item.materials_cu) { linksCu.push('<a href="' + item.materials_cu + '">📄 Презентация (CU)</a>'); }
+            if(item.seminar_cu) { linksCu.push('<a href="' + item.seminar_cu + '">👷‍♂️ Seminar (CU)</a>'); }
+            if (linksCu.length) { print(linksCu.join(' • ')); }
+        %>
+    </p>
     <p><%= item.title %></p>
 <% } %>
 ```
