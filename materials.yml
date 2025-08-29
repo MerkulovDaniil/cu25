@@ -2,10 +2,10 @@
   number: 1
   longread: /longreads/1.pdf
   materials: /lectures/1.pdf
-  # materials_cu: /lectures/1-cu.pdf
+  materials_cu: /lectures/1-cu.pdf
   # notes: /notes/1.pdf
   seminar: /seminars/1.pdf
-  # seminar_cu: /seminars/1-cu.pdf
+  seminar_cu: /seminars/1-cu.pdf
   youtube:
   download:
 
@@ -13,8 +13,10 @@
   number: 2
   longread: /longreads/2.pdf
   materials: /lectures/2.pdf
+  materials_cu: /lectures/2-cu.pdf
   # notes: /notes/2.pdf
   seminar: /seminars/2.pdf
+  seminar_cu: /seminars/2-cu.pdf
   youtube:
   download:
 
