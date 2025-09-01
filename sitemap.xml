@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://cu25.fmin.xyz/short_program.html</loc>
-    <lastmod>2025-09-01T18:06:34.040Z</lastmod>
-  </url>
-  <url>
-    <loc>https://cu25.fmin.xyz/program.html</loc>
-    <lastmod>2025-09-01T18:06:34.034Z</lastmod>
+    <loc>https://cu25.fmin.xyz/index.html</loc>
+    <lastmod>2025-09-01T18:20:02.370Z</lastmod>
   </url>
   <url>
     <loc>https://cu25.fmin.xyz/homework.html</loc>
-    <lastmod>2025-09-01T18:06:34.005Z</lastmod>
+    <lastmod>2025-09-01T18:20:02.370Z</lastmod>
   </url>
   <url>
-    <loc>https://cu25.fmin.xyz/index.html</loc>
-    <lastmod>2025-09-01T18:06:34.005Z</lastmod>
+    <loc>https://cu25.fmin.xyz/program.html</loc>
+    <lastmod>2025-09-01T18:20:02.409Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cu25.fmin.xyz/short_program.html</loc>
+    <lastmod>2025-09-01T18:20:02.416Z</lastmod>
   </url>
 </urlset>
