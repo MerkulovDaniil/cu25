@@ -24,8 +24,10 @@
   number: 3
   longread: /longreads/3.pdf
   materials: /lectures/3.pdf
+  materials_cu: /lectures/3-cu.pdf
   # notes: /notes/3.pdf
   seminar: /seminars/3.pdf
+  seminar_cu: /seminars/3-cu.pdf
   youtube:
   download:
 
@@ -33,7 +35,9 @@
   number: 4
   longread: /longreads/4.pdf
   materials: /lectures/4.pdf
+  materials_cu: /lectures/4-cu.pdf
   seminar: /seminars/4.pdf
+  seminar_cu: /seminars/4-cu.pdf
   # notes: /notes/4.pdf
   youtube:
   download:
