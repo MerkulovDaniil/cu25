@@ -7,10 +7,32 @@
 - name: Петр Остроухов
   role: Лектор и семинарист для магистров
   image: photos/po.jpeg
+- name: Анна Петрова
+  role: Старший ассистент
+  image: photos/ap.jpeg
+- name: Алексей Ребриков
+  role: Старший ассистент
+  image: photos/ar.jpeg
+- name: Фанис Хафизов
+  role: Ассистент
+  image: photos/fk.jpeg
+- name: Анастасия Герман
+  role: Ассистент
+  image: photos/ag.jpeg
 - name: Максим Шуклин
   role: Ассистент
   image: photos/ms.jpeg
-- name: Анна Петрова
+- name: Алексей Кравацкий
   role: Ассистент
-  image: photos/ap.jpeg
+  image: photos/ak.jpeg
+- name: Даниил Казачков
+  role: Ассистент
+  image: photos/kd.jpeg
+- name: Вячеслав Лямкин
+  role: Ассистент
+  image: photos/vl.jpeg
+- name: Амир Зайнуллин
+  role: Ассистент
+  image: photos/az.jpeg
+
 
