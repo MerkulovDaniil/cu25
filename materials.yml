@@ -46,8 +46,10 @@
   number: 5
   longread: /longreads/5.pdf
   materials: /lectures/5.pdf
+  materials_cu: /lectures/5-cu.pdf
   # notes: /notes/5.pdf
   seminar: /seminars/5.pdf
+  seminar_cu: /seminars/5-cu.pdf
   youtube:
   download:
 
