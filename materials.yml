@@ -3,133 +3,151 @@
   longread: /longreads/1.pdf
   materials: /lectures/1.pdf
   materials_cu: /lectures/1-cu.pdf
-  # notes: /notes/1.pdf
+  materials_cu_maga: /lectures/1-cu-maga.pdf
+  notes: /notes/1.pdf
   seminar: /seminars/1.pdf
   seminar_cu: /seminars/1-cu.pdf
-  youtube:
-  download:
+  seminar_cu_maga: /seminars/1-cu-maga.pdf
 
 - title: Одномерная оптимизация. Неточная одномерная оптимизация. Градиент. Гессиан. Матрично-векторное дифференцирование.
   number: 2
   longread: /longreads/2.pdf
   materials: /lectures/2.pdf
   materials_cu: /lectures/2-cu.pdf
-  # notes: /notes/2.pdf
+  materials_cu_maga: /lectures/2-cu-maga.pdf
+  notes: /notes/2.pdf
   seminar: /seminars/2.pdf
   seminar_cu: /seminars/2-cu.pdf
-  youtube:
-  download:
+  seminar_cu_maga: /seminars/2-cu-maga.pdf
 
 - title: Автоматическое дифференцирование. Вычислительный граф.
   number: 3
   longread: /longreads/3.pdf
   materials: /lectures/3.pdf
   materials_cu: /lectures/3-cu.pdf
-  # notes: /notes/3.pdf
+  materials_cu_maga: /lectures/3-cu-maga.pdf
+  notes: /notes/3.pdf
   seminar: /seminars/3.pdf
   seminar_cu: /seminars/3-cu.pdf
-  youtube:
-  download:
+  seminar_cu_maga: /seminars/3-cu-maga.pdf
 
 - title: Выпуклость. Выпуклые множества. Выпуклые функции. Неравенство Йенсена. Сильно выпуклые функции. Условие Поляка - Лоясиевича. Минимумы линейных нейронных сетей.
   number: 4
   longread: /longreads/4.pdf
   materials: /lectures/4.pdf
   materials_cu: /lectures/4-cu.pdf
+  materials_cu_maga: /lectures/4-cu-maga.pdf
   seminar: /seminars/4.pdf
   seminar_cu: /seminars/4-cu.pdf
+  seminar_cu_maga: /seminars/4-cu-maga.pdf
   # notes: /notes/4.pdf
-  youtube:
-  download:
 
 - title: Условия оптимальности. Функция Лагранжа. Задачи с ограничениями-равенствами. Задачи с ограничениями-равенствами. Теорема Каруша - Куна - Таккера.
   number: 5
   longread: /longreads/5.pdf
   materials: /lectures/5.pdf
   materials_cu: /lectures/5-cu.pdf
+  materials_cu_maga: /lectures/5-cu-maga.pdf
   # notes: /notes/5.pdf
   seminar: /seminars/5.pdf
   seminar_cu: /seminars/5-cu.pdf
-  youtube:
-  download:
+  seminar_cu_maga: /seminars/5-cu-maga.pdf
 
 - title: Задача линейного программирования. Симплекс метод.
   number: 6
   longread: /longreads/6.pdf
   materials: /lectures/6.pdf
+  materials_cu: /lectures/6-cu.pdf
+  materials_cu_maga: /lectures/6-cu-maga.pdf
   # notes: /notes/6.pdf
   seminar: /seminars/6.pdf
-  youtube:
-  download:
+  seminar_cu: /seminars/6-cu.pdf
+  seminar_cu_maga: /seminars/6-cu-maga.pdf
 
 - title: Градиентный спуск. Теоремы сходимости в гладком случае (выпуклые, сильно выпуклые, PL). Верхние и нижние оценки сходимости.
   number: 7
   longread: /longreads/7.pdf
   materials: /lectures/7.pdf
+  materials_cu: /lectures/7-cu.pdf
+  materials_cu_maga: /lectures/7-cu-maga.pdf
   # notes: /notes/7.pdf
   seminar: /seminars/7.pdf
-  youtube:
-  download:
+  seminar_cu: /seminars/7-cu.pdf
+  seminar_cu_maga: /seminars/7-cu-maga.pdf
 
 - title: Ускоренные градиентные методы. Метод Поляка, Нестерова.
   number: 8
   longread: /longreads/8.pdf
   materials: /lectures/8.pdf
+  materials_cu: /lectures/8-cu.pdf
+  materials_cu_maga: /lectures/8-cu-maga.pdf
   # notes: /notes/8.pdf
   seminar: /seminars/8.pdf
-  youtube:
-  download:
+  seminar_cu: /seminars/8-cu.pdf
+  seminar_cu_maga: /seminars/8-cu-maga.pdf
 
 - title: Метод сопряженных градиентов.
   number: 9
   longread: /longreads/9.pdf
   materials: /lectures/9.pdf
+  materials_cu: /lectures/9-cu.pdf
+  materials_cu_maga: /lectures/9-cu-maga.pdf
   # notes: /notes/9.pdf
   seminar: /seminars/9.pdf
-  youtube:
-  download:
+  seminar_cu: /seminars/9-cu.pdf
+  seminar_cu_maga: /seminars/9-cu-maga.pdf
 
 - title: Метод Ньютона. Квазиньютоновские методы.
   number: 10
   longread: /longreads/10.pdf
   materials: /lectures/10.pdf
+  materials_cu: /lectures/10-cu.pdf
+  materials_cu_maga: /lectures/10-cu-maga.pdf
   # notes: /notes/10.pdf
   seminar: /seminars/10.pdf
-  youtube:
-  download:
+  seminar_cu: /seminars/10-cu.pdf
+  seminar_cu_maga: /seminars/10-cu-maga.pdf
 
 - title: Градиентные методы в условных задачах оптимизации - метод проекции градиента. Метод Франк - Вульфа. Идея метода зеркального спуска.
   number: 11
   longread: /longreads/11.pdf
   materials: /lectures/11.pdf
+  materials_cu: /lectures/11-cu.pdf
+  materials_cu_maga: /lectures/11-cu-maga.pdf
   # notes: /notes/11.pdf
   seminar: /seminars/11.pdf
-  youtube:
-  download:
+  seminar_cu: /seminars/11-cu.pdf
+  seminar_cu_maga: /seminars/11-cu-maga.pdf
 
 - title: Субградиент. Субдифференциал. Субградиентный спуск. Теоремы сходимости в негладком случае. Особенности работы градиентного метода в практических негладких задачах. Проксимальный градиентный метод.
   number: 12
   longread: /longreads/12.pdf
   materials: /lectures/12.pdf
+  materials_cu: /lectures/12-cu.pdf
+  materials_cu_maga: /lectures/12-cu-maga.pdf
   # notes: /notes/12.pdf
   seminar: /seminars/12.pdf
-  youtube:
-  download:
+  seminar_cu: /seminars/12-cu.pdf
+  seminar_cu_maga: /seminars/12-cu-maga.pdf
 
 - title: "Стохастический градиентный спуск."
   number: 13
   longread: /longreads/13.pdf
   materials: /lectures/13.pdf
+  materials_cu: /lectures/13-cu.pdf
+  materials_cu_maga: /lectures/13-cu-maga.pdf
   # notes: /notes/13.pdf
   seminar: /seminars/13.pdf
-  youtube:
-  download:
+  seminar_cu: /seminars/13-cu.pdf
+  seminar_cu_maga: /seminars/13-cu-maga.pdf
 
 - title: "Методы редукции дисперсии: SAG, SVRG, SAGA. Адаптивные стохастические градиентные методы. Современные методы оптимизации для обучения нейронных сетей"
   number: 14
   longread: /longreads/14.pdf
   materials: /lectures/14.pdf
+  materials_cu: /lectures/14-cu.pdf
+  materials_cu_maga: /lectures/14-cu-maga.pdf
   # notes: /notes/14.pdf
   seminar: /seminars/14.pdf
-  youtube:
-  download:
+  seminar_cu: /seminars/14-cu.pdf
+  seminar_cu_maga: /seminars/14-cu-maga.pdf
