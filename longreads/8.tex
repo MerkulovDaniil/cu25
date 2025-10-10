@@ -327,17 +327,11 @@ k_\varepsilon &\geq \varkappa \log \dfrac{f(x_0)-f^*}{\varepsilon} = \mathcal{O}
 \end{aligned}
 \]
 
-\subsection{Сходимость градиентного
-спуска}\label{ux441ux445ux43eux434ux438ux43cux43eux441ux442ux44c-ux433ux440ux430ux434ux438ux435ux43dux442ux43dux43eux433ux43e-ux441ux43fux443ux441ux43aux430-1}
-
 \textbf{Вопрос: }Можно ли добиться лучшей скорости сходимости, используя
 только информацию первого порядка? \textbf{Да, можно.}
 
 \section{Нижние
 оценки}\label{ux43dux438ux436ux43dux438ux435-ux43eux446ux435ux43dux43aux438}
-
-\subsection{Нижние
-оценки}\label{ux43dux438ux436ux43dux438ux435-ux43eux446ux435ux43dux43aux438-1}
 
 Для нижних оценок пишут \(\Omega \left( \cdot \right)\) вместо
 \(\mathcal{O} \left( \cdot \right)\).
@@ -401,7 +395,7 @@ g_{i} \in \partial f(x_{i}) \; & f \text{ — негладкая}
 \subsection{Гладкий
 случай}\label{ux433ux43bux430ux434ux43aux438ux439-ux441ux43bux443ux447ux430ux439}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacityback=0, toptitle=1mm, colback=white, bottomtitle=1mm, toprule=.15mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Theorem}, rightrule=.15mm, left=2mm, breakable, coltitle=black, arc=.35mm, leftrule=.75mm, colbacktitle=quarto-callout-color!10!white, bottomrule=.15mm, colframe=quarto-callout-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Theorem}, colbacktitle=quarto-callout-color!10!white, opacityback=0, colframe=quarto-callout-color-frame, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, arc=.35mm, leftrule=.75mm, breakable, toprule=.15mm, bottomrule=.15mm, opacitybacktitle=0.6, left=2mm, colback=white]
 
 Существует \(L\)-гладкая и выпуклая функция \(f\), такая, что любой
 метод (\ref{eq-fom}) для всех \(k\), \(1 \leq k \leq \frac{n-1}{2}\),
@@ -484,9 +478,6 @@ x^T A x &= 2x_1^2 + 2x_2^2 + 2x_3^2 - 2x_1x_2 - 2x_2x_3\\
 0 &\leq x_1^2 + (x_1 + x_2)^2 + (x_2 + x_3)^2 + x_3^2
 \end{aligned}
 \]
-
-\subsection{Наихудшая функция
-Нестерова}\label{ux43dux430ux438ux445ux443ux434ux448ux430ux44f-ux444ux443ux43dux43aux446ux438ux44f-ux43dux435ux441ux442ux435ux440ux43eux432ux430-1}
 
 \begin{itemize}
 \item
@@ -587,9 +578,6 @@ x^T A x &= 2x_1^2 + 2x_2^2 + 2x_3^2 - 2x_1x_2 - 2x_2x_3\\
   \(f(x^*)\).
 \end{itemize}
 
-\subsection{Гладкий случай
-(доказательство)}\label{ux433ux43bux430ux434ux43aux438ux439-ux441ux43bux443ux447ux430ux439-ux434ux43eux43aux430ux437ux430ux442ux435ux43bux44cux441ux442ux432ux43e-1}
-
 \begin{itemize}
 \tightlist
 \item
@@ -617,9 +605,6 @@ x^T A x &= 2x_1^2 + 2x_2^2 + 2x_3^2 - 2x_1x_2 - 2x_2x_3\\
     }\end{equation}
 \end{itemize}
 
-\subsection{Гладкий случай
-(доказательство)}\label{ux433ux43bux430ux434ux43aux438ux439-ux441ux43bux443ux447ux430ux439-ux434ux43eux43aux430ux437ux430ux442ux435ux43bux44cux441ux442ux432ux43e-2}
-
 \begin{itemize}
 \item
   Теперь мы ограничиваем \(R = \|x_0 - x^*\|_2\): \[
@@ -644,9 +629,6 @@ x^T A x &= 2x_1^2 + 2x_2^2 + 2x_3^2 - 2x_1x_2 - 2x_2x_3\\
 \end{aligned}
 \]
 
-\subsection{Гладкий случай
-(доказательство)}\label{ux433ux43bux430ux434ux43aux438ux439-ux441ux43bux443ux447ux430ux439-ux434ux43eux43aux430ux437ux430ux442ux435ux43bux44cux441ux442ux432ux43e-3}
-
 Наконец, используя (\ref{eq-lb1}) и (\ref{eq-lb2}), мы получаем: \[
 \begin{aligned}
 f(x_k) - f(x^*) &\geq \frac{L}{16(k+1)}  = \frac{L (k+1)}{16(k+1)^2} \\
@@ -661,7 +643,7 @@ f(x_k) - f(x^*) &\geq \frac{L}{16(k+1)}  = \frac{L (k+1)}{16(k+1)^2} \\
 \subsection{Нижние оценки для гладкого
 случая}\label{ux43dux438ux436ux43dux438ux435-ux43eux446ux435ux43dux43aux438-ux434ux43bux44f-ux433ux43bux430ux434ux43aux43eux433ux43e-ux441ux43bux443ux447ux430ux44f}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacityback=0, toptitle=1mm, colback=white, bottomtitle=1mm, toprule=.15mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Гладкий выпуклый случай}, rightrule=.15mm, left=2mm, breakable, coltitle=black, arc=.35mm, leftrule=.75mm, colbacktitle=quarto-callout-color!10!white, bottomrule=.15mm, colframe=quarto-callout-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Гладкий выпуклый случай}, colbacktitle=quarto-callout-color!10!white, opacityback=0, colframe=quarto-callout-color-frame, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, arc=.35mm, leftrule=.75mm, breakable, toprule=.15mm, bottomrule=.15mm, opacitybacktitle=0.6, left=2mm, colback=white]
 
 Существует \(L\)-гладкая выпуклая функция \(f\), такая, что любой метод
 в форме~\ref{eq-fom} для всех \(k\), \(1 \leq k \leq \frac{n-1}{2}\),
@@ -671,7 +653,7 @@ f(x_k) - f^* \geq \frac{3L \|x_0 - x^*\|_2^2}{32(k+1)^2}
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacityback=0, toptitle=1mm, colback=white, bottomtitle=1mm, toprule=.15mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Гладкий сильно выпуклый случай}, rightrule=.15mm, left=2mm, breakable, coltitle=black, arc=.35mm, leftrule=.75mm, colbacktitle=quarto-callout-color!10!white, bottomrule=.15mm, colframe=quarto-callout-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Гладкий сильно выпуклый случай}, colbacktitle=quarto-callout-color!10!white, opacityback=0, colframe=quarto-callout-color-frame, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, arc=.35mm, leftrule=.75mm, breakable, toprule=.15mm, bottomrule=.15mm, opacitybacktitle=0.6, left=2mm, colback=white]
 
 Для любого \(x_0\) и любого \(\mu > 0\),
 \(\varkappa = \frac{L}{\mu} > 1\), существует \(L\)-гладкая и
@@ -698,7 +680,7 @@ f(x_k) - f^* &\geq \frac{\mu}{2} \left( \frac{\sqrt{\varkappa}-1}{\sqrt{\varkapp
 f(x) = \frac{1}{2} x^T A x - b^T x \qquad x_{k+1} = x_k - \alpha_k \nabla f(x_k).
 \]
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacityback=0, toptitle=1mm, colback=white, bottomtitle=1mm, toprule=.15mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Theorem}, rightrule=.15mm, left=2mm, breakable, coltitle=black, arc=.35mm, leftrule=.75mm, colbacktitle=quarto-callout-color!10!white, bottomrule=.15mm, colframe=quarto-callout-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Theorem}, colbacktitle=quarto-callout-color!10!white, opacityback=0, colframe=quarto-callout-color-frame, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, arc=.35mm, leftrule=.75mm, breakable, toprule=.15mm, bottomrule=.15mm, opacitybacktitle=0.6, left=2mm, colback=white]
 
 Градиентный спуск с шагом \(\alpha_k = \frac{2}{\mu + L}\) сходится к
 оптимальному решению \(x^*\) со следующей гарантией: \[
@@ -819,9 +801,6 @@ P_k(a) = T_k\left(\frac{L+\mu-2a}{L-\mu}\right) \cdot T_k\left(\frac{L+\mu}{L-\m
 \] и увидим, что они больше подходят для нашей задачи, чем наивные
 полиномы на интервале \([\mu,L]\).
 
-\subsection{Отшкалированные полиномы
-Чебышёва}\label{ux43eux442ux448ux43aux430ux43bux438ux440ux43eux432ux430ux43dux43dux44bux435-ux43fux43eux43bux438ux43dux43eux43cux44b-ux447ux435ux431ux44bux448ux451ux432ux430-1}
-
 \includegraphics[width=0.5\columnwidth,height=0.8\textheight,keepaspectratio]{gd_polynoms_1_ru.pdf}
 \includegraphics[width=0.5\columnwidth,height=0.8\textheight,keepaspectratio]{gd_polynoms_2_ru.pdf}
 \includegraphics[width=0.5\columnwidth,height=0.8\textheight,keepaspectratio]{gd_polynoms_3_ru.pdf}
@@ -852,9 +831,6 @@ P_k(a) = T_k\left(\frac{L+\mu-2a}{L-\mu}\right) \cdot T_k\left(\frac{L+\mu}{L-\m
 \(\|P_k(A)\|_2\) сверху величиной
 \(\left(\frac{1}{1 + \sqrt{\epsilon}}\right)^k\). Для этого детально
 изучим величину \(|T_k(1 + \epsilon)|\).
-
-\subsection{Верхняя оценка для полиномов
-Чебышёва}\label{ux432ux435ux440ux445ux43dux44fux44f-ux43eux446ux435ux43dux43aux430-ux434ux43bux44f-ux43fux43eux43bux438ux43dux43eux43cux43eux432-ux447ux435ux431ux44bux448ux451ux432ux430-1}
 
 Чтобы ограничить \(|P_k|\) сверху, мы должны ограничить
 \(|T_k(1 + \epsilon)|\) снизу.
@@ -982,10 +958,11 @@ x_{k+1} = x_k - \alpha_k \nabla f(x_k) + \beta_k \left(x_k - x_{k-1}\right)
 \section{Метод тяжёлого
 шарика}\label{ux43cux435ux442ux43eux434-ux442ux44fux436ux451ux43bux43eux433ux43e-ux448ux430ux440ux438ux43aux430}
 
-\subsection{Колебания и
-ускорение}\label{ux43aux43eux43bux435ux431ux430ux43dux438ux44f-ux438-ux443ux441ux43aux43eux440ux435ux43dux438ux435}
+\subsection{\texorpdfstring{\href{https://colab.research.google.com/github/MerkulovDaniil/optim/blob/master/assets/Notebooks/GD.ipynb}{Колебания
+и
+ускорение}}{Колебания и ускорение}}\label{ux43aux43eux43bux435ux431ux430ux43dux438ux44f-ux438-ux443ux441ux43aux43eux440ux435ux43dux438ux435}
 
-\href{https://colab.research.google.com/github/MerkulovDaniil/optim/blob/master/assets/Notebooks/GD.ipynb}{\pandocbounded{\includegraphics[keepaspectratio]{GD_vs_HB_hor.pdf}}}
+\pandocbounded{\includegraphics[keepaspectratio]{GD_vs_HB_hor.pdf}}
 
 \subsection{Метод тяжёлого шарика
 Поляка}\label{ux43cux435ux442ux43eux434-ux442ux44fux436ux451ux43bux43eux433ux43e-ux448ux430ux440ux438ux43aux430-ux43fux43eux43bux44fux43aux430}
@@ -1083,9 +1060,6 @@ M_1\\
 наихудшей скоростью сходимости среди его блока координат. Следовательно,
 достаточно исследовать оптимизацию в одномерном случае.
 
-\subsection{Сведение к скалярному
-случаю}\label{ux441ux432ux435ux434ux435ux43dux438ux435-ux43a-ux441ux43aux430ux43bux44fux440ux43dux43eux43cux443-ux441ux43bux443ux447ux430ux44e-1}
-
 Для \(i\)-й координаты, где \(\lambda_i\) --- \(i\)-е собственное
 значение матрицы \(A\), имеем:
 
@@ -1129,10 +1103,7 @@ M_i = \begin{bmatrix}
 
 И скорость сходимости не зависит от шага и равна \(\sqrt{\beta^*}\).
 
-\subsection{Сходимость метода тяжёлого шарика для квадратичной
-функции}\label{ux441ux445ux43eux434ux438ux43cux43eux441ux442ux44c-ux43cux435ux442ux43eux434ux430-ux442ux44fux436ux451ux43bux43eux433ux43e-ux448ux430ux440ux438ux43aux430-ux434ux43bux44f-ux43aux432ux430ux434ux440ux430ux442ux438ux447ux43dux43eux439-ux444ux443ux43dux43aux446ux438ux438-1}
-
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacityback=0, toptitle=1mm, colback=white, bottomtitle=1mm, toprule=.15mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Theorem}, rightrule=.15mm, left=2mm, breakable, coltitle=black, arc=.35mm, leftrule=.75mm, colbacktitle=quarto-callout-color!10!white, bottomrule=.15mm, colframe=quarto-callout-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Theorem}, colbacktitle=quarto-callout-color!10!white, opacityback=0, colframe=quarto-callout-color-frame, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, arc=.35mm, leftrule=.75mm, breakable, toprule=.15mm, bottomrule=.15mm, opacitybacktitle=0.6, left=2mm, colback=white]
 
 Предположим, что \(f\) является \(\mu\)-сильно выпуклой и \(L\)-гладкой
 квадратичной функцией. Тогда метод тяжёлого шарика с параметрами \[
@@ -1153,7 +1124,7 @@ M_i = \begin{bmatrix}
   метода тяжёлого шарика для выпуклой оптимизации, Euhanna Ghadimi et
   al.}}}{Глобальная сходимость метода тяжёлого шарика }}\label{ux433ux43bux43eux431ux430ux43bux44cux43dux430ux44f-ux441ux445ux43eux434ux438ux43cux43eux441ux442ux44c-ux43cux435ux442ux43eux434ux430-ux442ux44fux436ux451ux43bux43eux433ux43e-ux448ux430ux440ux438ux43aux430}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacityback=0, toptitle=1mm, colback=white, bottomtitle=1mm, toprule=.15mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Theorem}, rightrule=.15mm, left=2mm, breakable, coltitle=black, arc=.35mm, leftrule=.75mm, colbacktitle=quarto-callout-color!10!white, bottomrule=.15mm, colframe=quarto-callout-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Theorem}, colbacktitle=quarto-callout-color!10!white, opacityback=0, colframe=quarto-callout-color-frame, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, arc=.35mm, leftrule=.75mm, breakable, toprule=.15mm, bottomrule=.15mm, opacitybacktitle=0.6, left=2mm, colback=white]
 
 Предположим, что \(f\) является гладкой и выпуклой и что
 
@@ -1183,13 +1154,7 @@ f(\overline{x}_T)-f^{\star} \leq  \left\{
 
 \end{tcolorbox}
 
-\subsection[Глобальная сходимость метода тяжёлого шарика
-]{\texorpdfstring{Глобальная сходимость метода тяжёлого шарика
-\footnote{\href{https://arxiv.org/abs/1412.7457}{Глобальная сходимость
-  метода тяжёлого шарика для выпуклой оптимизации, Euhanna Ghadimi et
-  al.}}}{Глобальная сходимость метода тяжёлого шарика }}\label{ux433ux43bux43eux431ux430ux43bux44cux43dux430ux44f-ux441ux445ux43eux434ux438ux43cux43eux441ux442ux44c-ux43cux435ux442ux43eux434ux430-ux442ux44fux436ux451ux43bux43eux433ux43e-ux448ux430ux440ux438ux43aux430-1}
-
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacityback=0, toptitle=1mm, colback=white, bottomtitle=1mm, toprule=.15mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Theorem}, rightrule=.15mm, left=2mm, breakable, coltitle=black, arc=.35mm, leftrule=.75mm, colbacktitle=quarto-callout-color!10!white, bottomrule=.15mm, colframe=quarto-callout-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Theorem}, colbacktitle=quarto-callout-color!10!white, opacityback=0, colframe=quarto-callout-color-frame, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, arc=.35mm, leftrule=.75mm, breakable, toprule=.15mm, bottomrule=.15mm, opacitybacktitle=0.6, left=2mm, colback=white]
 
 Предположим, что \(f\) является гладкой и сильно выпуклой и что
 
@@ -1275,7 +1240,7 @@ x_{k+1} &= (x_k + d_k)^+ \qquad &\text{Ускоренный градиентны
 \subsection{Сходимость для выпуклых
 функций}\label{ux441ux445ux43eux434ux438ux43cux43eux441ux442ux44c-ux434ux43bux44f-ux432ux44bux43fux443ux43aux43bux44bux445-ux444ux443ux43dux43aux446ux438ux439}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacityback=0, toptitle=1mm, colback=white, bottomtitle=1mm, toprule=.15mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Theorem}, rightrule=.15mm, left=2mm, breakable, coltitle=black, arc=.35mm, leftrule=.75mm, colbacktitle=quarto-callout-color!10!white, bottomrule=.15mm, colframe=quarto-callout-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Theorem}, colbacktitle=quarto-callout-color!10!white, opacityback=0, colframe=quarto-callout-color-frame, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, arc=.35mm, leftrule=.75mm, breakable, toprule=.15mm, bottomrule=.15mm, opacitybacktitle=0.6, left=2mm, colback=white]
 
 Предположим, что \(f : \mathbb{R}^n \rightarrow \mathbb{R}\) является
 выпуклой и \(L\)-гладкой. Ускоренный градиентный метод Нестерова (NAG)
@@ -1299,7 +1264,7 @@ f(x_k) - f^* \leq \frac{2L \|x_0 - x^*\|^2}{k^2}
 \subsection{Ускоренная сходимость для сильно выпуклых
 функций}\label{ux443ux441ux43aux43eux440ux435ux43dux43dux430ux44f-ux441ux445ux43eux434ux438ux43cux43eux441ux442ux44c-ux434ux43bux44f-ux441ux438ux43bux44cux43dux43e-ux432ux44bux43fux443ux43aux43bux44bux445-ux444ux443ux43dux43aux446ux438ux439}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, opacityback=0, toptitle=1mm, colback=white, bottomtitle=1mm, toprule=.15mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Theorem}, rightrule=.15mm, left=2mm, breakable, coltitle=black, arc=.35mm, leftrule=.75mm, colbacktitle=quarto-callout-color!10!white, bottomrule=.15mm, colframe=quarto-callout-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, coltitle=black, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Theorem}, colbacktitle=quarto-callout-color!10!white, opacityback=0, colframe=quarto-callout-color-frame, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, arc=.35mm, leftrule=.75mm, breakable, toprule=.15mm, bottomrule=.15mm, opacitybacktitle=0.6, left=2mm, colback=white]
 
 Предположим, что \(f : \mathbb{R}^n \rightarrow \mathbb{R}\) является
 \(\mu\)-сильно выпуклой и \(L\)-гладкой. Ускоренный градиентный метод
@@ -1332,15 +1297,7 @@ f(x_k) - f^* \leq \frac{\mu + L}{2}\|x_0 - x^*\|^2_2 \exp \left(-\frac{k}{\sqrt{
 
 \pandocbounded{\includegraphics[keepaspectratio]{agd_random_1_10_60.pdf}}
 
-\subsection{Сильно выпуклая квадратичная задача (регуляризованная
-линейная
-регрессия)}\label{ux441ux438ux43bux44cux43dux43e-ux432ux44bux43fux443ux43aux43bux430ux44f-ux43aux432ux430ux434ux440ux430ux442ux438ux447ux43dux430ux44f-ux437ux430ux434ux430ux447ux430-ux440ux435ux433ux443ux43bux44fux440ux438ux437ux43eux432ux430ux43dux43dux430ux44f-ux43bux438ux43dux435ux439ux43dux430ux44f-ux440ux435ux433ux440ux435ux441ux441ux438ux44f-1}
-
 \pandocbounded{\includegraphics[keepaspectratio]{agd_random_1_1000_60.pdf}}
-
-\subsection{Сильно выпуклая квадратичная задача (регуляризованная
-линейная
-регрессия)}\label{ux441ux438ux43bux44cux43dux43e-ux432ux44bux43fux443ux43aux43bux430ux44f-ux43aux432ux430ux434ux440ux430ux442ux438ux447ux43dux430ux44f-ux437ux430ux434ux430ux447ux430-ux440ux435ux433ux443ux43bux44fux440ux438ux437ux43eux432ux430ux43dux43dux430ux44f-ux43bux438ux43dux435ux439ux43dux430ux44f-ux440ux435ux433ux440ux435ux441ux441ux438ux44f-2}
 
 \pandocbounded{\includegraphics[keepaspectratio]{agd_random_1_1000_1000.pdf}}
 
@@ -1349,53 +1306,23 @@ f(x_k) - f^* \leq \frac{\mu + L}{2}\|x_0 - x^*\|^2_2 \exp \left(-\frac{k}{\sqrt{
 
 \pandocbounded{\includegraphics[keepaspectratio]{agd_convex_logreg_beta_0.1.pdf}}
 
-\subsection{Выпуклая бинарная логистическая
-регрессия}\label{ux432ux44bux43fux443ux43aux43bux430ux44f-ux431ux438ux43dux430ux440ux43dux430ux44f-ux43bux43eux433ux438ux441ux442ux438ux447ux435ux441ux43aux430ux44f-ux440ux435ux433ux440ux435ux441ux441ux438ux44f-1}
-
 \pandocbounded{\includegraphics[keepaspectratio]{agd_convex_logreg_beta_0.2.pdf}}
-
-\subsection{Выпуклая бинарная логистическая
-регрессия}\label{ux432ux44bux43fux443ux43aux43bux430ux44f-ux431ux438ux43dux430ux440ux43dux430ux44f-ux43bux43eux433ux438ux441ux442ux438ux447ux435ux441ux43aux430ux44f-ux440ux435ux433ux440ux435ux441ux441ux438ux44f-2}
 
 \pandocbounded{\includegraphics[keepaspectratio]{agd_convex_logreg_beta_0.3.pdf}}
 
-\subsection{Выпуклая бинарная логистическая
-регрессия}\label{ux432ux44bux43fux443ux43aux43bux430ux44f-ux431ux438ux43dux430ux440ux43dux430ux44f-ux43bux43eux433ux438ux441ux442ux438ux447ux435ux441ux43aux430ux44f-ux440ux435ux433ux440ux435ux441ux441ux438ux44f-3}
-
 \pandocbounded{\includegraphics[keepaspectratio]{agd_convex_logreg_beta_0.4.pdf}}
-
-\subsection{Выпуклая бинарная логистическая
-регрессия}\label{ux432ux44bux43fux443ux43aux43bux430ux44f-ux431ux438ux43dux430ux440ux43dux430ux44f-ux43bux43eux433ux438ux441ux442ux438ux447ux435ux441ux43aux430ux44f-ux440ux435ux433ux440ux435ux441ux441ux438ux44f-4}
 
 \pandocbounded{\includegraphics[keepaspectratio]{agd_convex_logreg_beta_0.5.pdf}}
 
-\subsection{Выпуклая бинарная логистическая
-регрессия}\label{ux432ux44bux43fux443ux43aux43bux430ux44f-ux431ux438ux43dux430ux440ux43dux430ux44f-ux43bux43eux433ux438ux441ux442ux438ux447ux435ux441ux43aux430ux44f-ux440ux435ux433ux440ux435ux441ux441ux438ux44f-5}
-
 \pandocbounded{\includegraphics[keepaspectratio]{agd_convex_logreg_beta_0.6.pdf}}
-
-\subsection{Выпуклая бинарная логистическая
-регрессия}\label{ux432ux44bux43fux443ux43aux43bux430ux44f-ux431ux438ux43dux430ux440ux43dux430ux44f-ux43bux43eux433ux438ux441ux442ux438ux447ux435ux441ux43aux430ux44f-ux440ux435ux433ux440ux435ux441ux441ux438ux44f-6}
 
 \pandocbounded{\includegraphics[keepaspectratio]{agd_convex_logreg_beta_0.7.pdf}}
 
-\subsection{Выпуклая бинарная логистическая
-регрессия}\label{ux432ux44bux43fux443ux43aux43bux430ux44f-ux431ux438ux43dux430ux440ux43dux430ux44f-ux43bux43eux433ux438ux441ux442ux438ux447ux435ux441ux43aux430ux44f-ux440ux435ux433ux440ux435ux441ux441ux438ux44f-7}
-
 \pandocbounded{\includegraphics[keepaspectratio]{agd_convex_logreg_beta_0.8.pdf}}
-
-\subsection{Выпуклая бинарная логистическая
-регрессия}\label{ux432ux44bux43fux443ux43aux43bux430ux44f-ux431ux438ux43dux430ux440ux43dux430ux44f-ux43bux43eux433ux438ux441ux442ux438ux447ux435ux441ux43aux430ux44f-ux440ux435ux433ux440ux435ux441ux441ux438ux44f-8}
 
 \pandocbounded{\includegraphics[keepaspectratio]{agd_convex_logreg_beta_0.9.pdf}}
 
-\subsection{Выпуклая бинарная логистическая
-регрессия}\label{ux432ux44bux43fux443ux43aux43bux430ux44f-ux431ux438ux43dux430ux440ux43dux430ux44f-ux43bux43eux433ux438ux441ux442ux438ux447ux435ux441ux43aux430ux44f-ux440ux435ux433ux440ux435ux441ux441ux438ux44f-9}
-
 \pandocbounded{\includegraphics[keepaspectratio]{agd_convex_logreg_beta_0.95.pdf}}
-
-\subsection{Выпуклая бинарная логистическая
-регрессия}\label{ux432ux44bux43fux443ux43aux43bux430ux44f-ux431ux438ux43dux430ux440ux43dux430ux44f-ux43bux43eux433ux438ux441ux442ux438ux447ux435ux441ux43aux430ux44f-ux440ux435ux433ux440ux435ux441ux441ux438ux44f-10}
 
 \pandocbounded{\includegraphics[keepaspectratio]{agd_convex_logreg_beta_0.99.pdf}}
 
@@ -1404,18 +1331,9 @@ f(x_k) - f^* \leq \frac{\mu + L}{2}\|x_0 - x^*\|^2_2 \exp \left(-\frac{k}{\sqrt{
 
 \pandocbounded{\includegraphics[keepaspectratio]{agd_strongly_convex_logreg_0.25.pdf}}
 
-\subsection{Сильно выпуклая бинарная логистическая
-регрессия}\label{ux441ux438ux43bux44cux43dux43e-ux432ux44bux43fux443ux43aux43bux430ux44f-ux431ux438ux43dux430ux440ux43dux430ux44f-ux43bux43eux433ux438ux441ux442ux438ux447ux435ux441ux43aux430ux44f-ux440ux435ux433ux440ux435ux441ux441ux438ux44f-1}
-
 \pandocbounded{\includegraphics[keepaspectratio]{agd_strongly_convex_logreg_0.5.pdf}}
 
-\subsection{Сильно выпуклая бинарная логистическая
-регрессия}\label{ux441ux438ux43bux44cux43dux43e-ux432ux44bux43fux443ux43aux43bux430ux44f-ux431ux438ux43dux430ux440ux43dux430ux44f-ux43bux43eux433ux438ux441ux442ux438ux447ux435ux441ux43aux430ux44f-ux440ux435ux433ux440ux435ux441ux441ux438ux44f-2}
-
 \pandocbounded{\includegraphics[keepaspectratio]{agd_strongly_convex_logreg_0.7.pdf}}
-
-\subsection{Сильно выпуклая бинарная логистическая
-регрессия}\label{ux441ux438ux43bux44cux43dux43e-ux432ux44bux43fux443ux43aux43bux430ux44f-ux431ux438ux43dux430ux440ux43dux430ux44f-ux43bux43eux433ux438ux441ux442ux438ux447ux435ux441ux43aux430ux44f-ux440ux435ux433ux440ux435ux441ux441ux438ux44f-3}
 
 \pandocbounded{\includegraphics[keepaspectratio]{agd_strongly_convex_logreg_0.9.pdf}}
 
