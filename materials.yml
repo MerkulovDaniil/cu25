@@ -88,8 +88,8 @@
 
 - title: Повторение пройденого материала. Ответы на вопросы (Магистратура)
   number: 8.1
-  materials: 
-  notes
+  # materials: 
+  # notes:
   # longread: /longreads/8.pdf
   # materials: /lectures/8.pdf
   # materials_cu: /lectures/8-cu.pdf
