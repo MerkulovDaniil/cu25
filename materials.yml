@@ -40,7 +40,7 @@
   seminar: /seminars/4.pdf
   seminar_cu: /seminars/4-cu.pdf
   seminar_cu_maga: /seminars/4-cu-maga.pdf
-  # notes: /notes/4.pdf
+  notes: /notes/4.pdf
 
 - title: Условия оптимальности. Функция Лагранжа. Задачи с ограничениями-равенствами. Задачи с ограничениями-равенствами. Теорема Каруша - Куна - Таккера.
   number: 5
@@ -48,7 +48,7 @@
   materials: /lectures/5.pdf
   materials_cu: /lectures/5-cu.pdf
   materials_cu_maga: /lectures/5-cu-maga.pdf
-  # notes: /notes/5.pdf
+  notes: /notes/5.pdf
   seminar: /seminars/5.pdf
   seminar_cu: /seminars/5-cu.pdf
   seminar_cu_maga: /seminars/5-cu-maga.pdf
@@ -59,23 +59,23 @@
   materials: /lectures/6.pdf
   materials_cu: /lectures/6-cu.pdf
   materials_cu_maga: /lectures/6-cu-maga.pdf
-  # notes: /notes/6.pdf
+  notes: /notes/6.pdf
   seminar: /seminars/6.pdf
   seminar_cu: /seminars/6-cu.pdf
   seminar_cu_maga: /seminars/6-cu-maga.pdf
 
-- title: Градиентный спуск. Теоремы сходимости в гладком случае (выпуклые, сильно выпуклые, PL). Верхние и нижние оценки сходимости.
+- title: Введение в градиентный спуск.
   number: 7
   longread: /longreads/7.pdf
   materials: /lectures/7.pdf
   materials_cu: /lectures/7-cu.pdf
   materials_cu_maga: /lectures/7-cu-maga.pdf
-  # notes: /notes/7.pdf
+  notes: /notes/7.pdf
   seminar: /seminars/7.pdf
   seminar_cu: /seminars/7-cu.pdf
   seminar_cu_maga: /seminars/7-cu-maga.pdf
 
-- title: Ускоренные градиентные методы. Метод Поляка, Нестерова.
+- title: Теоремы сходимости в гладком случае (выпуклые, сильно выпуклые, PL). Верхние и нижние оценки сходимости. Ускоренные градиентные методы.
   number: 8
   longread: /longreads/8.pdf
   materials: /lectures/8.pdf
@@ -85,6 +85,19 @@
   seminar: /seminars/8.pdf
   seminar_cu: /seminars/8-cu.pdf
   seminar_cu_maga: /seminars/8-cu-maga.pdf
+
+- title: Повторение пройденого материала. Ответы на вопросы (Магистратура)
+  number: 8.1
+  materials: 
+  notes
+  # longread: /longreads/8.pdf
+  # materials: /lectures/8.pdf
+  # materials_cu: /lectures/8-cu.pdf
+  # materials_cu_maga: /lectures/8-cu-maga.pdf
+  # notes: /notes/8.pdf
+  # seminar: /seminars/8.pdf
+  # seminar_cu: /seminars/8-cu.pdf
+  # seminar_cu_maga: /seminars/8-cu-maga.pdf
 
 - title: Метод сопряженных градиентов.
   number: 9
