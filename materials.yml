@@ -75,7 +75,7 @@
   seminar_cu: /seminars/7-cu.pdf
   seminar_cu_maga: /seminars/7-cu-maga.pdf
 
-- title: Теоремы сходимости в гладком случае (выпуклые, сильно выпуклые, PL). Верхние и нижние оценки сходимости. Ускоренные градиентные методы.
+- title: Теоремы сходимости в гладком случае (выпуклые, сильно выпуклые, PL). Верхние и нижние оценки сходимости.
   number: 8
   longread: /longreads/8.pdf
   materials: /lectures/8.pdf
@@ -98,7 +98,7 @@
   # seminar_cu: /seminars/8-cu.pdf
   # seminar_cu_maga: /seminars/8-cu-maga.pdf
 
-- title: Метод сопряженных градиентов.
+- title: Ускоренные градиентные методы. Идея метода сопряженных градиентов.
   number: 9
   longread: /longreads/9.pdf
   materials: /lectures/9.pdf
