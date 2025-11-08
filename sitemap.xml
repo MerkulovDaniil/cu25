@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://cu25.fmin.xyz/notebooks/hw8prep.html</loc>
-    <lastmod>2025-11-07T13:40:43.903Z</lastmod>
-  </url>
-  <url>
-    <loc>https://cu25.fmin.xyz/index.html</loc>
-    <lastmod>2025-11-07T13:40:43.887Z</lastmod>
-  </url>
-  <url>
-    <loc>https://cu25.fmin.xyz/homework.html</loc>
-    <lastmod>2025-11-07T13:40:43.886Z</lastmod>
-  </url>
-  <url>
-    <loc>https://cu25.fmin.xyz/program.html</loc>
-    <lastmod>2025-11-07T13:40:44.646Z</lastmod>
-  </url>
-  <url>
-    <loc>https://cu25.fmin.xyz/short_program.html</loc>
-    <lastmod>2025-11-07T13:40:44.658Z</lastmod>
+    <loc>https://cu25.fmin.xyz/notebooks/hw10.html</loc>
+    <lastmod>2025-11-08T10:22:11.790Z</lastmod>
   </url>
   <url>
     <loc>https://cu25.fmin.xyz/notebooks/hw2task2.html</loc>
-    <lastmod>2025-11-07T13:40:43.902Z</lastmod>
+    <lastmod>2025-11-08T10:22:11.792Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cu25.fmin.xyz/short_program.html</loc>
+    <lastmod>2025-11-08T10:22:12.661Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cu25.fmin.xyz/program.html</loc>
+    <lastmod>2025-11-08T10:22:12.647Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cu25.fmin.xyz/homework.html</loc>
+    <lastmod>2025-11-08T10:22:11.774Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cu25.fmin.xyz/index.html</loc>
+    <lastmod>2025-11-08T10:22:11.774Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cu25.fmin.xyz/notebooks/hw8prep.html</loc>
+    <lastmod>2025-11-08T10:22:11.792Z</lastmod>
   </url>
 </urlset>
