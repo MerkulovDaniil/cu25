@@ -1,0 +1,1289 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  russian,
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+\ifLuaTeX
+\usepackage[bidi=basic,provide=*]{babel}
+\else
+\usepackage[bidi=default,provide=*]{babel}
+\fi
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\usepackage{fontspec}
+
+\setsansfont{Palatino Linotype}[
+    Path=../files/palatino/,
+    Extension = .ttf,
+    UprightFont=palatino-Roman,
+    BoldFont=palatino-Bold,
+    ItalicFont=palatino-Italic,
+    BoldItalicFont=palatino-BoldItalic
+]
+\setmainfont{Palatino Linotype}[
+    Path=../files/palatino/,
+    Extension = .ttf,
+    UprightFont=palatino-Roman,
+    BoldFont=palatino-Bold,
+    ItalicFont=palatino-Italic,
+    BoldItalicFont=palatino-BoldItalic
+]
+
+\usepackage[textwidth=0.86\paperwidth, textheight=0.86\paperheight]{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\graphicspath{{../files/}}
+
+\newcommand{\R}{\mathbb{R}}
+
+% \pagenumbering{gobble}
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\fancyhead[R]{\href{https://cu25.fmin.xyz}{\faGem[regular]} \hspace{0.04cm} \href{https://github.com/MerkulovDaniil/cu25}{\faGithub} \hspace{0.07cm} \href{https://t.me/fminxyz}{\faTelegram}}
+\fancyhead[L]{\href{https://fmin.xyz}{\includegraphics[height=0.35cm]{logo.pdf}} ~ \includegraphics[height=0.35cm]{logo_cu.pdf} \hspace{2pt} \textbf{Оптимизация для всех! ЦУ. 2025}}
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Содержание}
+\else
+  \newcommand\contentsname{Содержание}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{Список Иллюстраций}
+\else
+  \newcommand\listfigurename{Список Иллюстраций}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{Список Таблиц}
+\else
+  \newcommand\listtablename{Список Таблиц}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Рисунок}
+\else
+  \newcommand\figurename{Рисунок}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Таблица}
+\else
+  \newcommand\tablename{Таблица}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Список}
+\newcommand*\listoflistings{\listof{codelisting}{Список Каталогов}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Метод Ньютона и квазиньютоновские методы},
+  pdfauthor={Даня Меркулов, Петр Остроухов},
+  pdflang={ru},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Метод Ньютона и квазиньютоновские методы}
+\author{Даня Меркулов, Петр Остроухов}
+\date{}
+\begin{document}
+\maketitle
+
+
+\section{Метод
+Ньютона}\label{ux43cux435ux442ux43eux434-ux43dux44cux44eux442ux43eux43dux430}
+
+\subsection{Идея метода Ньютона для нахождения корней
+функции}\label{ux438ux434ux435ux44f-ux43cux435ux442ux43eux434ux430-ux43dux44cux44eux442ux43eux43dux430-ux434ux43bux44f-ux43dux430ux445ux43eux436ux434ux435ux43dux438ux44f-ux43aux43eux440ux43dux435ux439-ux444ux443ux43dux43aux446ux438ux438}
+
+\pandocbounded{\includegraphics[keepaspectratio]{newton_ru.pdf}}
+
+Рассмотрим функцию \(\varphi(x): \mathbb{R} \to \mathbb{R}\).
+
+Основная идея заключается в том, чтобы построить линейное приближение в
+точке \(x_k\) и найти его корень, который будет новой точкой итерации:
+
+\[
+\varphi'(x_k) = \frac{\varphi(x_k)}{x_k - x_{k+1}}
+\]
+
+Мы получаем итерационную схему:
+
+\[
+x_{k+1} = x_k - \dfrac{\varphi(x_k)}{\varphi'(x_k)}.
+\]
+
+Этот метод станет методом оптимизации Ньютона в случае
+\(f'(x) = \varphi(x)\)\footnote{Мы фактически решаем задачу нахождения
+  стационарных точек \(\nabla f(x) = 0\)}:
+
+\[
+x_{k+1} = x_k - \left[ \nabla^2 f(x_k)\right]^{-1} \nabla f(x_k)
+\]
+
+\subsection{Метод Ньютона как оптимизация локальной квадратичной
+аппроксимации}\label{ux43cux435ux442ux43eux434-ux43dux44cux44eux442ux43eux43dux430-ux43aux430ux43a-ux43eux43fux442ux438ux43cux438ux437ux430ux446ux438ux44f-ux43bux43eux43aux430ux43bux44cux43dux43eux439-ux43aux432ux430ux434ux440ux430ux442ux438ux447ux43dux43eux439-ux430ux43fux43fux440ux43eux43aux441ux438ux43cux430ux446ux438ux438}
+
+Пусть у нас есть функция \(f(x)\) и некоторая точка \(x_k\). Рассмотрим
+квадратичное приближение этой функции в окрестности \(x_k\):
+
+\[
+f^{II}_{x_k}(x) = f(x_k) + \langle \nabla f(x_k), x - x_k\rangle + \frac{1}{2} \langle \nabla^2 f(x_k)(x-x_k), x-x_k \rangle. 
+\]
+
+Идея метода заключается в том, чтобы найти точку \(x_{k+1}\), которая
+минимизирует функцию \(f^{II}_{x_k}(x)\), т.е.
+\(\nabla f^{II}_{x_k}(x_{k+1}) = 0\).
+
+\[
+\begin{aligned}
+ \nabla f^{II}_{x_k}(x_{k+1})  &= \nabla f(x_{k}) + \nabla^2 f(x_k)(x_{k+1} - x_k) = 0 \\ 
+ \nabla^2 f(x_k)(x_{k+1} - x_k) &= -\nabla f(x_{k}) \\ 
+ \left[ \nabla^2 f(x_k)\right]^{-1} \nabla^2 f(x_k)(x_{k+1} - x_k) &= -\left[ \nabla^2 f(x_k)\right]^{-1} \nabla f(x_{k}) \\ 
+ x_{k+1} &= x_k -\left[ \nabla^2 f(x_k)\right]^{-1} \nabla f(x_{k}). 
+\end{aligned}
+\]
+
+Необходимо отметить ограничения, связанные с необходимостью
+невырожденности (для существования метода) и положительной
+определенности (для гарантии сходимости) гессиана.
+
+\subsection{Метод Ньютона как оптимизация локальной квадратичной
+аппроксимации}\label{ux43cux435ux442ux43eux434-ux43dux44cux44eux442ux43eux43dux430-ux43aux430ux43a-ux43eux43fux442ux438ux43cux438ux437ux430ux446ux438ux44f-ux43bux43eux43aux430ux43bux44cux43dux43eux439-ux43aux432ux430ux434ux440ux430ux442ux438ux447ux43dux43eux439-ux430ux43fux43fux440ux43eux43aux441ux438ux43cux430ux446ux438ux438-1}
+
+\begin{center}
+\includegraphics[width=0.5\linewidth,height=\textheight,keepaspectratio]{newton_parabola1.pdf}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.5\linewidth,height=\textheight,keepaspectratio]{newton_parabola2.pdf}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.5\linewidth,height=\textheight,keepaspectratio]{newton_parabola3.pdf}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.5\linewidth,height=\textheight,keepaspectratio]{newton_parabola4.pdf}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.5\linewidth,height=\textheight,keepaspectratio]{newton_parabola5.pdf}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.5\linewidth,height=\textheight,keepaspectratio]{newton_parabola6.pdf}
+\end{center}
+
+\section{Свойства метода
+Ньютона}\label{ux441ux432ux43eux439ux441ux442ux432ux430-ux43cux435ux442ux43eux434ux430-ux43dux44cux44eux442ux43eux43dux430}
+
+\subsection{Квадратичная сходимость метода
+Ньютона}\label{ux43aux432ux430ux434ux440ux430ux442ux438ux447ux43dux430ux44f-ux441ux445ux43eux434ux438ux43cux43eux441ux442ux44c-ux43cux435ux442ux43eux434ux430-ux43dux44cux44eux442ux43eux43dux430}
+
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, colback=white, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Theorem}, opacitybacktitle=0.6, arc=.35mm, rightrule=.15mm, opacityback=0, colbacktitle=quarto-callout-color!10!white, breakable, coltitle=black, toptitle=1mm, toprule=.15mm, colframe=quarto-callout-color-frame, left=2mm, leftrule=.75mm, titlerule=0mm, bottomrule=.15mm]
+
+Пусть \(f(x)\) --- сильно выпуклая дважды непрерывно дифференцируемая
+функция на \(\mathbb{R}^n\), для второй производной которой выполняются
+неравенства: \(\mu I_n\preceq \nabla^2 f(x) \preceq L I_n\). Пусть также
+гессиан функции \(M\)-липшицев. Тогда метод Ньютона сходится локально к
+решению с квадратичной скоростью, т.е. при
+\(\| x_0 - x^* \| < \frac{2 \mu}{3M}\): \[
+\|x_{k+1} - x^*\| \leq \frac{3 M}{2\mu} \|x_k - x^*\|^2
+\]
+
+\end{tcolorbox}
+
+\subsection{Отсутствие квадратичной сходимости, если некоторые
+предположения
+нарушаются}\label{ux43eux442ux441ux443ux442ux441ux442ux432ux438ux435-ux43aux432ux430ux434ux440ux430ux442ux438ux447ux43dux43eux439-ux441ux445ux43eux434ux438ux43cux43eux441ux442ux438-ux435ux441ux43bux438-ux43dux435ux43aux43eux442ux43eux440ux44bux435-ux43fux440ux435ux434ux43fux43eux43bux43eux436ux435ux43dux438ux44f-ux43dux430ux440ux443ux448ux430ux44eux442ux441ux44f}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, toprule=.15mm, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, arc=.35mm, rightrule=.15mm, opacityback=0, left=2mm, breakable, leftrule=.75mm]
+\begin{minipage}[t]{5.5mm}
+\textcolor{quarto-callout-note-color}{\faInfo}
+\end{minipage}%
+\begin{minipage}[t]{\textwidth - 5.5mm}
+
+\[
+f(x) = x^4 \qquad f'(x) = 4x^3 \qquad f''(x) = 12x^2
+\]
+
+\end{minipage}%
+\end{tcolorbox}
+
+\pandocbounded{\includegraphics[keepaspectratio]{newton_linear.pdf}} \[
+x_{k+1} = x_k - \frac{f'(x_k)}{f''(x_k)} = x_k - \frac{4x_k^3}{12x_k^2} = x_k - \frac{1}{3}x_k = \frac{2}{3}x_k,
+\]
+
+сходится линейно к \(0\), единственному решению задачи, с линейной
+скоростью.
+
+\subsection{\texorpdfstring{Локальная сходимость метода Ньютона для
+гладкой сильно выпуклой
+\(f(x)\)}{Локальная сходимость метода Ньютона для гладкой сильно выпуклой f(x)}}\label{ux43bux43eux43aux430ux43bux44cux43dux430ux44f-ux441ux445ux43eux434ux438ux43cux43eux441ux442ux44c-ux43cux435ux442ux43eux434ux430-ux43dux44cux44eux442ux43eux43dux430-ux434ux43bux44f-ux433ux43bux430ux434ux43aux43eux439-ux441ux438ux43bux44cux43dux43e-ux432ux44bux43fux443ux43aux43bux43eux439-fx}
+
+\pandocbounded{\includegraphics[keepaspectratio]{newton_piecewise_parabola.pdf}}
+
+\[
+f(x) = \begin{cases}
+(x - 1)^2, & x \leq -1 \\
+2x^2 + 2, & -1 < x < 1 \\
+(x + 1)^2, & x \geq 1
+\end{cases}
+\]
+
+Эта функция сильно выпукла, но вторая производная не является
+липшицевой.
+
+\pandocbounded{\includegraphics[keepaspectratio]{newton_piecewise_parabola_non_lipshitz_hessian.pdf}}
+
+\subsection{\texorpdfstring{Локальная сходимость метода Ньютона даже
+если \(\nabla^2 f\)
+липшицев}{Локальная сходимость метода Ньютона даже если \textbackslash nabla\^{}2 f липшицев}}\label{ux43bux43eux43aux430ux43bux44cux43dux430ux44f-ux441ux445ux43eux434ux438ux43cux43eux441ux442ux44c-ux43cux435ux442ux43eux434ux430-ux43dux44cux44eux442ux43eux43dux430-ux434ux430ux436ux435-ux435ux441ux43bux438-nabla2-f-ux43bux438ux43fux448ux438ux446ux435ux432}
+
+\pandocbounded{\includegraphics[keepaspectratio]{newton_piecewise_smoooth.pdf}}
+
+\[
+f(x) = \begin{cases}
+(x - 1)^2, & x \leq -1 \\
+-\frac{1}{4}x^4 + \frac{5}{2}x^2 + \frac{7}{4}, & -1 < x < 1 \\
+(x + 1)^2, & x \geq 1
+\end{cases}
+\]
+
+Эта функция сильно выпукла и вторая производная является липшицевой.
+
+\pandocbounded{\includegraphics[keepaspectratio]{newton_piecewise_parabola_lipshitz_hessian.pdf}}
+
+\subsection{Локальная сходимость метода Ньютона. Хорошая
+инициализация}\label{ux43bux43eux43aux430ux43bux44cux43dux430ux44f-ux441ux445ux43eux434ux438ux43cux43eux441ux442ux44c-ux43cux435ux442ux43eux434ux430-ux43dux44cux44eux442ux43eux43dux430.-ux445ux43eux440ux43eux448ux430ux44f-ux438ux43dux438ux446ux438ux430ux43bux438ux437ux430ux446ux438ux44f}
+
+\begin{center}
+\includegraphics[width=0.8\linewidth,height=\textheight,keepaspectratio]{newton_iteration_0.pdf}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.8\linewidth,height=\textheight,keepaspectratio]{newton_iteration_1.pdf}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.8\linewidth,height=\textheight,keepaspectratio]{newton_iteration_2.pdf}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.8\linewidth,height=\textheight,keepaspectratio]{newton_iteration_3.pdf}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.8\linewidth,height=\textheight,keepaspectratio]{newton_iteration_4.pdf}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.8\linewidth,height=\textheight,keepaspectratio]{newton_iteration_5.pdf}
+\end{center}
+
+\subsection{Локальная сходимость метода Ньютона. Плохая
+инициализация}\label{ux43bux43eux43aux430ux43bux44cux43dux430ux44f-ux441ux445ux43eux434ux438ux43cux43eux441ux442ux44c-ux43cux435ux442ux43eux434ux430-ux43dux44cux44eux442ux43eux43dux430.-ux43fux43bux43eux445ux430ux44f-ux438ux43dux438ux446ux438ux430ux43bux438ux437ux430ux446ux438ux44f}
+
+\begin{center}
+\includegraphics[width=0.8\linewidth,height=\textheight,keepaspectratio]{newton_iteration_div_0.pdf}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.8\linewidth,height=\textheight,keepaspectratio]{newton_iteration_div_1.pdf}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.8\linewidth,height=\textheight,keepaspectratio]{newton_iteration_div_2.pdf}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.8\linewidth,height=\textheight,keepaspectratio]{newton_iteration_div_3.pdf}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.8\linewidth,height=\textheight,keepaspectratio]{newton_iteration_div_4.pdf}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.8\linewidth,height=\textheight,keepaspectratio]{newton_iteration_div_5.pdf}
+\end{center}
+
+\subsection{Проблемы метода
+Ньютона}\label{ux43fux440ux43eux431ux43bux435ux43cux44b-ux43cux435ux442ux43eux434ux430-ux43dux44cux44eux442ux43eux43dux430}
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.63\linewidth,height=\textheight,keepaspectratio]{newton_field.jpeg}
+
+}
+
+\caption{Animation
+\href{https://github.com/MerkulovDaniil/optim/raw/master/assets/Notebooks/Newton_convergence.mp4}{\faVideo}}
+
+\end{figure}%
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{inaccurate_taylor.jpeg}
+
+}
+
+\caption{Animation
+\href{https://fmin.xyz/docs/theory/inaccurate_taylor.mp4}{\faVideo}}
+
+\end{figure}%
+
+\subsection{Метод Ньютона для квадратичной задачи (линейной
+регрессии)}\label{ux43cux435ux442ux43eux434-ux43dux44cux44eux442ux43eux43dux430-ux434ux43bux44f-ux43aux432ux430ux434ux440ux430ux442ux438ux447ux43dux43eux439-ux437ux430ux434ux430ux447ux438-ux43bux438ux43dux435ux439ux43dux43eux439-ux440ux435ux433ux440ux435ux441ux441ux438ux438}
+
+\[
+\min_{x \in \mathbb{R}^n} \frac{1}{2} x^\top A x - b^\top x, \qquad A \in \mathbb{R}^{n \times n}, \quad \lambda\left(A\right) \in [\mu; L].
+\]
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{newton_random_1_10_60.pdf}}
+
+}
+
+\caption{Так как задача - квадратичная, то метод Ньютона сходится за
+один шаг.}
+
+\end{figure}%
+
+\[
+\min_{x \in \mathbb{R}^n} \frac{1}{2} x^\top A x - b^\top x, \qquad A \in \mathbb{R}^{n \times n}, \quad \lambda\left(A\right) \in [\mu; L].
+\]
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{newton_random_0_10_60.pdf}}
+
+}
+
+\caption{В этом случае метод Ньютона тоже крайне быстро сходится,
+однако, отметим, что это происходит благодаря тому, что минимальное
+собственное число гессиана не \(0\), а около \(10^{-8}\). Если применять
+метод Ньютона в наивной форме с обращением матрицы, то получится ошибка,
+так как матрица вырождена. На практике все равно можно использовать
+метод, если для направления итерации решать линейную систему
+\(\nabla^2 f(x_k) d_k = -\nabla f(x_k)\) методом наименьших квадратов.}
+
+\end{figure}%
+
+\[
+\min_{x \in \mathbb{R}^n} \frac{1}{2} x^\top A x - b^\top x, \qquad A \in \mathbb{R}^{n \times n}, \quad \lambda\left(A\right) \in [\mu; L].
+\]
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{newton_random_1_1000_60.pdf}}
+
+}
+
+\caption{Здесь число обусловленности гессиана в \(1000\) раз больше, чем
+в предыдущем случае, и метод Ньютона сходится за \(1\) итерацию.}
+
+\end{figure}%
+
+\subsection{Метод Ньютона для задачи бинарной логистической
+регрессии}\label{ux43cux435ux442ux43eux434-ux43dux44cux44eux442ux43eux43dux430-ux434ux43bux44f-ux437ux430ux434ux430ux447ux438-ux431ux438ux43dux430ux440ux43dux43eux439-ux43bux43eux433ux438ux441ux442ux438ux447ux435ux441ux43aux43eux439-ux440ux435ux433ux440ux435ux441ux441ux438ux438}
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{GD 0.09Heavy Ball. α=9.00e-02. β=9.50e-01NAG. α=9.00e-02. β=9.50e-01Newton 1_0_time.pdf}}
+
+}
+
+\caption{Наблюдается расходимость метода Ньютона. Сразу отметим, что в
+задаче нет регуляризации и гарантии сильной выпуклости. А также нет
+гарантий того, что мы инициализируем метод в окрестности решения.}
+
+\end{figure}%
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{GD 1.0Heavy Ball. α=1.00e+00. β=4.00e-01NAG. α=1.00e+00. β=4.00e-01Newton 1_0.2_time.pdf}}
+
+}
+
+\caption{Добавление регуляризации гарантирует сильную выпуклость,
+наблюдается сходимость метода Ньютона.}
+
+\end{figure}%
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{GD 0.08Heavy Ball. α=1.50e-01. β=5.00e-01NAG. α=8.00e-02. β=5.00e-01Newton 1_0.2_time_random.pdf}}
+
+}
+
+\caption{Увеличим размерность в 50 раз и наблюдаем расходимость метода
+Ньютона. Это можно связать с тем, что мы инициализируем метод в точке,
+далекой от решения}
+
+\end{figure}%
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{GD 0.012Heavy Ball. α=1.20e-02. β=5.00e-01NAG. α=1.20e-02. β=5.00e-01Newton 1_0.2_time_close.pdf}}
+
+}
+
+\caption{Не меняя задачу, изменим начальную точку и наблюдаем
+квадратичную сходимость метода Ньютона. Однако, обратите внимание на
+время работы. Уже при небольшой размерности, метод Ньютона работает
+значительно дольше, чем градиентные методы.}
+
+\end{figure}%
+
+\subsection{Задача нахождения аналитического центра
+многогранника}\label{ux437ux430ux434ux430ux447ux430-ux43dux430ux445ux43eux436ux434ux435ux43dux438ux44f-ux430ux43dux430ux43bux438ux442ux438ux447ux435ux441ux43aux43eux433ux43e-ux446ux435ux43dux442ux440ux430-ux43cux43dux43eux433ux43eux433ux440ux430ux43dux43dux438ux43aux430}
+
+Найти точку \(x \in \mathbb{R}^n\), которая максимизирует сумму
+логарифмов расстояний до границ многогранника: \[
+\max_{x} \sum_{i=1}^{m} \log(1 - a_i^T x) + \sum_{j=1}^{n} \log(1 - x_j^2)
+\] или, эквивалентно, минимизирует: \[
+\min_{x} -\sum_{i=1}^{m} \log(1 - a_i^T x) - \sum_{j=1}^{n} \log(1 - x_j^2)
+\]
+
+при ограничениях: - \(a_i^T x < 1\) для всех \(i = 1,...,m\), где
+\(a_i\) - строки матрицы \(A^T\) - \(|x_j| < 1\) для всех
+\(j = 1,...,n\)
+
+Аналитический центр многогранника - это точка, которая максимально
+удалена от всех границ многогранника в смысле логарифмического барьера.
+Эта концепция широко используется в методах внутренней точки для
+выпуклой оптимизации.
+
+\pandocbounded{\includegraphics[keepaspectratio]{anal_center.pdf}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{GD, α=0.005Heavy Ball, α=0.005, β=0.33NAG, α=0.005, β=0.33Newton, damping=1.0anal_center_20_100.pdf}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{GD, α=0.00015Heavy Ball, α=0.00015, β=0.79NAG, α=0.00015, β=0.79Newton, damping=1.0anal_center_200_1000.pdf}}
+
+\subsection{Аффинная инвариантность метода
+Ньютона}\label{ux430ux444ux444ux438ux43dux43dux430ux44f-ux438ux43dux432ux430ux440ux438ux430ux43dux442ux43dux43eux441ux442ux44c-ux43cux435ux442ux43eux434ux430-ux43dux44cux44eux442ux43eux43dux430}
+
+Важным свойством метода Ньютона является \textbf{аффинная
+инвариантность}. Пусть дана функция \(f\) и невырожденная матрица
+\(A \in \mathbb{R}^{n \times n}\), пусть \(x = Ay\), и пусть
+\(g(y) = f(Ay)\). Заметим, что \(\nabla g(y) = A^T \nabla f(x)\) и
+\(\nabla^2 g(y) = A^T \nabla^2 f(x) A\). Шаги Ньютона на \(g\)
+выражаются как: \[
+y_{k+1} = y_k - \left(\nabla^2 g(y_k)\right)^{-1} \nabla g(y_k)
+\]
+
+Раскрывая это, мы получаем: \[
+y_{k+1} = y_k - \left(A^T \nabla^2 f(Ay_k) A\right)^{-1} A^T \nabla f(Ay_k)
+\]
+
+Используя свойство обратной матрицы \((AB)^{-1} = B^{-1} A^{-1}\), это
+упрощается до: \[
+\begin{aligned}
+y_{k+1} = y_k - A^{-1} \left(\nabla^2 f(Ay_k)\right)^{-1} \nabla f(Ay_k) \\
+Ay_{k+1} = Ay_k - \left(\nabla^2 f(Ay_k)\right)^{-1} \nabla f(Ay_k) 
+\end{aligned}
+\]
+
+Таким образом, правило обновления для \(x\) выглядит так: \[
+x_{k+1} = x_k - \left(\nabla^2 f(x_k)\right)^{-1} \nabla f(x_k)
+\]
+
+Это показывает, что итерация метода Ньютона, не зависит от масштаба
+задачи. У градиентного спуска такого свойства нет!
+
+\subsection{Резюме}\label{ux440ux435ux437ux44eux43cux435}
+
+Плюсы:
+
+\begin{itemize}
+\tightlist
+\item
+  Квадратичная сходимость вблизи решения \(x^*\)
+\item
+  Аффинная инвариантность
+\item
+  Отсутствие параметров у метода
+\item
+  Сходимость можно сделать глобальной, если использовать демпфированный
+  метод Ньютона (добавить процедуру линейного поиска и шага метода)
+\end{itemize}
+
+Минусы:
+
+\begin{itemize}
+\tightlist
+\item
+  Необходимо хранить (обратный) гессиан на каждой итерации:
+  \(\mathcal{O}(n^2)\) памяти
+\item
+  Необходимо решать линейные системы: \(\mathcal{O}(n^3)\) операций
+\item
+  Гессиан может быть вырожденным в \(x^*\)
+\item
+  Гессиан может не быть положительно определенным \(\to\) направление
+  \(-(f''(x))^{-1}f'(x)\) может не быть направлением спуска
+\end{itemize}
+
+\section{Квазиньютоновские
+методы}\label{ux43aux432ux430ux437ux438ux43dux44cux44eux442ux43eux43dux43eux432ux441ux43aux438ux435-ux43cux435ux442ux43eux434ux44b}
+
+\subsection{Интуиция квазиньютоновских
+методов}\label{ux438ux43dux442ux443ux438ux446ux438ux44f-ux43aux432ux430ux437ux438ux43dux44cux44eux442ux43eux43dux43eux432ux441ux43aux438ux445-ux43cux435ux442ux43eux434ux43eux432}
+
+Для классической задачи безусловной оптимизации
+\(f(x) \to \min\limits_{x \in \mathbb{R}^n}\) общий алгоритм
+итерационного метода записывается как: \[
+x_{k+1} = x_k + \alpha_k d_k
+\] В методе Ньютона направление \(d_k\) (направление Ньютона)
+устанавливается решением линейной системы на каждом шаге: \[
+B_k d_k = - \nabla f(x_k), \;\;\; B_k = \nabla^2 f(x_k)
+\] т.е. на каждой итерации необходимо \textbf{вычислить} гессиан и
+градиент и \textbf{решить} линейную систему. Обратите внимание, что если
+мы возьмем единичную матрицу \(B_k = I_n\) в качестве \(B_k\) на каждом
+шаге, мы получим точно метод градиентного спуска.
+
+Общий алгоритм квазиньютоновских методов основан на выборе матрицы
+\(B_k\) так, чтобы она в некотором смысле стремилась к истинному
+значению гессиана \(\nabla^2 f(x_k)\) при \(k \to \infty\). Конечно,
+важно при этом сделать так, чтобы вычисления были не слишком дорогими.
+
+\subsection{Схема построения квазиньютоновских
+методов}\label{ux441ux445ux435ux43cux430-ux43fux43eux441ux442ux440ux43eux435ux43dux438ux44f-ux43aux432ux430ux437ux438ux43dux44cux44eux442ux43eux43dux43eux432ux441ux43aux438ux445-ux43cux435ux442ux43eux434ux43eux432}
+
+Пусть \(x_{0} \in \mathbb{R}^n\), \(B_{0} \succ 0\). Для
+\(k = 1, 2, 3, \dots\), повторяем:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Решить \(B_{k} d_{k} = -\nabla f(x_{k})\)
+\item
+  Обновить \(x_{k+1} = x_{k} + \alpha_k d_{k}\)
+\item
+  Вычислить \(B_{k+1}\) из \(B_{k}\)
+\end{enumerate}
+
+Разные квазиньютоновские методы реализуют шаг 3 по-разному. Мы скоро
+увидим, что часто можно вычислить \((B_{k+1})^{-1}\) из
+\((B_{k})^{-1}\).
+
+\textbf{Основная идея:} Поскольку \(B_{k}\) уже содержит информацию о
+гессиане, используем подходящее обновление матрицы для формирования
+\(B_{k+1}\).
+
+\textbf{Разумное требование для \(B_{k+1}\)} (вдохновленное методом
+секущих): \[
+\begin{aligned}
+\nabla f(x_{k+1}) - \nabla f(x_{k}) &= B_{k+1} (x_{k+1} - x_k) =  B_{k+1} d_{k} \\
+\Delta y_k &= B_{k+1} \Delta x_k
+\end{aligned}
+\]
+
+Помимо уравнения секущей, мы хотим наложить следующие ограничения на
+\(B_{k+1}\):
+
+\begin{itemize}
+\tightlist
+\item
+  \(B_{k+1}\) должна быть симметричной
+\item
+  \(B_{k+1}\) близка к \(B_k\)
+\item
+  \(B_k \succ 0 \Rightarrow B_{k+1} \succ 0\)
+\end{itemize}
+
+\subsection{Cимметричное одноранговое
+обновление}\label{cux438ux43cux43cux435ux442ux440ux438ux447ux43dux43eux435-ux43eux434ux43dux43eux440ux430ux43dux433ux43eux432ux43eux435-ux43eux431ux43dux43eux432ux43bux435ux43dux438ux435}
+
+Попробуем обновление вида: \[
+B_{k+1} = B_k + a u u^T
+\] Уравнение секущей \(B_{k+1} d_k = \Delta y_k\) дает: \[
+(a u^T d_k) u = \Delta y_k - B_k d_k
+\] Это верно только если \(u\) кратно \(\Delta y_k - B_k d_k\). Положив
+\(u = \Delta y_k - B_k d_k\), мы решаем уравнение, \[
+a = \frac{1}{(\Delta y_k - B_k d_k)^T d_k},
+\] что приводит к \[
+B_{k+1} = B_k +  \frac{(\Delta y_k - B_k d_k)(\Delta y_k - B_k d_k)^T}{(\Delta y_k - B_k d_k)^T d_k}
+\]
+
+Это называется симметричным одноранговым (SR1) обновлением или методом
+Бройдена.
+
+\subsection{Симметричное одноранговое обновление для обратной
+матрицы}\label{ux441ux438ux43cux43cux435ux442ux440ux438ux447ux43dux43eux435-ux43eux434ux43dux43eux440ux430ux43dux433ux43eux432ux43eux435-ux43eux431ux43dux43eux432ux43bux435ux43dux438ux435-ux434ux43bux44f-ux43eux431ux440ux430ux442ux43dux43eux439-ux43cux430ux442ux440ux438ux446ux44b}
+
+Как мы можем решить \[
+B_{k+1} d_{k+1} = -\nabla f(x_{k+1}),
+\] чтобы сделать следующий шаг? Помимо вывода \(B_{k+1}\) из \(B_k\),
+давайте получим выражения для вывода обратной матрицы, т.е.
+\(C_{k+1} = (B_{k+1})^{-1}\) из \(C_k = B_k^{-1}\).
+
+\subsubsection{Формула
+Шермана-Моррисона:}\label{ux444ux43eux440ux43cux443ux43bux430-ux448ux435ux440ux43cux430ux43dux430-ux43cux43eux440ux440ux438ux441ux43eux43dux430}
+
+Формула Шермана-Моррисона утверждает:
+
+\[
+(A + uv^T)^{-1} = A^{-1} - \frac{A^{-1}uv^T A^{-1}}{1 + v^T A^{-1}u}
+\]
+
+Таким образом, для SR1 обновления, обратная матрица также легко
+обновляется: \[
+C_{k+1} = C_k + \frac{(d_k - C_k \Delta y_k)(d_k - C_k \Delta y_k)^T}{(d_k - C_k \Delta y_k)^T \Delta y_k}
+\] SR1 прост и дешев, но у него есть ключевой недостаток: он не
+сохраняет положительную определенность.
+
+\subsection{Обновление
+Давидона-Флетчера-Пауэлла}\label{ux43eux431ux43dux43eux432ux43bux435ux43dux438ux435-ux434ux430ux432ux438ux434ux43eux43dux430-ux444ux43bux435ux442ux447ux435ux440ux430-ux43fux430ux443ux44dux43bux43bux430}
+
+Мы могли бы продолжить ту же идею для обновления обратной матрицы \(C\):
+\[
+C_{k+1} = C_k + a u u^T + b v v^T.
+\]
+
+Умножая на \(\Delta y_k\), используя уравнение секущей
+\(d_k = C_k \Delta y_k\) и решая для \(a\), \(b\), получаем: \[
+C_{k+1} = C_k - \frac{C_k \Delta y_k \Delta y_k^T C_k}{\Delta y_k^T C_k \Delta y_k} + \frac{d_k d_k^T}{\Delta y_k^T d_k}
+\]
+
+\subsubsection{Применение формулы
+Вудбери}\label{ux43fux440ux438ux43cux435ux43dux435ux43dux438ux435-ux444ux43eux440ux43cux443ux43bux44b-ux432ux443ux434ux431ux435ux440ux438}
+
+Формула Вудбери для обновления обратной матрицы:
+
+\[
+B_{k+1} = \left(I - \frac{\Delta y_k d_k^T}{\Delta y_k^T d_k}\right)B_k\left(I - \frac{d_k \Delta y_k^T}{\Delta y_k^T d_k}\right) + \frac{\Delta y_k \Delta y_k^T}{\Delta y_k^T d_k}
+\] Это обновление Давидона-Флетчера-Пауэлла (DFP). Также дешево:
+\(O(n^2)\), но сохраняет положительную определенность. Не так популярно,
+как BFGS.
+
+\subsection{Обновление Бройдена --- Флетчера --- Гольдфарба ---
+Шанно}\label{ux43eux431ux43dux43eux432ux43bux435ux43dux438ux435-ux431ux440ux43eux439ux434ux435ux43dux430-ux444ux43bux435ux442ux447ux435ux440ux430-ux433ux43eux43bux44cux434ux444ux430ux440ux431ux430-ux448ux430ux43dux43dux43e}
+
+Попробуем теперь двухранговое обновление: \[
+B_{k+1} = B_k + a u u^T + b v v^T.
+\] Уравнение секущей \(\Delta y_k = B_{k+1} d_k\) дает: \[
+\Delta y_k - B_k d_k = (a u^T d_k) u + (b v^T d_k) v
+\] Положив \(u = \Delta y_k\), \(v = B_k d_k\) и решая для \(a\), \(b\),
+получаем: \[
+B_{k+1} = B_k - \frac{B_k d_k d_k^T B_k}{d_k^T B_k d_k} + \frac{\Delta y_k \Delta y_k^T}{d_k^T \Delta y_k}
+\] Это обновление Бройдена --- Флетчера --- Гольдфарба --- Шанно (BFGS).
+
+\subsection{Обновление Бройдена --- Флетчера --- Гольдфарба --- Шанно с
+инверсией}\label{ux43eux431ux43dux43eux432ux43bux435ux43dux438ux435-ux431ux440ux43eux439ux434ux435ux43dux430-ux444ux43bux435ux442ux447ux435ux440ux430-ux433ux43eux43bux44cux434ux444ux430ux440ux431ux430-ux448ux430ux43dux43dux43e-ux441-ux438ux43dux432ux435ux440ux441ux438ux435ux439}
+
+\subsubsection{Формула
+Вудбери}\label{ux444ux43eux440ux43cux443ux43bux430-ux432ux443ux434ux431ux435ux440ux438}
+
+Формула Вудбери, обобщение формулы Шермана-Моррисона, дается как: \[
+(A + UCV)^{-1} = A^{-1} - A^{-1}U(C^{-1} + V A^{-1}U)^{-1}V A^{-1}
+\] Примененная к нашему случаю, мы получаем двухранговое обновление на
+обратной матрице \(C\): \[
+C_{k+1} = C_k + \frac{(d_k - C_k \Delta y_k) d_k^T}{\Delta y_k^T d_k} + \frac{d_k (d_k - C_k \Delta y_k)^T}{\Delta y_k^T d_k} - \frac{(d_k - C_k \Delta y_k)^T \Delta y_k}{(\Delta y_k^T d_k)^2} d_k d_k^T
+\]
+
+\[
+C_{k+1} = \left(I - \frac{d_k \Delta y_k^T}{\Delta y_k^T d_k}\right) C_k \left(I - \frac{\Delta y_k d_k^T}{\Delta y_k^T d_k}\right) + \frac{d_k d_k^T}{\Delta y_k^T d_k}
+\]
+
+Эта формулировка обеспечивает, что обновление BFGS, оставаясь достаточно
+общим, сохраняет вычислительную эффективность и требует \(O(n^2)\)
+операций. Важно, что обновление BFGS сохраняет положительную
+определенность: \(B_k \succ 0 \Rightarrow B_{k+1} \succ 0.\)
+Эквивалентно, \(C_k \succ 0 \Rightarrow C_{k+1} \succ 0\)
+
+\subsection{Код}\label{ux43aux43eux434}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://colab.research.google.com/github/MerkulovDaniil/optim/blob/master/assets/Notebooks/Quasi_Newton.ipynb}{Открыть
+  в Colab}
+\item
+  \href{https://nbviewer.jupyter.org/github/fabianp/pytron/blob/master/doc/benchmark_logistic.ipynb}{Сравнение
+  квазиньютоновских методов}
+\item
+  \href{https://colab.research.google.com/github/MerkulovDaniil/optim/blob/master/assets/Notebooks/Newton.ipynb}{Некоторые
+  практические замечания о методе Ньютона}
+\end{itemize}
+
+\section{Бонус:
+доказательства}\label{ux431ux43eux43dux443ux441-ux434ux43eux43aux430ux437ux430ux442ux435ux43bux44cux441ux442ux432ux430}
+
+\subsection{Квадратичная сходимость метода
+Ньютона}\label{ux43aux432ux430ux434ux440ux430ux442ux438ux447ux43dux430ux44f-ux441ux445ux43eux434ux438ux43cux43eux441ux442ux44c-ux43cux435ux442ux43eux434ux430-ux43dux44cux44eux442ux43eux43dux430-1}
+
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, colback=white, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Theorem}, opacitybacktitle=0.6, arc=.35mm, rightrule=.15mm, opacityback=0, colbacktitle=quarto-callout-color!10!white, breakable, coltitle=black, toptitle=1mm, toprule=.15mm, colframe=quarto-callout-color-frame, left=2mm, leftrule=.75mm, titlerule=0mm, bottomrule=.15mm]
+
+Пусть \(f(x)\) --- сильно выпуклая дважды непрерывно дифференцируемая
+функция на \(\mathbb{R}^n\), для второй производной которой выполняются
+неравенства: \(\mu I_n\preceq \nabla^2 f(x) \preceq L I_n\). Пусть также
+гессиан функции \(M\)-липшицев. Тогда метод Ньютона сходится локально к
+решению с квадратичной скоростью, т.е. при
+\(\| x_0 - x^* \| < \frac{2 \mu}{3M}\): \[
+\|x_{k+1} - x^*\| \leq \frac{3 M}{2\mu} \|x_k - x^*\|^2
+\]
+
+\end{tcolorbox}
+
+\textbf{Доказательство}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Мы будем использовать формулу Ньютона-Лейбница \[
+   \nabla f(x_{k}) - \nabla f(x^*) = \int_0^1 \nabla^2 f(x^* + \tau (x_k - x^*))  (x_k - x^*) d\tau
+   \]
+\item
+  Мы будем отслеживать расстояние до решения \[
+   \begin{aligned} 
+    x_{k+1} - x^* = x_k -\left[ \nabla^2 f(x_k)\right]^{-1} \nabla f(x_{k}) - x^* = x_k - x^* -\left[ \nabla^2 f(x_k)\right]^{-1} \nabla f(x_{k}) = \\ 
+    = x_k - x^* - \left[ \nabla^2 f(x_k)\right]^{-1}  \int_0^1 \nabla^2 f(x^* + \tau (x_k - x^*))  (x_k - x^*) d\tau 
+   \end{aligned} 
+   \]
+\end{enumerate}
+
+\subsection{Сходимость}\label{ux441ux445ux43eux434ux438ux43cux43eux441ux442ux44c}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\item
+  \[
+   \begin{aligned}
+   = \left( I - \left[ \nabla^2 f(x_k)\right]^{-1} \int_0^1 \nabla^2 f(x^* + \tau (x_k - x^*)) d \tau\right) (x_k - x^*)= \\
+   = \left[ \nabla^2 f(x_k)\right]^{-1} \left( \nabla^2 f(x_k) - \int_0^1 \nabla^2 f(x^* + \tau (x_k - x^*)) d \tau\right) (x_k - x^*) = \\ 
+   = \left[ \nabla^2 f(x_k)\right]^{-1} \left( \int_0^1 \left( \nabla^2 f(x_k) - \nabla^2 f(x^* + \tau (x_k - x^*)) d \tau\right)\right) (x_k - x^*)= \\ 
+   = \left[ \nabla^2 f(x_k)\right]^{-1} G_k (x_k - x^*) 
+   \end{aligned}
+   \]
+\item
+  Введём: \[
+   G_k = \int_0^1 \left( \nabla^2 f(x_k) - \nabla^2 f(x^* + \tau (x_k - x^*)) d \tau\right).
+   \]
+\end{enumerate}
+
+\subsection{Сходимость}\label{ux441ux445ux43eux434ux438ux43cux43eux441ux442ux44c-1}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\item
+  Попробуем оценить размер \(G_k\) с помощью \(r_k = \| x_k - x^* \|\):
+  \[
+   \begin{aligned} 
+    \| G_k\| = \left\| \int_0^1 \left( \nabla^2 f(x_k) - \nabla^2 f(x^* + \tau (x_k - x^*)) d \tau\right)\right\| \leq \\ 
+   \leq \int_0^1 \left\| \nabla^2 f(x_k) - \nabla^2 f(x^* + \tau (x_k - x^*))   \right\|d\tau \leq \qquad \text{(Липшицевость гессиана)}\\ 
+   \leq \int_0^1 M\|x_k - x^* - \tau (x_k - x^*)\| d \tau = \int_0^1 M\|x_k - x^*\|(1- \tau)d \tau = \frac{r_k}{2}M, 
+   \end{aligned} 
+   \]
+\item
+  Получаем: \[ 
+   r_{k+1}  \leq \left\|\left[ \nabla^2 f(x_k)\right]^{-1}\right\| \cdot \frac{r_k}{2}M \cdot r_k 
+   \] и нам нужно оценить норму обратного гессиана
+\end{enumerate}
+
+\subsection{Сходимость}\label{ux441ux445ux43eux434ux438ux43cux43eux441ux442ux44c-2}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  Из липшицевости и симметричности гессиана: \[
+   \begin{aligned} 
+   \nabla^2 f(x_k) - \nabla^2 f(x^*) \succeq - Mr_k I_n \\ 
+   \nabla^2 f(x_k) \succeq \nabla^2 f(x^*) - Mr_k I_n \\ 
+   \nabla^2 f(x_k) \succeq \mu I_n - Mr_k I_n \\ 
+   \nabla^2 f(x_k) \succeq (\mu- Mr_k )I_n \\ 
+   \end{aligned} 
+   \]
+\item
+  Из сильной выпуклости следует, что \(\nabla^2 f(x_k) \succ 0\), т.е.
+  \(r_k < \frac{\mu}{M}\). \[
+   \begin{aligned} 
+   \left\|\left[ \nabla^2 f(x_k)\right]^{-1}\right\| \leq (\mu - Mr_k)^{-1} \\
+   r_{k+1}  \leq \dfrac{r_k^2 M}{2(\mu - Mr_k)} 
+   \end{aligned} 
+   \]
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{8}
+\item
+  Потребуем, чтобы верхняя оценка на \(r_{k+1}\) была меньше \(r_k\),
+  учитывая, что \(0 <r_k < \frac{\mu}{M}\): \[
+   \begin{aligned}
+   \dfrac{r_k^2 M}{2(\mu - Mr_k)} &< r_k \\
+   \frac{M}{2(\mu - Mr_k)}\, r_k &< 1 \\
+   M r_k &< 2(\mu - Mr_k) \\
+   3 M r_k &< 2\mu \\
+   r_k &< \frac{2\mu}{3M}
+   \end{aligned} 
+   \]
+\item
+  Возвращаясь к оценке невязки на \(k+1\)-ой итерации, получаем: \[
+  r_{k+1}  \leq \dfrac{r_k^2 M}{2(\mu - Mr_k)} < \dfrac{3 M r_k^2 }{2\mu}
+  \]
+
+  Таким образом, мы получили важный результат: метод Ньютона для функции
+  с липшицевым положительно определённым гессианом сходится
+  \textbf{квадратично} вблизи решения.
+\end{enumerate}
+
+\subsection{Бонус: Идея методов адаптивной
+метрики}\label{ux431ux43eux43dux443ux441-ux438ux434ux435ux44f-ux43cux435ux442ux43eux434ux43eux432-ux430ux434ux430ux43fux442ux438ux432ux43dux43eux439-ux43cux435ux442ux440ux438ux43aux438}
+
+Пусть дана функция \(f(x)\) и точка \(x_0\). Определим
+\(B_\varepsilon(x_0) = \{x \in \mathbb{R}^n : d(x, x_0) = \varepsilon^2 \}\)
+как множество точек с расстоянием \(\varepsilon\) до \(x_0\). Здесь мы
+предполагаем существование функции расстояния \(d(x, x_0)\). \[
+x^* = \text{arg}\min_{x \in B_\varepsilon(x_0)} f(x)
+\] Далее, мы можем определить другое направление \emph{наискорейшего
+спуска} в терминах минимизатора функции на сфере: \[
+s = \lim_{\varepsilon \to 0} \frac{x^* - x_0}{\varepsilon}
+\] Предположим, что расстояние локально определяется некоторой метрикой
+\(A\): \[
+d(x, x_0) = (x-x_0)^\top A (x-x_0)
+\] Далее рассмотрим первый порядок аппроксимации функции \(f(x)\) в
+окрестности точки \(x_0\):
+\begin{equation}\phantomsection\label{eq-taylor}{
+f(x_0 + \delta x) \approx f(x_0) + \nabla f(x_0)^\top \delta x
+}\end{equation}
+
+Теперь мы можем сформулировать задачу нахождения \(s\), как это было
+сказано выше. \[
+\begin{aligned}
+&\min_{\delta x \in \mathbb{R^n}} f(x_0 + \delta x) \\
+\text{s.t.}\;& \delta x^\top A \delta x = \varepsilon^2
+\end{aligned}
+\] Используя уравнение~\ref{eq-taylor}, получаем: \[
+\begin{aligned}
+&\min_{\delta x \in \mathbb{R^n}} \nabla f(x_0)^\top \delta x \\
+\text{s.t.}\;& \delta x^\top A \delta x = \varepsilon^2
+\end{aligned}
+\] Используя метод множителей Лагранжа: \[
+\delta x = - \frac{2 \varepsilon^2}{\nabla f (x_0)^\top A^{-1} \nabla f (x_0)} A^{-1} \nabla f
+\] Новое направление наискорейшего спуска : \(-A^{-1} \nabla f(x_0)\).
+Действительно, если пространство изотропно и \(A = I\), мы сразу
+получаем формулу градиентного спуска, в то время как метод Ньютона
+использует локальный гессиан как матрицу метрик.
+
+\newpage
+
+\textless!-- \# Задачи на дом
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{😱 Сходимость метода Ньютона} (7 баллов)
+
+  Рассмотрим следующую функцию:
+
+  \[
+   f(x,y) = \dfrac{x^4}{4} - x^2 + 2x + (y-1)^2
+   \] и возьмем начальную точку \(x_0 = (0,2)^\top\). Как ведет себя
+  метод Ньютона при старте из этой точки? Как это объяснить? Как ведет
+  себя градиентный спуск с фиксированным шагом \(\alpha = 0.01\) и метод
+  наискорейшего спуска при тех же условиях? (Не обязательно показывать
+  численные симуляции в этой задаче).
+\item
+  \textbf{Метод Ньютона без вычисления гессиана} (16 баллов) В этой
+  задаче мы рассмотрим оптимизацию задачи бинарной логистической
+  регрессии с использованием различных методов. Не беспокойтесь о
+  размере описания задачи, первые 5 пунктов из 7 можно выполнить
+  довольно быстро. В этой задаче вы должны начать с этого
+  \href{https://colab.research.google.com/github/MerkulovDaniil/optim/blob/master/assets/Notebooks/Hessian_free_Newton.ipynb}{\faPython colab
+  notebook}
+
+  Дана выборка с \(n\) наблюдениями, где каждое наблюдение состоит из
+  вектора признаков \(x_i\) и связанной с ним бинарной целевой
+  переменной \(y_i \in \{0,1\}\). Логистическая регрессия моделирует
+  вероятность того, что \(y_i = 1\) при данном \(x_i\) с использованием
+  логистической функции. Функция потерь, которая минимизируется, это
+  отрицательный логарифм правдоподобия наблюдаемых результатов под этой
+  моделью, суммированный по всем наблюдениям. Она имеет высокое
+  значение, когда выходные данные модели значительно отличаются от
+  данных \(y\).
+
+  Функция потерь бинарной кросс-энтропии для одного наблюдения
+  \((x_i, y_i)\) задается как: \[
+   \text{Loss}(w; x_i, y_i) = -\left[ y_i \log(p(y_i=1 | x_i; w)) + (1-y_i) \log(1-p(y_i=1 | x_i; w)) \right]
+   \]
+
+  Здесь \(p(y=1 | x;w)\) определяется как: \[
+   p(y=1 | x;w) = \frac{1}{1 + e^{-w^T x}}
+   \]
+
+  Чтобы определить общую потерю над набором данных, мы суммируем
+  индивидуальные потери: \[
+   f(w) = -\sum_{i=1}^n \left[ y_i \log(p(y_i=1 | x_i; w)) + (1-y_i) \log(1-p(y_i=1 | x_i; w)) \right]
+   \]
+
+  Таким образом, оптимизационная задача в логистической регрессии
+  задается как: \[
+   \min_w f(w) = \min_w -\sum_{i=1}^n \left[ y_i \log\left(p\left(y_i=1 | x_i; w\right)\right) + \left(1-y_i\right) \log\left(1-p(y_i=1 | x_i; w)\right) \right]
+   \]
+
+  Это задача выпуклой оптимизации и может быть решена с использованием
+  градиентных методов, таких как градиентный спуск, метод Ньютона, или
+  более сложных оптимизационных алгоритмов, часто доступных в
+  библиотеках машинного обучения. Однако, эта задача часто
+  сопровождается регуляризацией \(l_2\):
+
+  \[
+   \min_w f(w) = \min_w -\sum_{i=1}^n \left[ y_i \log\left(p\left(y_i=1 | x_i; w\right)\right) + \left(1-y_i\right) \log\left(1-p(y_i=1 | x_i; w)\right) \right] + \frac{\mu}{2} \|w\|_2^2
+   \]
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    (1,6 баллов) Во-первых, рассмотрим оптимизацию с помощью метода
+    градиентного спуска (Gradient Descent, GD) в сильно выпуклой
+    постановке при \(\mu = 1\). Используйте постоянный шаг обучения
+    \(\alpha\). Запустите алгоритм градиентного спуска. Укажите
+    наибольший шаг обучения, при котором алгоритм гарантированно
+    сходится. Постройте график сходимости в терминах как области
+    (значения параметров), так и значения функции (потери). Опишите тип
+    наблюдаемой сходимости.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{params }\OperatorTok{=}\NormalTok{ \{}
+    \StringTok{"mu"}\NormalTok{: }\DecValTok{1}\NormalTok{,}
+    \StringTok{"m"}\NormalTok{: }\DecValTok{1000}\NormalTok{,}
+    \StringTok{"n"}\NormalTok{: }\DecValTok{100}\NormalTok{,}
+    \StringTok{"methods"}\NormalTok{: [}
+\NormalTok{        \{}
+            \StringTok{"method"}\NormalTok{: }\StringTok{"GD"}\NormalTok{,}
+            \StringTok{"learning\_rate"}\NormalTok{: }\FloatTok{3e{-}2}\NormalTok{,}
+            \StringTok{"iterations"}\NormalTok{: }\DecValTok{550}\NormalTok{,}
+\NormalTok{        \},}
+\NormalTok{    ]}
+\NormalTok{\}}
+
+\NormalTok{results, params }\OperatorTok{=}\NormalTok{ run\_experiments(params)}
+\end{Highlighting}
+\end{Shaded}
+  \item
+    (1,6 баллов) Запустите метод Ньютона при тех же условиях, используя
+    вторые производные для направления оптимизации. Опишите и
+    проанализируйте наблюдаемые свойства сходимости.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{params }\OperatorTok{=}\NormalTok{ \{}
+    \StringTok{"mu"}\NormalTok{: }\DecValTok{1}\NormalTok{,}
+    \StringTok{"m"}\NormalTok{: }\DecValTok{1000}\NormalTok{,}
+    \StringTok{"n"}\NormalTok{: }\DecValTok{100}\NormalTok{,}
+    \StringTok{"methods"}\NormalTok{: [}
+\NormalTok{        \{}
+            \StringTok{"method"}\NormalTok{: }\StringTok{"GD"}\NormalTok{,}
+            \StringTok{"learning\_rate"}\NormalTok{: }\FloatTok{3e{-}2}\NormalTok{,}
+            \StringTok{"iterations"}\NormalTok{: }\DecValTok{550}\NormalTok{,}
+\NormalTok{        \},}
+\NormalTok{        \{}
+            \StringTok{"method"}\NormalTok{: }\StringTok{"Newton"}\NormalTok{,}
+            \StringTok{"iterations"}\NormalTok{: }\DecValTok{20}\NormalTok{,}
+\NormalTok{        \},}
+\NormalTok{    ]}
+\NormalTok{\}}
+
+\NormalTok{results, params }\OperatorTok{=}\NormalTok{ run\_experiments(params)}
+\end{Highlighting}
+\end{Shaded}
+  \item
+    (1,6 баллов) В случаях, когда метод Ньютона может сходиться слишком
+    быстро или «перескакивать» через минимум, заторможенная версия
+    метода может быть более устойчивой. Запустите заторможенный метод
+    Ньютона. Отрегулируйте фактор затухания как шаг обучения. Укажите
+    наибольший шаг обучения, обеспечивающий стабильность и сходимость.
+    Постройте график сходимости.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{params }\OperatorTok{=}\NormalTok{ \{}
+    \StringTok{"mu"}\NormalTok{: }\DecValTok{1}\NormalTok{,}
+    \StringTok{"m"}\NormalTok{: }\DecValTok{1000}\NormalTok{,}
+    \StringTok{"n"}\NormalTok{: }\DecValTok{100}\NormalTok{,}
+    \StringTok{"methods"}\NormalTok{: [}
+\NormalTok{        \{}
+            \StringTok{"method"}\NormalTok{: }\StringTok{"GD"}\NormalTok{,}
+            \StringTok{"learning\_rate"}\NormalTok{: }\FloatTok{3e{-}2}\NormalTok{,}
+            \StringTok{"iterations"}\NormalTok{: }\DecValTok{550}\NormalTok{,}
+\NormalTok{        \},}
+\NormalTok{        \{}
+            \StringTok{"method"}\NormalTok{: }\StringTok{"Newton"}\NormalTok{,}
+            \StringTok{"iterations"}\NormalTok{: }\DecValTok{20}\NormalTok{,}
+\NormalTok{        \},}
+\NormalTok{        \{}
+            \StringTok{"method"}\NormalTok{: }\StringTok{"Newton"}\NormalTok{,}
+            \StringTok{"learning\_rate"}\NormalTok{: }\FloatTok{5e{-}1}\NormalTok{,}
+            \StringTok{"iterations"}\NormalTok{: }\DecValTok{50}\NormalTok{,}
+\NormalTok{        \},}
+\NormalTok{    ]}
+\NormalTok{\}}
+
+\NormalTok{results, params }\OperatorTok{=}\NormalTok{ run\_experiments(params)}
+\end{Highlighting}
+\end{Shaded}
+  \item
+    (1,6 баллов) Теперь отключим регуляризацию, установив \(\mu=0\).
+    Попробуйте найти наибольший шаг обучения, который обеспечивает
+    сходимость градиентного спуска. Используйте постоянный шаг обучения
+    \(\alpha\). Запустите алгоритм градиентного спуска. Укажите
+    наибольший шаг обучения, при котором алгоритм гарантированно
+    сходится. Постройте график сходимости в терминах как области
+    (значения параметров), так и значения функции (потери). Опишите тип
+    наблюдаемой сходимости. Как вы можете описать идею применения этого
+    метода для достижения строгого первичного разрыва
+    \(f(x_k) - f^* \approx 10^{-2}\) или \(10^{-3}\), \(10^{-4}\)?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{params }\OperatorTok{=}\NormalTok{ \{}
+    \StringTok{"mu"}\NormalTok{: }\DecValTok{0}\NormalTok{,}
+    \StringTok{"m"}\NormalTok{: }\DecValTok{1000}\NormalTok{,}
+    \StringTok{"n"}\NormalTok{: }\DecValTok{100}\NormalTok{,}
+    \StringTok{"methods"}\NormalTok{: [}
+\NormalTok{        \{}
+            \StringTok{"method"}\NormalTok{: }\StringTok{"GD"}\NormalTok{,}
+            \StringTok{"learning\_rate"}\NormalTok{: }\FloatTok{3e{-}2}\NormalTok{,}
+            \StringTok{"iterations"}\NormalTok{: }\DecValTok{200}\NormalTok{,}
+\NormalTok{        \},}
+\NormalTok{        \{}
+            \StringTok{"method"}\NormalTok{: }\StringTok{"GD"}\NormalTok{,}
+            \StringTok{"learning\_rate"}\NormalTok{: }\FloatTok{7e{-}2}\NormalTok{,}
+            \StringTok{"iterations"}\NormalTok{: }\DecValTok{200}\NormalTok{,}
+\NormalTok{        \},}
+\NormalTok{    ]}
+\NormalTok{\}}
+
+\NormalTok{results, params }\OperatorTok{=}\NormalTok{ run\_experiments(params)}
+\end{Highlighting}
+\end{Shaded}
+  \item
+    (1,6 баллов) Что вы можете сказать о сходимости метода Ньютона в той
+    же постановке \(\mu=0\)? Попробуйте использовать несколько значений
+    скорости обучения, меньших единицы, для заторможенного метода
+    Ньютона. Работает ли это? Напишите ваши выводы о сходимости второго
+    порядка для задачи бинарной логистической регрессии.
+  \item
+    (4 балла) Теперь вернемся к сильно выпуклой постановке \(\mu=1\).
+    Чтобы избежать прямого вычисления матрицы гессиана в методе Ньютона,
+    используйте метод сопряженных градиентов (Conjugate Gradient, CG)
+    для решения линейной системы в шаге Ньютона. Разработайте функцию
+    \texttt{newton\_method\_cg}, которая вычисляет шаг Ньютона,
+    используя CG для решения системы
+    \(\nabla^2 f(x_k) d_k = - \nabla f(x_k), \; x_{k+1} = x_k + \alpha d_k\)
+    определенной гессианом. Вы должны использовать функцию
+    \href{https://jax.readthedocs.io/en/latest/_autosummary/jax.scipy.sparse.linalg.cg.html}{\texttt{jax.scipy.sparse.linalg.cg}}.
+    Итак, сначала вычислите гессиан, как это было сделано в коде, затем
+    поместите его в этот решатель линейных систем. Сравните его
+    производительность в терминах вычислительной эффективности и
+    скорости сходимости с обычным методом Ньютона.
+  \item
+    (4 балла) Теперь реализуйте версию метода Ньютона без вычисления
+    гессиана (HFN), которая использует произведение гессиана на вектор,
+    получаемые с помощью автоматического дифференцирования. Обратите
+    внимание, что функция \texttt{jax.scipy.sparse.linalg.cg} может
+    принимать функцию matvec, которая напрямую вычисляет произведение
+    любого входного вектора \(x\) на гессиан. Реализуйте метод HFN без
+    явного формирования или хранения матрицы гессиана в функции
+    \texttt{newton\_method\_hfn}. Используйте autograd для вычисления
+    произведений гессиана на вектор, как это описано
+    \href{https://iclr-blogposts.github.io/2024/blog/bench-hvp/}{здесь}.
+    Сравните вычислительную сложность по времени и затраты памяти этого
+    метода с предыдущими реализациями.
+  \end{enumerate}
+\end{enumerate}
+
+
+
+
+\end{document}

@@ -1,0 +1,1029 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  russian,
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+\ifLuaTeX
+\usepackage[bidi=basic,provide=*]{babel}
+\else
+\usepackage[bidi=default,provide=*]{babel}
+\fi
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\usepackage{fontspec}
+
+\setsansfont{Palatino Linotype}[
+    Path=../files/palatino/,
+    Extension = .ttf,
+    UprightFont=palatino-Roman,
+    BoldFont=palatino-Bold,
+    ItalicFont=palatino-Italic,
+    BoldItalicFont=palatino-BoldItalic
+]
+\setmainfont{Palatino Linotype}[
+    Path=../files/palatino/,
+    Extension = .ttf,
+    UprightFont=palatino-Roman,
+    BoldFont=palatino-Bold,
+    ItalicFont=palatino-Italic,
+    BoldItalicFont=palatino-BoldItalic
+]
+
+\usepackage[textwidth=0.86\paperwidth, textheight=0.86\paperheight]{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\graphicspath{{../files/}}
+
+\newcommand{\R}{\mathbb{R}}
+
+% \pagenumbering{gobble}
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\fancyhead[R]{\href{https://cu25.fmin.xyz}{\faGem[regular]} \hspace{0.04cm} \href{https://github.com/MerkulovDaniil/cu25}{\faGithub} \hspace{0.07cm} \href{https://t.me/fminxyz}{\faTelegram}}
+\fancyhead[L]{\href{https://fmin.xyz}{\includegraphics[height=0.35cm]{logo.pdf}} ~ \includegraphics[height=0.35cm]{logo_cu.pdf} \hspace{2pt} \textbf{Оптимизация для всех! ЦУ. 2025}}
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Содержание}
+\else
+  \newcommand\contentsname{Содержание}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{Список Иллюстраций}
+\else
+  \newcommand\listfigurename{Список Иллюстраций}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{Список Таблиц}
+\else
+  \newcommand\listtablename{Список Таблиц}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Рисунок}
+\else
+  \newcommand\figurename{Рисунок}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Таблица}
+\else
+  \newcommand\tablename{Таблица}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Список}
+\newcommand*\listoflistings{\listof{codelisting}{Список Каталогов}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Ускоренные градиентные методы. Идея метода сопряженных градиентов},
+  pdfauthor={Даня Меркулов, Петр Остроухов},
+  pdflang={ru},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Ускоренные градиентные методы. Идея метода сопряженных
+градиентов}
+\author{Даня Меркулов, Петр Остроухов}
+\date{}
+\begin{document}
+\maketitle
+
+
+\section{Квадратичная задача
+оптимизации}\label{ux43aux432ux430ux434ux440ux430ux442ux438ux447ux43dux430ux44f-ux437ux430ux434ux430ux447ux430-ux43eux43fux442ux438ux43cux438ux437ux430ux446ux438ux438}
+
+\subsection{Сильно выпуклая квадратичная
+функция}\label{ux441ux438ux43bux44cux43dux43e-ux432ux44bux43fux443ux43aux43bux430ux44f-ux43aux432ux430ux434ux440ux430ux442ux438ux447ux43dux430ux44f-ux444ux443ux43dux43aux446ux438ux44f}
+
+Рассмотрим следующую квадратичную задачу оптимизации:
+\begin{equation}\phantomsection\label{eq-main_problem}{
+\min\limits_{x \in \mathbb{R}^n} f(x) =  \min\limits_{x \in \mathbb{R}^n} \dfrac{1}{2} x^\top  A x - b^\top  x + c, \text{ где }A \in \mathbb{S}^n_{++}.
+}\end{equation}
+
+Условия оптимальности \[
+Ax^* = b
+\]
+
+\pandocbounded{\includegraphics[keepaspectratio]{SD_vs_CG.pdf}}
+
+\subsection{Наискорейший спуск aka точный линейный
+поиск}\label{ux43dux430ux438ux441ux43aux43eux440ux435ux439ux448ux438ux439-ux441ux43fux443ux441ux43a-aka-ux442ux43eux447ux43dux44bux439-ux43bux438ux43dux435ux439ux43dux44bux439-ux43fux43eux438ux441ux43a}
+
+\[
+\alpha_k = \text{arg}\min_{\alpha \in \mathbb{R^+}} f(x_{k+1}) = \text{arg}\min_{\alpha \in \mathbb{R^+}} f(x_k - \alpha \nabla f(x_k))
+\] Более теоретический, чем практический подход к выбору шага. Он также
+позволяет анализировать сходимость, но точный линейный поиск может быть
+численно сложным, если вычисление функции занимает слишком много времени
+или требует слишком много ресурсов.
+
+Интересное теоретическое свойство этого метода заключается в том, что
+каждая следующая итерация метода ортогональна предыдущей: \[
+\alpha_k = \text{arg}\min_{\alpha \in \mathbb{R^+}} f(x_k - \alpha \nabla f(x_k))
+\]
+
+Условия оптимальности:
+
+\[
+\nabla f(x_k)^T\nabla f(x_{k+1})  = 0
+\]
+
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, colback=white, colbacktitle=quarto-callout-caution-color!10!white, colframe=quarto-callout-caution-color-frame, rightrule=.15mm, breakable, coltitle=black, opacitybacktitle=0.6, toptitle=1mm, titlerule=0mm, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Оптимальное значение для квадратичных функций}, left=2mm, bottomrule=.15mm, opacityback=0]
+
+\[
+\nabla f(x_k)^\top A (x_k - \alpha \nabla f(x_k)) - \nabla f(x_k)^\top b = 0 \qquad \alpha_k = \frac{\nabla f(x_k)^T \nabla f(x_k)}{\nabla f(x_k)^T A \nabla f(x_k)}
+\]
+
+\end{tcolorbox}
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{GD_vs_Steepest.pdf}}
+
+}
+
+\caption{Наискорейший спуск}
+
+\end{figure}%
+
+\href{https://colab.research.google.com/github/MerkulovDaniil/optim/blob/master/assets/Notebooks/Steepest_descent.ipynb}{Открыть
+в Colab \(\clubsuit\)}
+
+\section{Ортогональность}\label{ux43eux440ux442ux43eux433ux43eux43dux430ux43bux44cux43dux43eux441ux442ux44c}
+
+\subsection{\texorpdfstring{Сопряженные направления.
+\(A\)-ортогональность.}{Сопряженные направления. A-ортогональность.}}\label{ux441ux43eux43fux440ux44fux436ux435ux43dux43dux44bux435-ux43dux430ux43fux440ux430ux432ux43bux435ux43dux438ux44f.-a-ux43eux440ux442ux43eux433ux43eux43dux430ux43bux44cux43dux43eux441ux442ux44c.}
+
+\begin{figure}
+
+\centering{
+
+\href{https://colab.research.google.com/github/MerkulovDaniil/optim/blob/master/assets/Notebooks/CG.ipynb}{\pandocbounded{\includegraphics[keepaspectratio]{A_orthogonality.pdf}}}
+
+}
+
+\caption{\label{fig-aorth}}
+
+\end{figure}%
+
+Предположим, у нас есть две системы координат и квадратичная функция
+\(f(x) = \frac12 x^T I x\) выглядит так, как на левой части
+изображения~\ref{fig-aorth}, в то время как в других координатах она
+выглядит как \(f(\hat{x}) = \frac12 \hat{x}^T A \hat{x}\), где
+\(A \in \mathbb{S}^n_{++}\).
+
+\[
+\frac12 x^T I x
+\]
+
+\[
+\frac12 \hat{x}^T A \hat{x}
+\]
+
+Поскольку \(A = Q \Lambda Q^T\): \[
+ \frac12 \hat{x}^T A \hat{x} = \frac12 \hat{x}^T Q \Lambda Q^T \hat{x} = \frac12 \hat{x}^T Q \Lambda^{\frac12}\Lambda^{\frac12} Q^T \hat{x} = \frac12 x^T I x \text{ и }  \hat{x} = Q \Lambda^{-\frac12} x
+\]
+
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, colback=white, colbacktitle=quarto-callout-caution-color!10!white, colframe=quarto-callout-caution-color-frame, rightrule=.15mm, breakable, coltitle=black, opacitybacktitle=0.6, toptitle=1mm, titlerule=0mm, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{\(A\)-ортогональные векторы}, left=2mm, bottomrule=.15mm, opacityback=0]
+
+Векторы \(x \in \mathbb{R}^n\) и \(y \in \mathbb{R}^n\) называются
+\(A\)-ортогональными (или \(A\)-сопряженными), если \[
+x^T A y = 0 \qquad \Leftrightarrow \qquad x \perp_A y 
+\] Когда \(A = I\), \(A\)-ортогональность превращается в
+ортогональность.
+
+\end{tcolorbox}
+
+\subsection{Процесс
+Грама-Шмидта}\label{ux43fux440ux43eux446ux435ux441ux441-ux433ux440ux430ux43cux430-ux448ux43cux438ux434ux442ux430}
+
+\textbf{Вход:} \(n\) линейно независимых векторов
+\(u_0, \ldots, u_{n-1}\).
+
+\textbf{Выход:} \(n\) линейно независимых
+\texttt{попарно\ ортогональных} векторов \(d_0, \ldots, d_{n-1}\).
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{GS1.pdf}}
+
+}
+
+\caption{Иллюстрация процесса Грама-Шмидта}
+
+\end{figure}%
+
+\textbf{Вход:} \(n\) линейно независимых векторов
+\(u_0, \ldots, u_{n-1}\).
+
+\textbf{Выход:} \(n\) линейно независимых
+\texttt{попарно\ ортогональных} векторов \(d_0, \ldots, d_{n-1}\).
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{GS2.pdf}}
+
+}
+
+\caption{Иллюстрация процесса Грама-Шмидта}
+
+\end{figure}%
+
+\textbf{Вход:} \(n\) линейно независимых векторов
+\(u_0, \ldots, u_{n-1}\).
+
+\textbf{Выход:} \(n\) линейно независимых
+\texttt{попарно\ ортогональных} векторов \(d_0, \ldots, d_{n-1}\).
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{GS3.pdf}}
+
+}
+
+\caption{Иллюстрация процесса Грама-Шмидта}
+
+\end{figure}%
+
+\textbf{Вход:} \(n\) линейно независимых векторов
+\(u_0, \ldots, u_{n-1}\).
+
+\textbf{Выход:} \(n\) линейно независимых
+\texttt{попарно\ ортогональных} векторов \(d_0, \ldots, d_{n-1}\).
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{GS4.pdf}}
+
+}
+
+\caption{Иллюстрация процесса Грама-Шмидта}
+
+\end{figure}%
+
+\textbf{Вход:} \(n\) линейно независимых векторов
+\(u_0, \ldots, u_{n-1}\).
+
+\textbf{Выход:} \(n\) линейно независимых
+\texttt{попарно\ ортогональных} векторов \(d_0, \ldots, d_{n-1}\).
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{GS5.pdf}}
+
+}
+
+\caption{Иллюстрация процесса Грама-Шмидта}
+
+\end{figure}%
+
+\centering
+
+\pandocbounded{\includegraphics[keepaspectratio]{GS5.pdf}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{Projection.pdf}}
+
+\raggedright
+
+\textbf{Вход:} \(n\) линейно независимых векторов
+\(u_0, \ldots, u_{n-1}\).
+
+\textbf{Выход:} \(n\) линейно независимых
+\texttt{попарно\ ортогональных} векторов \(d_0, \ldots, d_{n-1}\). \[
+\begin{aligned}
+d_0 &= u_0 \\ 
+d_1 &= u_1 - \pi_{d_0}(u_1) \\ 
+d_2 &= u_2 - \pi_{d_0}(u_2) - \pi_{d_1}(u_2) \\ 
+&\vdots \\ 
+d_k &= u_k - \sum\limits_{i=0}^{k-1}\pi_{d_i}(u_k) 
+\end{aligned}
+\]
+
+\begin{equation}\phantomsection\label{eq-GS}{
+d_k = u_k + \sum\limits_{i=0}^{k-1}\beta_{ik} d_i \qquad \beta_{ik} = - \dfrac{\langle d_i, u_k \rangle}{\langle d_i, d_i \rangle}
+}\end{equation}
+
+\section{Метод сопряженных направлений
+(CD)}\label{ux43cux435ux442ux43eux434-ux441ux43eux43fux440ux44fux436ux435ux43dux43dux44bux445-ux43dux430ux43fux440ux430ux432ux43bux435ux43dux438ux439-cd}
+
+\subsection{Общая
+идея}\label{ux43eux431ux449ux430ux44f-ux438ux434ux435ux44f}
+
+\begin{itemize}
+\tightlist
+\item
+  В изотропном случае \(A=I\) метод наискорейшего спуска, запущенный из
+  произвольной точки в \(n\) ортогональных линейно независимых
+  направлениях, сойдется за \(n\) шагов в точных арифметических
+  вычислениях. Мы пытаемся построить аналогичную процедуру в случае
+  \(A \neq I\) с использованием концепции \(A\)-ортогональности.
+\item
+  Предположим, у нас есть набор из \(n\) линейно независимых
+  \(A\)-ортогональных направлений \(d_0, \ldots, d_{n-1}\) (которые
+  будут вычислены с помощью процесса Грама-Шмидта).
+\item
+  Мы хотим построить метод, который идет из \(x_0\) в \(x^*\) для
+  квадратичной задачи с шагами \(\alpha_i\), который, фактически,
+  является разложением \(x^* - x_0\) в некотором базисе: \[
+    x^* = x_0 + \sum\limits_{i=0}^{n-1} \alpha_i d_i \qquad x^* - x_0 = \sum\limits_{i=0}^{n-1} \alpha_i d_i
+    \]
+\item
+  Мы докажем, что \(\alpha_i\) и \(d_i\) могут быть построены очень
+  эффективно с вычислительной точки зрения (метод сопряженных
+  градиентов).
+\end{itemize}
+
+\subsection{Идея метода сопряженных направлений
+(CD)}\label{ux438ux434ux435ux44f-ux43cux435ux442ux43eux434ux430-ux441ux43eux43fux440ux44fux436ux435ux43dux43dux44bux445-ux43dux430ux43fux440ux430ux432ux43bux435ux43dux438ux439-cd}
+
+Таким образом, мы формулируем алгоритм:
+
+\emph{Предположим, что нам заранее известны линейно‑независимые векторы
+\(u_0,\dots,u_{n-1}\).}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(d_0 = -\nabla f(x_0)\).
+\item
+  С помощью процедуры точного линейного поиска находим оптимальную длину
+  шага. Вычисляем \(\alpha\) минимизируя \(f(x_k + \alpha_k d_k)\) по
+  формуле \begin{equation}\phantomsection\label{eq-line_search}{
+   \alpha_k = -\frac{d_k^\top (A x_k - b)}{d_k^\top A d_k}
+   }\end{equation}
+\item
+  Выполняем шаг алгоритма: \[
+   x_{k+1} = x_k + \alpha_k d_k
+   \]
+\item
+  \emph{Обновляем направление: \(d_{k+1}\) получаем из \(u_{k+1}\) с
+  помощью модифицированной процедуры Грама--Шмидта в скалярном
+  произведении \(\langle v,w\rangle_A = v^\top A w\) относительно уже
+  построенных \(d_0,\dots,d_k\):} \[
+   d_{k+1} = u_{k+1} - \sum_{i=0}^{k} \beta_{k+1, i}\ d_i,\quad \beta_{k+1,i} = \frac{u_{k+1}^\top A d_i}{d_i^\top A d_i}
+   \] \emph{что обеспечивает \(d_{k+1}\perp_A d_j\) для всех
+  \(j\le k\).}
+\item
+  Повторяем шаги 2--4, пока не построим \(n\) направлений, где \(n\) ---
+  размерность пространства (\(x\)).
+\end{enumerate}
+
+\subsection{Метод сопряженных направлений
+(CD)}\label{ux43cux435ux442ux43eux434-ux441ux43eux43fux440ux44fux436ux435ux43dux43dux44bux445-ux43dux430ux43fux440ux430ux432ux43bux435ux43dux438ux439-cd-1}
+
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, colback=white, colbacktitle=quarto-callout-color!10!white, colframe=quarto-callout-color-frame, rightrule=.15mm, breakable, coltitle=black, opacitybacktitle=0.6, toptitle=1mm, titlerule=0mm, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Лемма 1. Линейная независимость A-ортогональных векторов.}, left=2mm, bottomrule=.15mm, opacityback=0]
+
+Если множество векторов \(d_1, \ldots, d_n\) - попарно
+\(A\)-ортогональны (каждая пара векторов \(A\)-ортогональна), то эти
+векторы линейно независимы. \(A \in \mathbb{S}^n_{++}\).
+
+\end{tcolorbox}
+
+\textbf{Доказательство}
+
+Покажем, что если \(\sum\limits_{i=1}^n\alpha_i d_i = 0\), то все
+коэффициенты должны быть равны нулю:
+
+\[
+\begin{aligned}
+0 &= \sum\limits_{i=1}^n\alpha_i d_i \\ 
+(\text{Умножаем на } d_j^T A) \qquad &= d_j^\top A \left( \sum\limits_{i=1}^n\alpha_i d_i \right) \\ 
+=  \sum\limits_{i=1}^n \alpha_i d_j^\top A d_i  \\ 
+&=  \alpha_j d_j^\top A d_j  + 0 + \ldots + 0 
+\end{aligned}
+\]
+
+Таким образом, \(\alpha_j = 0\), для всех остальных индексов нужно
+проделать тот же процесс
+
+\subsection{Доказательство
+сходимости}\label{ux434ux43eux43aux430ux437ux430ux442ux435ux43bux44cux441ux442ux432ux43e-ux441ux445ux43eux434ux438ux43cux43eux441ux442ux438}
+
+Введем следующие обозначения:
+
+\begin{itemize}
+\tightlist
+\item
+  \(r_k = b - Ax_k\) - невязка
+\item
+  \(e_k = x_k - x^*\) - ошибка
+\item
+  Поскольку \(Ax^* = b\), имеем
+  \(r_k = b - Ax_k = Ax^* - Ax_k = -A (x_k - x^*)\)
+  \begin{equation}\phantomsection\label{eq-res_error}{
+    r_k = -Ae_k.
+    }\end{equation}
+\item
+  Также заметим, что поскольку
+  \(x_{k+1} = x_0 + \sum\limits_{i=0}^k\alpha_i d_i\), имеем
+  \begin{equation}\phantomsection\label{eq-err_decomposition}{
+    e_{k+1} = e_0 + \sum\limits_{i=0}^k\alpha_i d_i.
+    }\end{equation}
+\end{itemize}
+
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, colback=white, colbacktitle=quarto-callout-color!10!white, colframe=quarto-callout-color-frame, rightrule=.15mm, breakable, coltitle=black, opacitybacktitle=0.6, toptitle=1mm, titlerule=0mm, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Лемма 2. Сходимость метода сопряженных направлений.}, left=2mm, bottomrule=.15mm, opacityback=0]
+
+Предположим, мы решаем \(n\)-мерную квадратичную сильно выпуклую задачу
+оптимизации (\ref{eq-main_problem}). Метод сопряженных направлений \[
+x_{k+1} = x_0 + \sum\limits_{i=0}^k\alpha_i d_i
+\] с
+\(\alpha_i = \frac{\langle d_i, r_i \rangle}{\langle d_i, Ad_i \rangle}\)
+взятым из точного линейного поиска, сходится за не более \(n\) шагов
+алгоритма.
+
+\end{tcolorbox}
+
+\textbf{Доказательство} Пусть \[
+e_0 = x_0 - x^* =  \sum\limits_{i=0}^{n-1}\delta_i d_i
+\] Докажем, что \(\delta_i = - \alpha_i\):
+
+Умножаем обе части слева на \(d_k^T A\): \[
+    \begin{gathered}
+    d_k^T Ae_0 = \sum\limits_{i=0}^{n-1}\delta_i d_k^T A d_i = \delta_k d_k^T A d_k \\
+    d_k^T A e_k = d_k^T A\left(e_0 + \sum\limits_{i=0}^{k-1}\alpha_i d_i \right) \overset{\perp_A}{=} \delta_k d_k^T A d_k \\
+    \delta_k = \frac{ d_k^T A e_k}{d_k^T A d_k } = -\frac{ d_k^T r_k}{d_k^T A d_k } \Leftrightarrow \delta_k = - \alpha_k 
+    \end{gathered}
+    \]
+
+\section{Метод сопряженных градиентов
+(CG)}\label{ux43cux435ux442ux43eux434-ux441ux43eux43fux440ux44fux436ux435ux43dux43dux44bux445-ux433ux440ux430ux434ux438ux435ux43dux442ux43eux432-cg}
+
+\subsection{Идея метода сопряженных градиентов
+(CG)}\label{ux438ux434ux435ux44f-ux43cux435ux442ux43eux434ux430-ux441ux43eux43fux440ux44fux436ux435ux43dux43dux44bux445-ux433ux440ux430ux434ux438ux435ux43dux442ux43eux432-cg}
+
+\begin{itemize}
+\tightlist
+\item
+  Это буквально метод сопряженных направлений, в котором мы выбираем
+  специальный набор \(d_0, \ldots, d_{n-1}\), позволяющий значительно
+  ускорить процесс Грама-Шмидта.
+\item
+  Используется процесс Грама-Шмидта с \(A\)-ортогональностью вместо
+  Евклидовой ортогональности, чтобы получить их из набора начальных
+  векторов.
+\item
+  На каждой итерации \(r_0, \ldots, r_{n-1}\) используются в качестве
+  начальных линейно-независимых векторов для процесса Грама-Шмидта.
+\item
+  Основная идея заключается в том, что для произвольного метода CD
+  процесс Грама-Шмидта вычислительно дорогой и требует квадратичного
+  числа операций сложения векторов и скалярных произведений
+  \(\mathcal{O}\left( n^2\right)\), в то время как в случае CG мы
+  покажем, что сложность этой процедуры может быть уменьшена до линейной
+  \(\mathcal{O}\left( n\right)\).
+\end{itemize}
+
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, colback=white, colframe=quarto-callout-caution-color-frame, rightrule=.15mm, leftrule=.75mm, breakable, opacityback=0, toprule=.15mm, bottomrule=.15mm, left=2mm]
+\begin{minipage}[t]{5.5mm}
+\textcolor{quarto-callout-caution-color}{\faFire}
+\end{minipage}%
+\begin{minipage}[t]{\textwidth - 5.5mm}
+
+\[
+\text{CG} = \text{CD} + r_0, \ldots, r_{n-1} \text{ как начальные векторы для процесса Грама-Шмидта} + A\text{-ортогональность.}
+\]
+
+\end{minipage}%
+\end{tcolorbox}
+
+\subsection{Леммы для
+сходимости}\label{ux43bux435ux43cux43cux44b-ux434ux43bux44f-ux441ux445ux43eux434ux438ux43cux43eux441ux442ux438}
+
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, colback=white, colbacktitle=quarto-callout-color!10!white, colframe=quarto-callout-color-frame, rightrule=.15mm, breakable, coltitle=black, opacitybacktitle=0.6, toptitle=1mm, titlerule=0mm, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Лемма 5. Невязки ортогональны друг другу в методе CG}, left=2mm, bottomrule=.15mm, opacityback=0]
+
+Все невязки в методе CG ортогональны друг другу:
+\begin{equation}\phantomsection\label{eq-res_orth_cg}{
+r_i^T r_k = 0 \qquad \forall i \neq k
+}\end{equation}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, colback=white, colbacktitle=quarto-callout-color!10!white, colframe=quarto-callout-color-frame, rightrule=.15mm, breakable, coltitle=black, opacitybacktitle=0.6, toptitle=1mm, titlerule=0mm, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Лемма 7. Коэффициенты для процесса Грама-Шмидта для CG}, left=2mm, bottomrule=.15mm, opacityback=0]
+
+В процессе Грама-Шмидта для CG \[
+    \beta_{ji} = \frac{r_i^\top r_i}{r_{i - 1}^\top r_{i - 1}},\ i = j + 1.
+\] Все остальные коэффициенты равны нулю кроме \(i = j\), но этот случай
+нам неинтересен.
+
+\end{tcolorbox}
+
+\subsection{Метод сопряженных градиентов
+(CG)}\label{ux43cux435ux442ux43eux434-ux441ux43eux43fux440ux44fux436ux435ux43dux43dux44bux445-ux433ux440ux430ux434ux438ux435ux43dux442ux43eux432-cg-1}
+
+\[
+\begin{aligned}
+& r_0 := b - A x_0 \\
+& \hbox{если } r_{0} \text{ достаточно мал, то вернуть } x_{0} \text{ как результат}\\
+& d_0 := r_0 \\
+& k := 0 \\
+& \text{повторять} \\
+& \qquad \alpha_k := \frac{r_k^\mathsf{T} r_k}{d_k^\mathsf{T} A d_k}  \\
+& \qquad x_{k+1} := x_k + \alpha_k d_k \\
+& \qquad r_{k+1} := r_k - \alpha_k A d_k \\
+& \qquad \hbox{если } r_{k+1} \text{ достаточно мал, то выйти из цикла} \\
+& \qquad \beta_k := \frac{r_{k+1}^\mathsf{T} r_{k+1}}{r_k^\mathsf{T} r_k} \\
+& \qquad d_{k+1} := r_{k+1} + \beta_k d_k \\
+& \qquad k := k + 1 \\
+& \text{конец повторения} \\
+& \text{вернуть } x_{k+1} \text{ как результат}
+\end{aligned}
+\]
+
+\subsection{Закрываем квадратичный
+вопрос}\label{ux437ux430ux43aux440ux44bux432ux430ux435ux43c-ux43aux432ux430ux434ux440ux430ux442ux438ux447ux43dux44bux439-ux432ux43eux43fux440ux43eux441}
+
+\href{https://fmin.xyz/docs/visualizations/cg_gd.mp4}{\pandocbounded{\includegraphics[keepaspectratio]{cg_cgd_gd.pdf}}}
+
+\subsection{Сходимость}\label{ux441ux445ux43eux434ux438ux43cux43eux441ux442ux44c}
+
+\textbf{Теорема 1.} Если матрица \(A\) имеет только \(r\) различных
+собственных значений, то метод сопряженных градиентов сходится за \(r\)
+итераций.
+
+\textbf{Теорема 2.} Следующая оценка сходимости выполняется для метода
+сопряженных градиентов, как для итерационного метода в сильно выпуклой
+задаче:
+
+\[
+\| x_{k} - x^* \|_A \leq 2\left( \dfrac{\sqrt{\kappa(A)} - 1}{\sqrt{\kappa(A)} + 1} \right)^k \|x_0 - x^*\|_A,
+\]
+
+где \(\|x\|^2_A = x^{\top}Ax\) и
+\(\varkappa(A) = \frac{\lambda_1(A)}{\lambda_n(A)}\) - это число
+обусловленности матрицы \(A\),
+\(\lambda_1(A) \geq ... \geq \lambda_n(A)\) - собственные значения
+матрицы \(A\)
+
+\textbf{Примечание:} Сравните коэффициент геометрической прогрессии с
+его аналогом в методе градиентного спуска.
+
+\subsection{Численные
+эксперименты}\label{ux447ux438ux441ux43bux435ux43dux43dux44bux435-ux44dux43aux441ux43fux435ux440ux438ux43cux435ux43dux442ux44b}
+
+\[
+f(x) = \frac{1}{2} x^T A x - b^T x \to \min_{x \in \mathbb{R}^n}
+\]
+
+\pandocbounded{\includegraphics[keepaspectratio]{cg_random_0.001_100_60.pdf}}
+
+\[
+f(x) = \frac{1}{2} x^T A x - b^T x \to \min_{x \in \mathbb{R}^n}
+\]
+
+\pandocbounded{\includegraphics[keepaspectratio]{cg_random_10_100_60.pdf}}
+
+\[
+f(x) = \frac{1}{2} x^T A x - b^T x \to \min_{x \in \mathbb{R}^n}
+\]
+
+\pandocbounded{\includegraphics[keepaspectratio]{cg_random_10_1000_60.pdf}}
+
+\[
+f(x) = \frac{1}{2} x^T A x - b^T x \to \min_{x \in \mathbb{R}^n}
+\]
+
+\pandocbounded{\includegraphics[keepaspectratio]{cg_clustered_10_1000_60.pdf}}
+
+\[
+f(x) = \frac{1}{2} x^T A x - b^T x \to \min_{x \in \mathbb{R}^n}
+\]
+
+\pandocbounded{\includegraphics[keepaspectratio]{cg_clustered_10_1000_600.pdf}}
+
+\[
+f(x) = \frac{1}{2} x^T A x - b^T x \to \min_{x \in \mathbb{R}^n}
+\]
+
+\pandocbounded{\includegraphics[keepaspectratio]{cg_uniform spectrum_1_100_60.pdf}}
+
+\[
+f(x) = \frac{1}{2} x^T A x - b^T x \to \min_{x \in \mathbb{R}^n}
+\]
+
+\pandocbounded{\includegraphics[keepaspectratio]{cg_Hilbert_1_10_60.pdf}}
+
+Посмотрим на видео с экспериментами в VS Code.
+
+\section{Метод сопряженных градиентов для неквадратичных задач
+(Non-linear
+CG)}\label{ux43cux435ux442ux43eux434-ux441ux43eux43fux440ux44fux436ux435ux43dux43dux44bux445-ux433ux440ux430ux434ux438ux435ux43dux442ux43eux432-ux434ux43bux44f-ux43dux435ux43aux432ux430ux434ux440ux430ux442ux438ux447ux43dux44bux445-ux437ux430ux434ux430ux447-non-linear-cg}
+
+В случае, когда нет аналитического выражения для функции или ее
+градиента, мы, скорее всего, не сможем решить одномерную задачу
+минимизации аналитически. Поэтому \(\alpha_k\) подбирается обычной
+процедурой линейного поиска. Но для выбора \(\beta_k\) есть следующий
+математический трюк:
+
+Для двух итераций справедливо: \[
+x_{k+1} - x_k = c d_k,
+\]
+
+где \(c\) - некоторая константа. Тогда для квадратичного случая мы
+имеем: \[ 
+\nabla f(x_{k+1}) - \nabla f(x_k) = (A x_{k+1} - b) - (A x_k - b) = A(x_{k+1}-x_k) = cA d_k
+\]
+
+Выражая из этого уравнения величину
+\(Ad_k = \dfrac{1}{c} \left( \nabla f(x_{k+1}) - \nabla f(x_k)\right)\),
+мы избавляемся от \texttt{знания} функции в определении \(\beta_k\),
+тогда пункт 4 будет переписан как: \[
+\beta_k = \frac{\nabla f(x_{k+1})^\top (\nabla f(x_{k+1}) - \nabla f(x_k))}{d_k^\top (\nabla f(x_{k+1}) - \nabla f(x_k))}.
+\] Этот метод называется методом Полака-Рибьера.
+
+\subsection{Численные
+эксперименты}\label{ux447ux438ux441ux43bux435ux43dux43dux44bux435-ux44dux43aux441ux43fux435ux440ux438ux43cux435ux43dux442ux44b-1}
+
+\[
+f(x) = \frac{\mu}{2} \|x\|_2^2 + \frac1m \sum_{i=1}^m \log (1 + \exp(- y_i \langle a_i, x \rangle)) \to \min_{x \in \mathbb{R}^n}
+\]
+
+\pandocbounded{\includegraphics[keepaspectratio]{cg_non_linear_1000_300_0_None.pdf}}
+
+\[
+f(x) = \frac{\mu}{2} \|x\|_2^2 + \frac1m \sum_{i=1}^m \log (1 + \exp(- y_i \langle a_i, x \rangle)) \to \min_{x \in \mathbb{R}^n}
+\]
+
+\pandocbounded{\includegraphics[keepaspectratio]{cg_non_linear_1000_300_1_None.pdf}}
+
+\[
+f(x) = \frac{\mu}{2} \|x\|_2^2 + \frac1m \sum_{i=1}^m \log (1 + \exp(- y_i \langle a_i, x \rangle)) \to \min_{x \in \mathbb{R}^n}
+\]
+
+\pandocbounded{\includegraphics[keepaspectratio]{cg_non_linear_1000_300_1_20.pdf}}
+
+\[
+f(x) = \frac{\mu}{2} \|x\|_2^2 + \frac1m \sum_{i=1}^m \log (1 + \exp(- y_i \langle a_i, x \rangle)) \to \min_{x \in \mathbb{R}^n}
+\]
+
+\pandocbounded{\includegraphics[keepaspectratio]{cg_non_linear_1000_300_1_50.pdf}}
+
+\[
+f(x) = \frac{\mu}{2} \|x\|_2^2 + \frac1m \sum_{i=1}^m \log (1 + \exp(- y_i \langle a_i, x \rangle)) \to \min_{x \in \mathbb{R}^n}
+\]
+
+\pandocbounded{\includegraphics[keepaspectratio]{cg_non_linear_1000_300_10_None.pdf}}
+
+\[
+f(x) = \frac{\mu}{2} \|x\|_2^2 + \frac1m \sum_{i=1}^m \log (1 + \exp(- y_i \langle a_i, x \rangle)) \to \min_{x \in \mathbb{R}^n}
+\]
+
+\pandocbounded{\includegraphics[keepaspectratio]{cg_non_linear_1000_300_10_20.pdf}}
+
+\section{Бонус: дополнительные технические леммы и
+доказательства}\label{ux431ux43eux43dux443ux441-ux434ux43eux43fux43eux43bux43dux438ux442ux435ux43bux44cux43dux44bux435-ux442ux435ux445ux43dux438ux447ux435ux441ux43aux438ux435-ux43bux435ux43cux43cux44b-ux438-ux434ux43eux43aux430ux437ux430ux442ux435ux43bux44cux441ux442ux432ux430}
+
+\subsection{Леммы для
+сходимости}\label{ux43bux435ux43cux43cux44b-ux434ux43bux44f-ux441ux445ux43eux434ux438ux43cux43eux441ux442ux438-1}
+
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, colback=white, colbacktitle=quarto-callout-color!10!white, colframe=quarto-callout-color-frame, rightrule=.15mm, breakable, coltitle=black, opacitybacktitle=0.6, toptitle=1mm, titlerule=0mm, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Лемма 3. Разложение ошибки.}, left=2mm, bottomrule=.15mm, opacityback=0]
+
+\begin{equation}\phantomsection\label{eq-err_decomposition}{
+e_i = \sum\limits_{j=i}^{n-1}-\alpha_j d_j 
+}\end{equation}
+
+\end{tcolorbox}
+
+\textbf{Доказательство}
+
+По определению \[
+e_{i} = e_0 + \sum\limits_{j=0}^{i-1}\alpha_j d_j = x_0 - x^* + \sum\limits_{j=0}^{i-1}\alpha_j d_j = -\sum\limits_{j=0}^{n-1}\alpha_j d_j + \sum\limits_{j=0}^{i-1}\alpha_j d_j = \sum\limits_{j=i}^{n-1}-\alpha_j d_j 
+\]
+
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, colback=white, colbacktitle=quarto-callout-color!10!white, colframe=quarto-callout-color-frame, rightrule=.15mm, breakable, coltitle=black, opacitybacktitle=0.6, toptitle=1mm, titlerule=0mm, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Лемма 4. Невязка ортогональна всем предыдущим направлениям для CD.}, left=2mm, bottomrule=.15mm, opacityback=0]
+
+Рассмотрим невязку метода сопряженных направлений на \(k\) итерации
+\(r_k\), тогда для любого \(i < k\):
+
+\begin{equation}\phantomsection\label{eq-res_orth_dir}{
+d_i^T r_k = 0
+}\end{equation}
+
+\end{tcolorbox}
+
+\textbf{Доказательство}
+
+Запишем (\ref{eq-err_decomposition}) для некоторого фиксированного
+индекса \(k\):
+
+\[
+e_k = \sum\limits_{j=k}^{n-1}-\alpha_j d_j 
+\]
+
+Умножаем обе части на \(-d_i^TA \cdot\) \[
+-d_i^TA e_k = \sum\limits_{j=k}^{n-1}\alpha_j d_i^TA d_j  = 0
+\]
+
+\pandocbounded{\includegraphics[keepaspectratio]{CG_lem1.pdf}} Таким
+образом, \(d_i^T r_k = 0\) и невязка \(r_k\) ортогональна всем
+предыдущим направлениям \(d_i\) для метода CD.
+
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, colback=white, colbacktitle=quarto-callout-color!10!white, colframe=quarto-callout-color-frame, rightrule=.15mm, breakable, coltitle=black, opacitybacktitle=0.6, toptitle=1mm, titlerule=0mm, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Лемма 5. Невязки ортогональны друг другу в методе CG}, left=2mm, bottomrule=.15mm, opacityback=0]
+
+Все невязки в методе CG ортогональны друг другу:
+\begin{equation}\phantomsection\label{eq-res_orth_cg}{
+r_i^T r_k = 0 \qquad \forall i \neq k
+}\end{equation}
+
+\end{tcolorbox}
+
+\textbf{Доказательство}
+
+Запишем процесс Грама-Шмидта (\ref{eq-GS}) с
+\(\langle \cdot, \cdot \rangle\) замененным на
+\(\langle \cdot, \cdot \rangle_A = x^T A y\)
+
+\begin{equation}\phantomsection\label{eq-gs_cg1}{
+d_i = u_i + \sum\limits_{j=0}^{i-1}\beta_{ji} d_j \;\; \beta_{ji} = - \dfrac{\langle d_j, u_i \rangle_A}{\langle d_j, d_j \rangle_A}
+}\end{equation}
+
+Тогда, мы используем невязки в качестве начальных векторов для процесса
+и \(u_i = r_i\).
+
+\begin{equation}\phantomsection\label{eq-gs_cg2}{ 
+d_i = r_i + \sum\limits_{j=0}^{i-1}\beta_{ji} d_j \;\; \beta_{ji} = - \dfrac{\langle d_j, r_i \rangle_A}{\langle d_j, d_j \rangle_A}
+}\end{equation}
+
+\pandocbounded{\includegraphics[keepaspectratio]{CG_lem1.pdf}} Умножаем
+обе части (\ref{eq-gs_cg1}) на \(r_k^T \cdot\) для некоторого индекса
+\(k\): \[
+r_k^Td_i = r_k^Tu_i + \sum\limits_{j=0}^{i-1}\beta_{ji} r_k^Td_j 
+\]
+
+Если \(j < i < k\), то имеем лемму 4 с \(d_i^T r_k = 0\) и
+\(d_j^T r_k = 0\). Имеем: \[
+r_k^Tu_i= 0 \;\text{ для CD} \;\; r_k^Tr_i = 0 \;\text{ для CG}
+\]
+
+Более того, если \(k=i\): \[
+r_k^Td_k = r_k^Tu_k + \sum\limits_{j=0}^{k-1}\beta_{jk} r_k^Td_j = r_k^Tu_k + 0,
+\]
+
+и мы имеем для любого \(k\) (из-за произвольного выбора \(i\)):
+\begin{equation}\phantomsection\label{eq-lemma5}{
+r_k^Td_k = r_k^Tu_k.
+}\end{equation}
+
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, colback=white, colbacktitle=quarto-callout-color!10!white, colframe=quarto-callout-color-frame, rightrule=.15mm, breakable, coltitle=black, opacitybacktitle=0.6, toptitle=1mm, titlerule=0mm, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Лемма 6. Пересчет невязки}, left=2mm, bottomrule=.15mm, opacityback=0]
+
+\begin{equation}\phantomsection\label{eq-res_recalculation}{
+r_{k+1} = r_k - \alpha_k A d_k 
+}\end{equation}
+
+\end{tcolorbox}
+
+\[
+r_{k+1} = -A e_{k+1} = -A \left( e_{k} + \alpha_k d_k \right) = -A e_{k} - \alpha_k A d_k = r_k - \alpha_k A d_k 
+\]
+
+Наконец, все эти вышеуказанные леммы достаточны для доказательства, что
+\(\beta_{ji} = 0\) для всех \(i,j\), кроме соседних.
+
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, colback=white, colbacktitle=quarto-callout-color!10!white, colframe=quarto-callout-color-frame, rightrule=.15mm, breakable, coltitle=black, opacitybacktitle=0.6, toptitle=1mm, titlerule=0mm, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm, title=\textcolor{quarto-callout-color}{\faInfo}\hspace{0.5em}{Лемма 7. Коэффициенты для процесса Грама-Шмидта для CG}, left=2mm, bottomrule=.15mm, opacityback=0]
+
+В процессе Грама-Шмидта для CG \[
+    \beta_{ji} = \frac{\left\langle r_i, r_i \right\rangle}{r_{i - 1}, r_{i - 1}},\ i = j + 1.
+\] Все остальные коэффициенты равны нулю кроме \(i = j\), но этот случай
+нам неинтересен.
+
+\end{tcolorbox}
+
+Рассмотрим процесс Грам-Шмидта в методе CG \[
+\beta_{ji} = - \dfrac{\langle d_j, u_i \rangle_A}{\langle d_j, d_j \rangle_A} = - \dfrac{ d_j^T A u_i }{ d_j^T A d_j } = - \dfrac{ d_j^T A r_i }{ d_j^T A d_j } = - \dfrac{r_i^T A d_j}{ d_j^T A d_j }.
+\]
+
+Рассмотрим скалярное произведение \(\langle r_i, r_{j+1} \rangle\)
+используя (\ref{eq-res_recalculation}): \[
+\begin{aligned}
+\langle r_i, r_{j+1} \rangle &= \langle r_i, r_j - \alpha_j A d_j  \rangle = \langle r_i, r_j \rangle - \alpha_j\langle r_i, A d_j  \rangle \\
+\alpha_j\langle r_i, A d_j  \rangle &= \langle r_i, r_j \rangle - \langle r_i, r_{j+1} \rangle 
+\end{aligned}
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Если \(i=j\):
+  \(\alpha_i\langle r_i, A d_i  \rangle = \langle r_i, r_i \rangle - \langle r_i, r_{i+1} \rangle = \langle r_i, r_i \rangle\).
+  Этот случай не интересен по построению процесса Грам-Шмидта.
+\item
+  Соседний случай \(i=j + 1\):
+  \(\alpha_j\langle r_i, A d_j \rangle = \langle r_i, r_{i-1} \rangle - \langle r_i, r_{i} \rangle = - \langle r_i, r_i \rangle\)
+\item
+  Для любого другого случая: \(\alpha_j\langle r_i, A d_j \rangle = 0\),
+  потому что все невязки ортогональны друг другу.
+\end{enumerate}
+
+Наконец, мы имеем формулу для \(i=j + 1\): \[
+\beta_{ji} = - \dfrac{r_i^T A d_j}{ d_j^T A d_j} = \dfrac{1}{\alpha_j}\dfrac{\langle r_i, r_i \rangle}{ d_j^T A d_j } =  \dfrac{d_j^T A d_j}{d_j^T r_j}\dfrac{\langle r_i, r_i \rangle}{ d_j^T A d_j } = \dfrac{\langle r_i, r_i \rangle}{\langle r_j, r_j \rangle} = \dfrac{\langle r_i, r_i \rangle}{\langle r_{i-1}, r_{i-1} \rangle}
+\]
+
+И для направления
+\(d_{k+1} = r_{k+1} + \beta_{k,k+1} d_k, \qquad  \beta_{k,k+1} = \beta_k = \dfrac{\langle r_{k+1}, r_{k+1} \rangle}{\langle r_{k}, r_{k} \rangle}.\)
+
+\section{Задачи}\label{ux437ux430ux434ux430ux447ux438}
+
+\subsection{Задача 1}\label{ux437ux430ux434ux430ux447ux430-1}
+
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, colback=white, colframe=quarto-callout-color-frame, rightrule=.15mm, leftrule=.75mm, breakable, opacityback=0, toprule=.15mm, bottomrule=.15mm, left=2mm]
+
+Реализуйте итерации метода сопряжённых градиентов для квадратичной
+задачи \[
+f(x) = \dfrac{1}{2}x^TAx - b^Tx \longrightarrow \min_{x\in\mathbb{R}^n}
+\] и запустите эксперименты для нескольких матриц \(A\). Смотрите код
+здесь
+\href{https://colab.research.google.com/github/MerkulovDaniil/hse25/blob/main/notebooks/s10_ex1.ipynb}{\faPython}.
+
+\end{tcolorbox}
+
+\subsection{Задача 2}\label{ux437ux430ux434ux430ux447ux430-2}
+
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, colback=white, colframe=quarto-callout-color-frame, rightrule=.15mm, leftrule=.75mm, breakable, opacityback=0, toprule=.15mm, bottomrule=.15mm, left=2mm]
+
+Реализуйте итерации метода Полака---Рибьера и запустите эксперименты для
+нескольких \(\mu\) в бинарной логистической регрессии: \[
+f(x)=\dfrac{\mu}{2}\| x \|^2_2 + \dfrac{1}{m}\sum_{i=1}^{m}log(1+exp(-y_i\langle a_i, x \rangle)) \longrightarrow \min_{x\in\mathbb{R}^n}
+\] Смотрите код здесь
+\href{https://colab.research.google.com/github/MerkulovDaniil/hse25/blob/main/notebooks/s10_ex2.ipynb}{\faPython}.
+
+\end{tcolorbox}
+
+\section{Задачи на
+дом}\label{ux437ux430ux434ux430ux447ux438-ux43dux430-ux434ux43eux43c}
+
+\subsection{Задача 1. Оптимальная расстановка роботов (19
+баллов)}\label{ux437ux430ux434ux430ux447ux430-1.-ux43eux43fux442ux438ux43cux430ux43bux44cux43dux430ux44f-ux440ux430ux441ux441ux442ux430ux43dux43eux432ux43aux430-ux440ux43eux431ux43eux442ux43eux432-19-ux431ux430ux43bux43bux43eux432}
+
+Вы будете решать простую квадратичную задачу оптимизации положения
+мобильных роботов, сравнивая \textbf{градиентный спуск (GD)} и
+\textbf{метод сопряжённых градиентов (CG)} для определения их
+оптимальных положений.
+
+\pandocbounded{\includegraphics[keepaspectratio]{cg_robots.pdf}}
+
+Есть команда роботов. Некоторые --- \textbf{неподвижные}
+(фиксированные), остальные --- \textbf{мобильные}. Некоторым роботам (на
+изображении выше между ними нарисованы ребра графа - связи) нужно
+обмениваться информацией друг с другом.
+
+Для тех, кому нужно обмениваться, важно, чтобы они были близко друг к
+другу. Цена связи между двумя роботами растёт с расстоянием, поэтому мы
+минимизируем сумму квадратов расстояний между соединёнными вершинами
+графа, при этом координаты фиксированных роботов неизменны.
+
+В этой задаче вам нужно будет показать, что поставленная задача может
+быть записана явно как задача минимизации квадратичной функции. После
+этого необходимо будет определить свойства этой функции (4 балла + 2
+балла), реализовать метод градиентного спуска (3 балла) и метод
+сопряжённых градиентов (6 баллов) для решения этой задачи. Затем
+сравнить их работу (4 балла).
+
+Детальное описание задачи с подпунктами и вспомогательным кодом доступно
+по
+\href{https://colab.research.google.com/github/MerkulovDaniil/optim/blob/master/assets/Notebooks/CG_simple_exercise_ru.ipynb}{ссылке}.
+
+
+
+
+\end{document}
