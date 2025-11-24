@@ -25,7 +25,7 @@ format:
       incremental: true
       include-in-header: ../files/xeheader_cu.tex
       header-includes:
-        - \newcommand{\cover}{../files/Обложка Мет. опт. неделя 9.pdf}
+        - \newcommand{\cover}{../files/Методы вып_оптимизации_презентация_9.pdf}
 header-includes:
  - \newcommand{\bgimage}{../files/back9.jpeg}
 ---
