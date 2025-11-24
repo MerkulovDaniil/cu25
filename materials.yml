@@ -153,13 +153,13 @@
   seminar_cu: /seminars/13-cu.pdf
   seminar_cu_maga: /seminars/13-cu-maga.pdf
 
-- title: "Методы редукции дисперсии: SAG, SVRG, SAGA. Адаптивные стохастические градиентные методы. Современные методы оптимизации для обучения нейронных сетей"
-  number: 14
-  longread: /longreads/14.pdf
-  materials: /lectures/14.pdf
-  materials_cu: /lectures/14-cu.pdf
-  materials_cu_maga: /lectures/14-cu-maga.pdf
-  # notes: /notes/14.pdf
-  seminar: /seminars/14.pdf
-  seminar_cu: /seminars/14-cu.pdf
-  seminar_cu_maga: /seminars/14-cu-maga.pdf
+# - title: "Методы редукции дисперсии: SAG, SVRG, SAGA. Адаптивные стохастические градиентные методы. Современные методы оптимизации для обучения нейронных сетей"
+#   number: 14
+#   longread: /longreads/14.pdf
+#   materials: /lectures/14.pdf
+#   materials_cu: /lectures/14-cu.pdf
+#   materials_cu_maga: /lectures/14-cu-maga.pdf
+#   # notes: /notes/14.pdf
+#   seminar: /seminars/14.pdf
+#   seminar_cu: /seminars/14-cu.pdf
+#   seminar_cu_maga: /seminars/14-cu-maga.pdf
