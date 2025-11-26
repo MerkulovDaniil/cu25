@@ -81,7 +81,7 @@
   materials: /lectures/8.pdf
   materials_cu: /lectures/8-cu.pdf
   materials_cu_maga: /lectures/8-cu-maga.pdf
-  # notes: /notes/8.pdf
+  notes: /notes/8.pdf
   seminar: /seminars/8.pdf
   seminar_cu: /seminars/8-cu.pdf
   seminar_cu_maga: /seminars/8-cu-maga.pdf
@@ -104,7 +104,7 @@
   materials: /lectures/9.pdf
   materials_cu: /lectures/9-cu.pdf
   materials_cu_maga: /lectures/9-cu-maga.pdf
-  # notes: /notes/9.pdf
+  notes: /notes/9.pdf
   seminar: /seminars/9.pdf
   seminar_cu: /seminars/9-cu.pdf
   seminar_cu_maga: /seminars/9-cu-maga.pdf
@@ -115,7 +115,7 @@
   materials: /lectures/10.pdf
   materials_cu: /lectures/10-cu.pdf
   materials_cu_maga: /lectures/10-cu-maga.pdf
-  # notes: /notes/10.pdf
+  notes: /notes/10.pdf
   seminar: /seminars/10.pdf
   seminar_cu: /seminars/10-cu.pdf
   seminar_cu_maga: /seminars/10-cu-maga.pdf
@@ -126,7 +126,7 @@
   materials: /lectures/11.pdf
   materials_cu: /lectures/11-cu.pdf
   materials_cu_maga: /lectures/11-cu-maga.pdf
-  # notes: /notes/11.pdf
+  notes: /notes/11.pdf
   seminar: /seminars/11.pdf
   seminar_cu: /seminars/11-cu.pdf
   seminar_cu_maga: /seminars/11-cu-maga.pdf
@@ -137,7 +137,7 @@
   materials: /lectures/12.pdf
   materials_cu: /lectures/12-cu.pdf
   materials_cu_maga: /lectures/12-cu-maga.pdf
-  # notes: /notes/12.pdf
+  notes: /notes/12.pdf
   seminar: /seminars/12.pdf
   seminar_cu: /seminars/12-cu.pdf
   seminar_cu_maga: /seminars/12-cu-maga.pdf
@@ -147,19 +147,24 @@
   longread: /longreads/13.pdf
   materials: /lectures/13.pdf
   materials_cu: /lectures/13-cu.pdf
-  materials_cu_maga: /lectures/13-cu-maga.pdf
-  # notes: /notes/13.pdf
+  notes: /notes/13.pdf
   seminar: /seminars/13.pdf
   seminar_cu: /seminars/13-cu.pdf
-  seminar_cu_maga: /seminars/13-cu-maga.pdf
 
-# - title: "Методы редукции дисперсии: SAG, SVRG, SAGA. Адаптивные стохастические градиентные методы. Современные методы оптимизации для обучения нейронных сетей"
-#   number: 14
-#   longread: /longreads/14.pdf
-#   materials: /lectures/14.pdf
-#   materials_cu: /lectures/14-cu.pdf
-#   materials_cu_maga: /lectures/14-cu-maga.pdf
-#   # notes: /notes/14.pdf
-#   seminar: /seminars/14.pdf
-#   seminar_cu: /seminars/14-cu.pdf
-#   seminar_cu_maga: /seminars/14-cu-maga.pdf
+- title: "Стохастический градиентный спуск. Адаптивные методы. Оптимизация нейронных сетей (Магистратура)"
+  number: 13.1
+  longread: /longreads/13_maga.pdf
+  materials: /lectures/13_maga.pdf
+  materials_cu_maga: /lectures/13_maga-cu-maga.pdf
+  # notes: /notes/13.pdf
+  seminar: /seminars/13_maga.pdf
+  seminar_cu_maga: /seminars/13_maga-cu-maga.pdf
+
+- title: "Оптимизация для обучения нейронных сетей"
+  number: 14
+  longread: /longreads/14.pdf
+  materials: /lectures/14.pdf
+  materials_cu: /lectures/14-cu.pdf
+  notes: /notes/14.pdf
+  seminar: /seminars/14.pdf
+  seminar_cu: /seminars/14-cu.pdf
