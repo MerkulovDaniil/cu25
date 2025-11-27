@@ -645,7 +645,7 @@ $$
 
 # Оптимизация для глубокого обучения с практической точки зрения
 
-## Как их сравнить? Бенчмарк AlgoPerf ^[[Benchmarking Neural Network Training Algorithms](https://arxiv.org/abs/2306.07179)] ^[[Accelerating neural network training: An analysis of the AlgoPerf competition](https://openreview.net/forum?id=CtM5xjRSfm)]
+## Как сравнивать методы? Бенчмарк AlgoPerf ^[[Benchmarking Neural Network Training Algorithms](https://arxiv.org/abs/2306.07179)] ^[[Accelerating neural network training: An analysis of the AlgoPerf competition](https://openreview.net/forum?id=CtM5xjRSfm)]
 
 * **Бенчмарк AlgoPerf:** Сравнивает алгоритмы обучения нейросетей в двух режимах:
     * **Внешняя настройка (*External Tuning*):** моделирует подбор гиперпараметров при ограниченных ресурсах (5 запусков, квазислучайный поиск). Оценка — медианное минимальное время достижения цели по 5 наборам задач.
