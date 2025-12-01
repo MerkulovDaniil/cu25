@@ -92,7 +92,7 @@ PL           & $\mathcal{O}\left(\log(1/\varepsilon)\right)$       & \uncover<2-
 
 ## Типичное поведение
 
-[!["Divergence"](sgd_lin_reg_divergence.jpeg){width=90%}](https://fmin.xyz/docs/visualizations/sgd_divergence.mp4)
+[![](sgd_lin_reg_divergence.jpeg){width=90%}](https://fmin.xyz/docs/visualizations/sgd_divergence.mp4)
 
 
 ## Гладкий PL-случай с постоянным шагом
