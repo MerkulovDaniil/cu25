@@ -567,7 +567,7 @@ $$
 
 Добавляя и вычитая $L_{S}(\boldsymbol{w})$:
 $$
-\left[\max _{\|\in\|_2 \leq \rho} L_{{S}}(\boldsymbol{w}+\boldsymbol{\epsilon})-L_{{S}}(\boldsymbol{w})\right]+L_{\mathcal{S}}(\boldsymbol{w})+h\left(\|\boldsymbol{w}\|_2^2 / \rho^2\right)
+\left[\max _{\|\epsilon\|_2 \leq \rho} L_{{S}}(\boldsymbol{w}+\boldsymbol{\epsilon})-L_{{S}}(\boldsymbol{w})\right]+L_{\mathcal{S}}(\boldsymbol{w})+h\left(\|\boldsymbol{w}\|_2^2 / \rho^2\right)
 $$
 
 Слагаемое в квадратных скобках отражает **остроту (sharpness)** $L_S$ в точке $\boldsymbol{w}$, измеряя, как быстро может возрасти ошибка обучения при переходе от $\boldsymbol{w}$ к близкому значению параметров.
