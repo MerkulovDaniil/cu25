@@ -173,16 +173,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="импорты" class="level2">
 <h2 class="anchored" data-anchor-id="импорты">Импорты</h2>
-<div id="cell-4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="3c5348c1-892d-4e29-edfa-ddefbe8a825c" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> jax</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> jax.numpy <span class="im">as</span> jnp</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> flax <span class="im">import</span> linen <span class="im">as</span> nn</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> flax.training <span class="im">import</span> train_state</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> optax</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tqdm.auto <span class="im">import</span> tqdm</span></code></pre></div><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="3c5348c1-892d-4e29-edfa-ddefbe8a825c">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ask XLA for deterministic kernels (no device pinning so it works on CPU/GPU/TPU)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>os.environ.setdefault(<span class="st">"XLA_FLAGS"</span>, <span class="st">"--xla_gpu_deterministic_ops"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> jax</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> jax.numpy <span class="im">as</span> jnp</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> flax <span class="im">import</span> linen <span class="im">as</span> nn</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> flax.training <span class="im">import</span> train_state</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> optax</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tqdm.auto <span class="im">import</span> tqdm</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>SEED <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>random.seed(SEED)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>np.random.seed(SEED)</span></code></pre></div><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>/usr/local/lib/python3.12/dist-packages/jax/_src/cloud_tpu_init.py:86: UserWarning: Transparent hugepages are not enabled. TPU runtime startup and shutdown time should be significantly improved on TPU v5e and newer. If not already set, you may need to enable transparent hugepages in your VM image (sudo sh -c "echo always &gt; /sys/kernel/mm/transparent_hugepage/enabled")
   warnings.warn(</code></pre>
@@ -496,7 +506,7 @@ x_full shape: (10296, 25)</code></pre>
 </section>
 <section id="построение-модели" class="level2">
 <h2 class="anchored" data-anchor-id="построение-модели">Построение модели</h2>
-<div id="cell-12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="f2c7097f-91ad-4031-b210-178db8c33b04" data-execution_count="6">
+<div id="cell-12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="f2c7097f-91ad-4031-b210-178db8c33b04">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x_train <span class="op">=</span> x_train.reshape((<span class="op">-</span><span class="dv">1</span>, TIME_STEPS, <span class="dv">1</span>))</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>x_full <span class="op">=</span> x_full.reshape((<span class="op">-</span><span class="dv">1</span>, TIME_STEPS, <span class="dv">1</span>))</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -526,14 +536,14 @@ x_full shape: (10296, 25)</code></pre>
 <span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> x</span>
 <span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize model</span></span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> jax.random.PRNGKey(<span class="dv">0</span>)</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> jax.random.PRNGKey(SEED)</span>
 <span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>input_shape <span class="op">=</span> (<span class="dv">128</span>, TIME_STEPS, <span class="dv">1</span>)</span>
 <span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> jnp.ones(input_shape)</span>
 <span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> Autoencoder()</span>
 <span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>params <span class="op">=</span> model.init(rng, x)</span>
 <span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> model.<span class="bu">apply</span>(params, x_train)</span>
 <span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Model output shape </span><span class="sc">{</span>output<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model.tabulate(jax.random.key(<span class="dv">0</span>), x,</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model.tabulate(jax.random.key(SEED), x,</span>
 <span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>                   compute_flops<span class="op">=</span><span class="va">True</span>, compute_vjp_flops<span class="op">=</span><span class="va">True</span>))</span></code></pre></div><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
@@ -663,7 +673,7 @@ Model output shape (9691, 25, 1)
 </section>
 <section id="обучение-модели" class="level2">
 <h2 class="anchored" data-anchor-id="обучение-модели">Обучение модели</h2>
-<div id="cell-14" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:406}}" data-outputid="c019642e-f7a5-4ab9-a64f-0952f20f211c" data-execution_count="23">
+<div id="cell-14" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:406}}" data-outputid="c019642e-f7a5-4ab9-a64f-0952f20f211c">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tqdm <span class="im">import</span> tqdm</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -691,31 +701,30 @@ Model output shape (9691, 25, 1)
 <span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>learning_rate <span class="op">=</span> <span class="fl">1e-3</span></span>
 <span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize model and state</span></span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> jax.random.PRNGKey(<span class="dv">0</span>)</span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> jnp.ones((batch_size, TIME_STEPS, <span class="dv">1</span>))</span>
-<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>state <span class="op">=</span> create_train_state(rng, learning_rate, Autoencoder(), x)</span>
-<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Training loop</span></span>
-<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>losses <span class="op">=</span> []</span>
-<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> epoch <span class="kw">in</span> tqdm(<span class="bu">range</span>(n_epochs)):</span>
-<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>    epoch_losses <span class="op">=</span> []</span>
-<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(x_train), batch_size):</span>
-<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>        x_batch <span class="op">=</span> x_train[i:i <span class="op">+</span> batch_size]</span>
-<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> x_batch.shape[<span class="dv">0</span>] <span class="op">!=</span> batch_size:  <span class="co"># Skip the last batch if it is smaller than batch_size</span></span>
-<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>            <span class="cf">continue</span></span>
-<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>        state, loss <span class="op">=</span> train_step(state, x_batch)</span>
-<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>        epoch_losses.append(loss)</span>
-<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>    losses.append(np.mean(epoch_losses))</span>
-<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the training loss curve</span></span>
-<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">4</span>))</span>
-<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>plt.semilogy(losses, label<span class="op">=</span><span class="st">'Training Loss'</span>)</span>
-<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Epochs'</span>)</span>
-<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Loss'</span>)</span>
-<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>plt.grid(linestyle<span class="op">=</span><span class="st">":"</span>)</span>
-<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> jnp.ones((batch_size, TIME_STEPS, <span class="dv">1</span>))</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>state <span class="op">=</span> create_train_state(rng, learning_rate, Autoencoder(), x)</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Training loop</span></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>losses <span class="op">=</span> []</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> epoch <span class="kw">in</span> tqdm(<span class="bu">range</span>(n_epochs)):</span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>    epoch_losses <span class="op">=</span> []</span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(x_train), batch_size):</span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>        x_batch <span class="op">=</span> x_train[i:i <span class="op">+</span> batch_size]</span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> x_batch.shape[<span class="dv">0</span>] <span class="op">!=</span> batch_size:  <span class="co"># Skip the last batch if it is smaller than batch_size</span></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>            <span class="cf">continue</span></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>        state, loss <span class="op">=</span> train_step(state, x_batch)</span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>        epoch_losses.append(loss)</span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>    losses.append(np.mean(epoch_losses))</span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the training loss curve</span></span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">4</span>))</span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>plt.semilogy(losses, label<span class="op">=</span><span class="st">'Training Loss'</span>)</span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Epochs'</span>)</span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Loss'</span>)</span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>plt.grid(linestyle<span class="op">=</span><span class="st">":"</span>)</span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>100%|██████████| 100/100 [00:04&lt;00:00, 20.65it/s]</code></pre>
 </div>
